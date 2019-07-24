@@ -1,0 +1,40 @@
+.animation {
+    width:864px;
+    height:486px;
+    display:block;
+    margin:0 auto 55px auto;
+}
+.topbar {
+    background-image:url('../img/main/topbar.png');
+    width:800px;
+    height:24px;
+}
+.demogif {
+    margin:0 auto;
+    height:480px;
+    overflow:hidden;
+    width:800px;
+    display:block;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    margin-bottom:70px;
+}
+
+
+
+@media only screen and (max-width: 1170px) {
+.demogif {
+    width:90vw;
+    height:calc(90vw / 2);
+}
+.animation {
+    overflow:hidden;
+    width:90vw;
+    height:calc(90vw / 2);
+    background-size:cover;
+}
+.topbar {
+    width:90vw;
+    height:calc(90vw / 33.33);
+}
+}
