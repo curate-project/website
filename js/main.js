@@ -237,6 +237,17 @@
 
         setupCountdown();
 
+        function setupFundsRaised() {
+          $('#fundsRaised').goalProgress({
+            goalAmount: 250000,
+            currentAmount: 100000,
+            textBefore: '$',
+            textAfter: ' raised'
+          });
+        }
+
+        setupFundsRaised();
+
         var swiper = new Swiper('.our-team__slider-wrap', {
           spaceBetween: 25,
           slidesPerView: 5,

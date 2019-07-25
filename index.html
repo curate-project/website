@@ -236,14 +236,18 @@
                             </h1>
                             <h4 class="intro__undertitle">Discover Styles. Earn Crypto.</h4>
                         </div>
+                        <div class="countdown-container">
+                            <p id="countdown-label">IEO starts in</p>
+                            <div class="timer" id="countdown"></div>
+                        </div>        
                         <div class="intro__btn-wrap">
                             <a href="#" class="intro__btn btn d-none">
                                 <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon"
                                     alt="icon sign-up">
                                 <span>SIGN IN</span>
                             </a>
-                            <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn">
-                                <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon"
+                            <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn btn--simple">
+                                <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
                                     alt="icon writing">
                                 <span>WHITEPAPER</span>
                             </a>
@@ -251,9 +255,9 @@
                     </div>
                 </div>
 
-                <div class="countdown-container">
-                    <p id="countdown-label">IEO starts in</p>
-                    <div class="timer" id="countdown"></div>
+                <div class="funds-container d-none">
+                    <div id="fundsRaised"></div>
+                    <span class="funds-goal">of $250,000</span>
                 </div>
 
                 <a href="#" class="header__arrow-down">
@@ -1033,6 +1037,9 @@
 
     <script src="/plugins/moment.js/moment.min.js"></script>
     <script src="/plugins/countdown/countdown-timer.min.js"></script>
+    <script src="/plugins/goalProgress/goalProgress.min.js"></script>
+
+    <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
 
     <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/animate.css">

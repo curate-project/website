@@ -990,6 +990,10 @@ div.menu li.animate:nth-of-type(6) {
     margin-right: 10px;
 }
 
+.btn__icon__colored {
+    filter: invert(74%) sepia(45%) saturate(358%) hue-rotate(354deg) brightness(106%) contrast(102%);
+}
+
 .btn--simple {
     background-color: transparent;
     font-weight: 900;
@@ -2264,11 +2268,11 @@ div.menu li.animate:nth-of-type(6) {
 .countdown-container {
     text-align: center;
     justify-content: center;
-    position: absolute !important;
+    position: relative;
+    /* position: absolute !important;
     left: 50%;
     top: 65%;
-    transform: translate(-50%, -50%);
-
+    transform: translate(-50%, -50%); */
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
@@ -2277,6 +2281,7 @@ div.menu li.animate:nth-of-type(6) {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 40px;
 }
 
 .countdown-container > p {
@@ -2367,10 +2372,23 @@ div.menu li.animate:nth-of-type(6) {
     }
 }
 
+@media only screen and (min-width: 1066px) {
+    .timer {
+        width: 100%;
+    }
+
+    .countdown-container > p {
+        width: 60%;
+    }
+}
+
 @media only screen and (max-width: 1065px) {
-  .countdown-container {
-      width: 100%;
-  }
+    .countdown-container {
+        width: 100vw;
+        margin-left: 0px;
+        left: 50%;
+        transform: translate(-50vw, 0);
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -2491,10 +2509,6 @@ div.menu li.animate:nth-of-type(6) {
 }
 
 @media only screen and (max-width: 767px) {
-    .countdown-container {
-        top: 70%;
-    }
-
     .header__arrow-down {
         bottom: 10%;
     }
@@ -2682,6 +2696,21 @@ div.menu li.animate:nth-of-type(6) {
 
     .about__unisex {
         margin-bottom: 5px;
+    }
+
+    .timer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        padding-top: 10px !important;
+    }
+
+    .timer .timer-wrapper .time {
+        font-size: 18px;
+    }
+
+    .countdown-container > p {
+        font-size: 12px;
     }
 }
 /*# sourceMappingURL=maps/main.css.map */
