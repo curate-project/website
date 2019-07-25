@@ -2269,19 +2269,23 @@ div.menu li.animate:nth-of-type(6) {
     text-align: center;
     justify-content: center;
     position: relative;
-    /* position: absolute !important;
-    left: 50%;
-    top: 65%;
-    transform: translate(-50%, -50%); */
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.54);
     display: flex;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-bottom: 40px;
+    backdrop-filter: blur(20px);
+    margin-bottom: 34px;
+}
+
+.countdown-combined {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .countdown-container > p {
@@ -2291,13 +2295,12 @@ div.menu li.animate:nth-of-type(6) {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-    padding: 10px;
 }
 
 .timer {
     padding: 10px;
     text-align: center;
-    padding-top: 15px;
+    /* padding-top: 15px; */
 }
 
 .timer .timer-wrapper {
@@ -2388,6 +2391,27 @@ div.menu li.animate:nth-of-type(6) {
         margin-left: 0px;
         left: 50%;
         transform: translate(-50vw, 0);
+    }
+
+    .funds-container {
+        width: 100vw;
+        margin-left: 0px;
+        left: 50%;
+        transform: translate(-50vw, 0);
+        background: rgba(0, 0, 0, 0.54);
+        backdrop-filter: blur(20px);
+        padding: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .funds-progress {
+        width: 420px;
+        margin: auto;
+    }
+
+    .goalProgress {
+        background: none !important;
     }
 }
 
@@ -2710,7 +2734,23 @@ div.menu li.animate:nth-of-type(6) {
     }
 
     .countdown-container > p {
-        font-size: 12px;
+        font-size: 12px !important;
+    }
+
+    .progressBar {
+        font-size: 12px !important;
+    }
+
+    .progressBarUnmet {
+        height: 35px !important;
+    }
+
+    .funds-goal {
+        font-size: 12px !important;
+    }
+
+    .funds-progress {
+        width: 325px !important;
     }
 }
 /*# sourceMappingURL=maps/main.css.map */

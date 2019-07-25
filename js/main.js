@@ -174,23 +174,41 @@
             start: moment('20190809', 'YYYYMMDD').toDate(),
             end: moment('20190825', 'YYYYMMDD').toDate(),
             price: 0.1,
-            discount: 0.25
+            discount: 0.25,
+            fundingGoal: 750000
           },
           //IEO Round 2
           {
             start: moment('20190916', 'YYYYMMDD').toDate(),
             end: moment('20191015', 'YYYYMMDD').toDate(),
             price: 0.12,
-            discount: 0.25
+            discount: 0.25,
+            fundingGoal: 720000
           },
           //IEO Round 3
           {
             start: moment('20191025', 'YYYYMMDD').toDate(),
             end: moment('20191124', 'YYYYMMDD').toDate(),
             price: 0.15,
-            discount: 0.25
+            discount: 0.25,
+            fundingGoal: 787500
           },
         ]
+
+        function getCurrentIEOPhase() {
+          let phase = undefined;
+          const today = new Date(Date.now());
+
+          if (today >= ieo[0].start && today <= ieo[0].end) {
+            phase = ieo[0];
+          } else if (today >= ieo[1].start && today <= ieo[1].end) {
+            phase = ieo[1];
+          } else if (today >= ieo[2].start && today <= ieo[2].end) {
+            phase = ieo[2];
+          }
+
+          return phase;
+        }
 
         function setupCountdown() {
           let label = 'ieo starts in';
@@ -200,20 +218,20 @@
           if (today < ieo[0].start) {
             label = 'ieo starts in';
             countdown = ieo[0].start;
-          } else if (today > ieo[0].start && today <= ieo[0].end) {
-            label = 'ieo round 1 ends in'
+          } else if (today >= ieo[0].start && today <= ieo[0].end) {
+            label = 'ieo phase 1 ends in'
             countdown = ieo[0].end;
           } else if (today > ieo[0].end && today < ieo[1].start) {
-            label = 'ieo round 2 starts in'
+            label = 'ieo phase 2 starts in'
             countdown = ieo[1].start;
-          } else if (today > ieo[1].start && today <= ieo[1].end) {
-            label = 'ieo round 2 ends in'
+          } else if (today >= ieo[1].start && today <= ieo[1].end) {
+            label = 'ieo phase 2 ends in'
             countdown = ieo[1].end;
           } else if (today > ieo[1].end && today < ieo[2].start) {
-            label = 'ieo round 3 starts in'
+            label = 'ieo phase 3 starts in'
             countdown = ieo[2].start;
-          } else if (today > ieo[2].start && today <= ieo[2].end) {
-            label = 'ieo round 3 ends in'
+          } else if (today >= ieo[2].start && today <= ieo[2].end) {
+            label = 'ieo phase 3 ends in'
             countdown = ieo[2].end;
           } else {
             $("countdown-container").remove();
@@ -237,13 +255,24 @@
 
         setupCountdown();
 
+        let fundsRaisedTimer = undefined;
+
         function setupFundsRaised() {
+          const phase = getCurrentIEOPhase();
+
+          if (!phase) {
+            $('#funds-container').remove();
+            return;
+          }
+
           $('#fundsRaised').goalProgress({
-            goalAmount: 250000,
-            currentAmount: 100000,
+            goalAmount: phase.fundingGoal,
+            currentAmount: 0,
             textBefore: '$',
             textAfter: ' raised'
           });
+
+          $('#countdown-container').addClass('countdown-combined');
         }
 
         setupFundsRaised();
