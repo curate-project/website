@@ -2334,6 +2334,40 @@ div.menu li.animate:nth-of-type(6) {
     text-transform: capitalize;
 }
 
+.news {
+    padding-top: 0px;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+    background-image: url('/img/main/news-bg.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.news-wrapper {
+    display: inline-block;
+}
+
+.news-quote {
+    text-align: center;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.news-highlight {
+    color: white;
+    font-weight: bold;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.x-icon-news {
+    margin-left: 40px;
+    margin-right: 30px;
+}
+
 @keyframes preload-inner {
     0% {
         transform: rotate(0) scale(1);
