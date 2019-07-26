@@ -990,6 +990,10 @@ div.menu li.animate:nth-of-type(6) {
     margin-right: 10px;
 }
 
+.btn__icon__colored {
+    filter: invert(74%) sepia(45%) saturate(358%) hue-rotate(354deg) brightness(106%) contrast(102%);
+}
+
 .btn--simple {
     background-color: transparent;
     font-weight: 900;
@@ -2264,19 +2268,24 @@ div.menu li.animate:nth-of-type(6) {
 .countdown-container {
     text-align: center;
     justify-content: center;
-    position: absolute !important;
-    left: 50%;
-    top: 65%;
-    transform: translate(-50%, -50%);
-
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.75);
+    position: relative;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.54);
     display: flex;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    backdrop-filter: blur(20px);
+    margin-bottom: 34px;
+}
+
+.countdown-combined {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .countdown-container > p {
@@ -2286,13 +2295,12 @@ div.menu li.animate:nth-of-type(6) {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-    padding: 10px;
 }
 
 .timer {
     padding: 10px;
     text-align: center;
-    padding-top: 15px;
+    /* padding-top: 15px; */
 }
 
 .timer .timer-wrapper {
@@ -2324,6 +2332,40 @@ div.menu li.animate:nth-of-type(6) {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.4);
     text-transform: capitalize;
+}
+
+.news {
+    padding-top: 0px;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+    background-image: url('/img/main/news-bg.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.news-wrapper {
+    display: inline-block;
+}
+
+.news-quote {
+    text-align: center;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.news-highlight {
+    color: white;
+    font-weight: bold;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.x-icon-news {
+    margin-left: 40px;
+    margin-right: 30px;
 }
 
 @keyframes preload-inner {
@@ -2367,10 +2409,44 @@ div.menu li.animate:nth-of-type(6) {
     }
 }
 
+@media only screen and (min-width: 1066px) {
+    .timer {
+        width: 100%;
+    }
+
+    .countdown-container > p {
+        width: 60%;
+    }
+}
+
 @media only screen and (max-width: 1065px) {
-  .countdown-container {
-      width: 100%;
-  }
+    .countdown-container {
+        width: 100vw;
+        margin-left: 0px;
+        left: 50%;
+        transform: translate(-50vw, 0);
+    }
+
+    .funds-container {
+        width: 100vw;
+        margin-left: 0px;
+        left: 50%;
+        transform: translate(-50vw, 0);
+        background: rgba(0, 0, 0, 0.54);
+        backdrop-filter: blur(20px);
+        padding: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .funds-progress {
+        width: 420px;
+        margin: auto;
+    }
+
+    .goalProgress {
+        background: none !important;
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -2491,10 +2567,6 @@ div.menu li.animate:nth-of-type(6) {
 }
 
 @media only screen and (max-width: 767px) {
-    .countdown-container {
-        top: 70%;
-    }
-
     .header__arrow-down {
         bottom: 10%;
     }
@@ -2682,6 +2754,52 @@ div.menu li.animate:nth-of-type(6) {
 
     .about__unisex {
         margin-bottom: 5px;
+    }
+
+    .timer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        padding-top: 10px !important;
+    }
+
+    .timer .timer-wrapper .time {
+        font-size: 18px;
+    }
+
+    .countdown-container > p {
+        font-size: 12px !important;
+    }
+
+    .progressBar {
+        font-size: 12px !important;
+    }
+
+    .progressBarUnmet {
+        height: 35px !important;
+    }
+
+    .funds-goal {
+        font-size: 12px !important;
+    }
+
+    .funds-progress {
+        width: 325px !important;
+    }
+
+    .x-icon-news {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 30px;
+        margin-bottom:  40px;
+    }
+
+    .column-wrap {
+        flex-direction: column !important;
+    }
+
+    .news {
+        background-size: auto;
     }
 }
 /*# sourceMappingURL=maps/main.css.map */
