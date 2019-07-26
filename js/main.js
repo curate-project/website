@@ -266,7 +266,7 @@
           }
 
           $('#fundsRaised').goalProgress({
-            goalAmount: phase.fundingGoal,
+            goalAmount: 2250000,
             currentAmount: 0,
             textBefore: '$',
             textAfter: ' raised'

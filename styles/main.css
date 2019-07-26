@@ -2786,5 +2786,20 @@ div.menu li.animate:nth-of-type(6) {
     .funds-progress {
         width: 325px !important;
     }
+
+    .x-icon-news {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 30px;
+        margin-bottom:  40px;
+    }
+
+    .column-wrap {
+        flex-direction: column !important;
+    }
+
+    .news {
+        background-size: auto;
+    }
 }
 /*# sourceMappingURL=maps/main.css.map */
