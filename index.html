@@ -236,24 +236,26 @@
                             </h1>
                             <h4 class="intro__undertitle">Discover Styles. Earn Crypto.</h4>
                         </div>
+                        <div class="countdown-container" id="countdown-container">
+                            <p id="countdown-label">IEO starts in</p>
+                            <div class="timer" id="countdown"></div>
+                        </div>
+                        <div class="funds-container" id="funds-container">
+                            <div id="fundsRaised" class="funds-progress"></div>
+                        </div>
                         <div class="intro__btn-wrap">
                             <a href="#" class="intro__btn btn d-none">
                                 <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon"
                                     alt="icon sign-up">
                                 <span>SIGN IN</span>
                             </a>
-                            <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn">
-                                <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon"
+                            <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn btn--simple">
+                                <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
                                     alt="icon writing">
                                 <span>WHITEPAPER</span>
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <div class="countdown-container">
-                    <p id="countdown-label">IEO starts in</p>
-                    <div class="timer" id="countdown"></div>
                 </div>
 
                 <a href="#" class="header__arrow-down">
@@ -409,18 +411,12 @@
             <div class="container">
                 <h2 class="roadmap__title wow fadeInUp">Curate Demo Preview</h2>
                 <div class="roadmap__wrap">
-
-
-
                     <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true" muted="muted"
                         playsinline="" disableremoteplayback="">
-                        <source src="desktop.mp4" type="video/mp4">
+                        <source src="demo_part_1.mp4" type="video/mp4">
                         <!-- <source src="movie.ogg" type="video/ogg"> -->
                         Your browser does not support the video tag.
                     </video>
-
-
-
                 </div>
             </div>
             <section class="roadmap" id="roadmap">
@@ -495,7 +491,7 @@
                             <ul class="roadmap__list roadmap__list--now">
                                 <li class="roadmap__item">
                                     <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                    <span>1st IEO starts aiming to raise $250,000 USD</span>
+                                    <span>1st IEO starts, aiming to raise $2.25M USD</span>
                                 </li>
                                 <li class="roadmap__item">
                                     <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
@@ -516,7 +512,7 @@
                             <ul class="roadmap__list roadmap__list--now">
                                 <li class="roadmap__item">
                                     <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                    <span>2nd IEO starts on 2 top CoinMarketCap approved exchanges</span>
+                                    <span>2nd IEO starts on two top CoinMarketCap approved exchanges</span>
                                 </li>
                                 <li class="roadmap__item">
                                     <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
@@ -524,7 +520,7 @@
                                 </li>
                                 <li class="roadmap__item">
                                     <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                    <span>CUR8 token listed on 2 more top exchanges, volume of trading increase</span>
+                                    <span>CUR8 token listed on two more top exchanges, volume of trading increase</span>
                                 </li>
                             </ul>
                         </div>
@@ -817,6 +813,26 @@
                     </div>
                 </div>
             </section>
+            <section class="news" id="news">
+                <div class="container center-text">
+                    <div class="news-wrapper">
+                        <div class="flexan column-wrap">
+                            <img src="img/sprites/intermediate-svg/main-logo.svg" alt="logo" class="main-logo__img">
+                            <img src="img/main/XCircle.svg" class="x-icon-news">
+                            <img src="img/main/p2pb2b.svg">
+                        </div>
+                        <div class="news-quote">
+                            <p>
+                                <q>"</q>
+                                Curate is now <span class="news-highlight">confirmed to be listed on P2PB2B</span> trading platform.  
+                                P2PB2B is one of the top 20 exchanges in the world with a daily trading volume of <span class="news-highlight">$418 million - a real powerhouse.</span>
+                                <q>"</q>
+                            </p>
+                        </div>
+                        <img src="img/main/FounderImage.svg">
+                    </div>
+                </div>
+            </section>
             <section class="graph" id="graph">
                 <div class="container">
                     <div class="graph__wrap">
@@ -1033,6 +1049,9 @@
 
     <script src="/plugins/moment.js/moment.min.js"></script>
     <script src="/plugins/countdown/countdown-timer.min.js"></script>
+    <script src="/plugins/goalProgress/goalProgress.js"></script>
+
+    <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
 
     <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/animate.css">
