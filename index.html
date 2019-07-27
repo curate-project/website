@@ -411,12 +411,24 @@
             <div class="container">
                 <h2 class="roadmap__title wow fadeInUp">Curate Demo Preview</h2>
                 <div class="roadmap__wrap">
-                    <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true" muted="muted"
-                        playsinline="" disableremoteplayback="">
-                        <source src="demo_part_1.mp4" type="video/mp4">
-                        <!-- <source src="movie.ogg" type="video/ogg"> -->
-                        Your browser does not support the video tag.
-                    </video>
+                    <ul id="lightSlider">
+                        <li>
+                            <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true"
+                                muted="muted" playsinline="" disableremoteplayback="">
+                                <source src="demo_part_1.mp4" type="video/mp4">
+                                <!-- <source src="movie.ogg" type="video/ogg"> -->
+                                Your browser does not support the video tag.
+                            </video>
+                        </li>
+                        <li>
+                            <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true"
+                                muted="muted" playsinline="" disableremoteplayback="">
+                                <source src="desktop.mp4" type="video/mp4">
+                                <!-- <source src="movie.ogg" type="video/ogg"> -->
+                                Your browser does not support the video tag.
+                            </video>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <section class="roadmap" id="roadmap">
@@ -732,7 +744,7 @@
                                 </div>
                                 <div class="our-team__slider-block swiper-slide">
                                     <div class="our-team__slider-avatar">
-                                        <img src="img/main/team-carrim.png" alt="Team-Avatar"
+                                        <img src="img/main/team-carrim.jpeg" alt="Team-Avatar"
                                             class="our-team__avatar-img">
                                     </div>
                                     <h5 class="our-team__slider-title">Mohammed Carrim Ganey</h5>
@@ -746,7 +758,7 @@
                                 </div>
                                 <div class="our-team__slider-block swiper-slide">
                                     <div class="our-team__slider-avatar">
-                                        <img src="img/main/team-kalla.png" alt="Team-Avatar"
+                                        <img src="img/main/team-kalla.jpeg" alt="Team-Avatar"
                                             class="our-team__avatar-img">
                                     </div>
                                     <h5 class="our-team__slider-title">Aslam Kalla</h5>
@@ -824,8 +836,10 @@
                         <div class="news-quote">
                             <p>
                                 <q>"</q>
-                                Curate is now <span class="news-highlight">confirmed to be listed on P2PB2B</span> trading platform.  
-                                P2PB2B is one of the top 20 exchanges in the world with a daily trading volume of <span class="news-highlight">$418 million - a real powerhouse.</span>
+                                Curate is now <span class="news-highlight">confirmed to be listed on P2PB2B</span>
+                                trading platform.
+                                P2PB2B is one of the top 20 exchanges in the world with a daily trading volume of <span
+                                    class="news-highlight">$418 million - a real powerhouse.</span>
                                 <q>"</q>
                             </p>
                         </div>
@@ -1050,8 +1064,10 @@
     <script src="/plugins/moment.js/moment.min.js"></script>
     <script src="/plugins/countdown/countdown-timer.min.js"></script>
     <script src="/plugins/goalProgress/goalProgress.js"></script>
+    <script src="/plugins/lightslider/lightslider.js"></script>
 
     <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
+    <link rel="stylesheet" href="plugins/lightslider/lightslider.css">
 
     <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/animate.css">
