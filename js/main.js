@@ -277,6 +277,15 @@
 
         setupFundsRaised();
 
+        $(document).ready(function () {
+          $('#lightSlider').lightSlider({
+            item: 1,
+            slideMove: 1,
+            slideMargin: 0,
+            loop: true
+          });
+        });
+
         var swiper = new Swiper('.our-team__slider-wrap', {
           spaceBetween: 25,
           slidesPerView: 5,
