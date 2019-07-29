@@ -696,12 +696,12 @@ div.menu li.animate:nth-of-type(3) {
 }
 
 div.menu li.animate:nth-of-type(4) {
-    top: 360px;
+    top: 330px;
     transition-delay: 0.09s;
 }
 
 div.menu li.animate:nth-of-type(5) {
-    top: 430px;
+    top: 400px;
     transition-delay: 0.12s;
 }
 
