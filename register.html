@@ -61,7 +61,7 @@
 
 <body>
     <!--        <h1>New Page</h1>-->
-    <main class="main">
+    <main class="main" id="main">
         <section class="form__section">
             <div class="container">
                 <a href="index.html" class="form__logo">
@@ -70,23 +70,40 @@
                 <div class="form">
                     <div class="form__head">
 
-                        <h2 class="form__title">Password recovery</h2>
-                        <h3 class="form__undertitle">We will send a password <br> reset link to this email.</h3>
+                        <h2 class="form__title">Create your account</h2>
+                        <!--                    <h3 class="form__undertitle">Have questions? Contact us:</h3>-->
                     </div>
                     <div class="form__body">
                         <form action="#" class="form__main-form">
 
+                            <label for="form-name" class="form__input">
+                                <span class="label">Full Name</span>
+                                <input type="text" id="form-name" placeholder="John Doe" required>
+                                <span class="form__input-error d-none">incorrect name</span>
+                            </label>
+
+                            <label for="form-pass" class="form__input">
+                                <span class="label">Password</span>
+                                <input type="password" id="form-pass" placeholder="••••••••" required>
+                                <!--                                    <span class="form__input-error">incorrect password</span>-->
+                            </label>
+
                             <label for="form-mail" class="form__input">
                                 <span class="label">E-mail</span>
                                 <input type="email" id="form-mail" placeholder="sample@gmail.com">
-                                <span class="form__input-error d-none">incorrect E-mail</span>
+                                <!--                                    <span class="form__input-error">incorrect E-mail</span>-->
                             </label>
 
                             <div class="form__footer">
+                                <label for="form-checkbox" class="form__checkbox">
+                                    <input type="checkbox" class="form__checkbox-input" id="form-checkbox" />
+                                    <span class="form__checkbox-span">I agree to the <a href="#" class="link">Terms and
+                                            conditions</a></span>
+                                </label>
 
-                                <button type="submit" class="form__button">Send</button>
+                                <button type="submit" class="form__button">Create Account</button>
 
-                                <a href="login.html" class="link">Authorization</a>
+                                <a href="login.html" class="link">Already have an account</a>
                             </div>
 
                         </form>
@@ -96,14 +113,16 @@
             </div>
         </section>
     </main>
+
     <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/transitions.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="js/recovery.js"></script>
+    <script src="js/register.js"></script>
     <script src="js/transitions.js"></script>
+
 </body>
 
 </html>
