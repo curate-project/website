@@ -2,6 +2,16 @@
 <html lang="en" class="overflow">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144820552-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144820552-1');
+    </script>
+
     <meta charset="UTF-8" />
 
     <!-- Useful meta tags -->
@@ -79,7 +89,7 @@
                             <label for="form-name" class="form__input">
                                 <span class="label">Full Name</span>
                                 <input type="text" id="form-name" placeholder="John Doe" required>
-                                <span class="form__input-error d-none">incorrect name</span>
+                                <!-- <span class="form__input-error d-none">incorrect name</span> -->
                             </label>
 
                             <label for="form-pass" class="form__input">
@@ -91,7 +101,7 @@
                             <label for="form-mail" class="form__input">
                                 <span class="label">E-mail</span>
                                 <input type="email" id="form-mail" placeholder="sample@gmail.com">
-                                <!--                                    <span class="form__input-error">incorrect E-mail</span>-->
+                                <!-- <span class="form__input-error">invalid e-mail</span> -->
                             </label>
 
                             <div class="form__footer">
@@ -101,7 +111,7 @@
                                             conditions</a></span>
                                 </label>
 
-                                <button type="submit" class="form__button">Create Account</button>
+                                <button class="form__button disabled-btn" id="create-account">Create Account</button>
 
                                 <a href="login.html" class="link">Already have an account</a>
                             </div>

@@ -1907,7 +1907,9 @@ div.menu li.animate:nth-of-type(6) {
     display: block;
     position: absolute;
     top: 6px;
-    right: -63px;
+    /* right: -63px; */
+    right: 0;
+    transform: translate(50%, 0px);
     padding: 11px 16px;
     color: #ff2e53;
     text-align: center;
@@ -1917,12 +1919,12 @@ div.menu li.animate:nth-of-type(6) {
     border-radius: 4px;
 }
 
-.form__input-error:before {
+/* .form__input-error:before {
     content: "!";
     position: absolute;
     top: 26%;
     left: -140%;
-}
+} */
 
 .form__input .label {
     position: absolute;
@@ -2394,6 +2396,45 @@ a.form__logo:hover {
 
 a:not(.btn):hover {
     background-color: transparent !important;
+}
+
+.audit {
+    margin-bottom: 50px;
+}
+
+.audit-container {
+    width: 350px;
+}
+
+.audit-logo {
+    width: 100px;
+}
+
+.disabled-btn {
+    background-color: grey !important;
+    cursor: none !important;
+    pointer-events: none !important;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: white;
+        background: transparent;
+    }
+}
+
+@keyframes autofill {
+    to {
+        color: white;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    animation-name: autofill;
+    -webkit-animation-name: autofill;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
 }
 
 @keyframes preload-inner {
