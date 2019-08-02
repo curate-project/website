@@ -40,15 +40,15 @@
     <meta property="og:site_name" content="" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="shortcut icon" href="../img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
 
     <meta name="application-name" content="&nbsp;" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
@@ -62,7 +62,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
 
     <!-- Title -->
     <title>CURATE</title>
@@ -74,8 +74,8 @@
     <main class="main" id="main">
         <section class="form__section">
             <div class="container">
-                <a class="form__logo" href="index.html">
-                    <img src="img/sprites/intermediate-svg/main-logo.svg" class="btn__icon" alt="icon sign-up">
+                <a class="form__logo" href="../index.html">
+                    <img src="../img/sprites/intermediate-svg/main-logo.svg" class="btn__icon" alt="icon sign-up">
                 </a>
                 <div class="form">
                     <div class="form__head">
@@ -90,14 +90,12 @@
                                 <span class="label">E-mail</span>
                                 <input type="email" id="form-mail" placeholder="sample@gmail.com"
                                     autocomplete="username">
-                                <span class="form__input-error d-none">incorrect E-mail</span>
                             </label>
 
                             <label for="form-pass" class="form__input">
                                 <span class="label">Password</span>
                                 <input type="password" id="form-pass" placeholder="••••••••" required
-                                    autocomplete="current-password">
-                                <!--                            <span class="form__input-error">incorrect password</span>-->
+                                    autocomplete="current-password">                                <!--                            <span class="form__input-error">incorrect password</span>-->
                             </label>
 
                             <div class="form__footer">
@@ -108,7 +106,7 @@
                                             password?</a></span>
                                 </label>
 
-                                <button type="submit" class="form__button">login</button>
+                                <button class="form__button disabled-btn" id="login-button">login</button>
 
                                 <a href="register.html" class="link">Create account</a>
                             </div>
@@ -121,14 +119,14 @@
         </section>
     </main>
 
-    <link rel="stylesheet" href="styles/animate.css">
-    <link rel="stylesheet" href="styles/transitions.css">
+    <link rel="stylesheet" href="../styles/animate.css">
+    <link rel="stylesheet" href="../styles/transitions.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="js/login.js"></script>
-    <script src="js/transitions.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/transitions.js"></script>
 
 </body>
 

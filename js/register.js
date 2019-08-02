@@ -27,6 +27,8 @@ window.onload = function () {
     });
 
     $('#create-account').on('click', function (e) {
+        e.preventDefault();
+        
         if (validateEntries()) {
             createAccount();
         }

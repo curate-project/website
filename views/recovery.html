@@ -40,15 +40,15 @@
     <meta property="og:site_name" content="" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="shortcut icon" href="../img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
 
     <meta name="application-name" content="&nbsp;" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
@@ -62,7 +62,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
 
     <!-- Title -->
     <title>CURATE</title>
@@ -71,49 +71,31 @@
 
 <body>
     <!--        <h1>New Page</h1>-->
-    <main class="main" id="main">
+    <main class="main">
         <section class="form__section">
             <div class="container">
-                <a href="index.html" class="form__logo">
-                    <img src="img/sprites/intermediate-svg/main-logo.svg" class="btn__icon" alt="icon sign-up">
+                <a href="../index.html" class="form__logo">
+                    <img src="../img/sprites/intermediate-svg/main-logo.svg" class="btn__icon" alt="icon sign-up">
                 </a>
                 <div class="form">
                     <div class="form__head">
 
-                        <h2 class="form__title">Create your account</h2>
-                        <!--                    <h3 class="form__undertitle">Have questions? Contact us:</h3>-->
+                        <h2 class="form__title">Password recovery</h2>
+                        <h3 class="form__undertitle">We will send a password <br> reset link to this email.</h3>
                     </div>
                     <div class="form__body">
                         <form action="#" class="form__main-form">
 
-                            <label for="form-name" class="form__input">
-                                <span class="label">Full Name</span>
-                                <input type="text" id="form-name" placeholder="John Doe" required>
-                                <!-- <span class="form__input-error d-none">incorrect name</span> -->
-                            </label>
-
-                            <label for="form-pass" class="form__input">
-                                <span class="label">Password</span>
-                                <input type="password" id="form-pass" placeholder="••••••••" required>
-                                <!--                                    <span class="form__input-error">incorrect password</span>-->
-                            </label>
-
                             <label for="form-mail" class="form__input">
                                 <span class="label">E-mail</span>
                                 <input type="email" id="form-mail" placeholder="sample@gmail.com">
-                                <!-- <span class="form__input-error">invalid e-mail</span> -->
                             </label>
 
                             <div class="form__footer">
-                                <label for="form-checkbox" class="form__checkbox">
-                                    <input type="checkbox" class="form__checkbox-input" id="form-checkbox" />
-                                    <span class="form__checkbox-span">I agree to the <a href="#" class="link">Terms and
-                                            conditions</a></span>
-                                </label>
 
-                                <button class="form__button disabled-btn" id="create-account">Create Account</button>
+                                <button class="form__button disabled-btn" id="reset-password">Send</button>
 
-                                <a href="login.html" class="link">Already have an account</a>
+                                <a href="login.html" class="link">Authorization</a>
                             </div>
 
                         </form>
@@ -123,16 +105,14 @@
             </div>
         </section>
     </main>
-
-    <link rel="stylesheet" href="styles/animate.css">
-    <link rel="stylesheet" href="styles/transitions.css">
+    <link rel="stylesheet" href="../styles/animate.css">
+    <link rel="stylesheet" href="../styles/transitions.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="js/register.js"></script>
-    <script src="js/transitions.js"></script>
-
+    <script src="../js/recovery.js"></script>
+    <script src="../js/transitions.js"></script>
 </body>
 
 </html>
