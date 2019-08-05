@@ -1,16 +1,18 @@
 window.onload = function () {
-    const nameReg = /^[A-Za-z]+$/;
-    const numberReg = /^[0-9]+$/;
     const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
-    let passwordHash = '';
     let email = '';
-    let rememberMe = false; // TODO: Initialize
+    let rememberMe = window.localStorage.getItem('remembered'); // TODO: Initialize
+
+    $('#form-checkbox').prop('checked', rememberMe);
+
+    if (rememberMe) {
+        email = window.localStorage.getItem('email');
+        $('#form-mail').val(email);
+    }
 
     $('#form-pass').on('input', function (e) {
-        passwordHash = e.target.value;
         validateEntries();
-        // TODO: Hash and store pword
     });
 
     $('#form-mail').on('input', function (e) {
@@ -24,7 +26,7 @@ window.onload = function () {
 
     $('#login-button').on('click', function (e) {
         e.preventDefault();
-        
+
         if (validateEntries()) {
             login();
         }
@@ -44,8 +46,7 @@ window.onload = function () {
             result = false;
         }
 
-        if (passwordHash.length == 0) 
-        {
+        if ($('#form-pass').val().length == 0) {
             result = false;
         }
 
@@ -59,19 +60,35 @@ window.onload = function () {
     }
 
     function login() {
-        // console.log('Account creation succeeded!');
         $('#login-button').blur();
 
-        // TODO: Report error or save to storage if rememberMe 
-        // if ($('#form-pass').val().length > 0) {
-        //     if ($('#form-pass').val().length < 8) {
-        //         $('#form-pass').after('<span class="form__input-error">invalid password</span>');
-        //         result = false;
-        //     }
-        // } else {
-        //     result = false;
-        // }
+        const hash = window.web3.sha3($('#form-pass').val());
 
-        window.location = 'userAccount.html';
+        $.ajax({
+            url: 'http://localhost:3000/login',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                email: email,
+                password: hash.substr(2)
+            }),
+            success: function (data, textStatus) {
+                window.sessionStorage.setItem('user', JSON.stringify(data));
+
+                if (rememberMe) {
+                    window.localStorage.setItem('remembered', true);
+                    window.localStorage.setItem('email', email);
+                } else {
+                    window.localStorage.removeItem('remembered');
+                    window.localStorage.removeItem('email');
+                }
+
+                window.location = 'userAccount.html';
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+                // TODO: Handle errors
+            }
+        })
     }
 }

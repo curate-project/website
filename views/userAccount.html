@@ -120,7 +120,7 @@
                                                     <img src="../img/main/team-james.png" alt="avatar"
                                                         class="account__avatar-img">
                                                 </div>
-                                                <div class="account__avatar-name">James</div>
+                                                <div class="account__avatar-name" id="user-avatar-label"></div>
                                             </div>
                                             <div class="account__avatar-angle">
                                                 <img src="../img/sprites/intermediate-svg/drop-angle.svg" alt="">
@@ -180,6 +180,27 @@
                 </nav>
 
                 <main class="main">
+                    <p class="user-greeting">Hey, <span id="user-name"></span></p>
+                    <div class="user-account-header-section">
+                        <ul class="user-account-header">
+                            <li class="main-nav__item faded-label">Your balance</li>
+                            <li class="main-nav__item faded-label">Registered</li>
+                            <li class="main-nav__item faded-label">E-mail</li>
+                        </ul>
+                        <ul class="user-account-header float-left">
+                            <li class="main-nav__item light-label"><img src="../img/main/logo32.png" class="user-balance-icon" /><span class="centered-text">0.00</span></li>
+                            <li class="main-nav__item light-label" id="user-created"></li>
+                            <li class="main-nav__item light-label" id="user-email"></li>
+                        </ul>
+                        <a target="_blank" href="whitepaper.pdf" class="btn btn--simple float-right no-padding">
+                            <img src="../img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
+                                alt="icon writing">
+                            <span>WHITEPAPER</span>
+                        </a>
+                    </div>
+                    <section class="user-purchase-section">
+                        <p class="user-purchase-section-header">Purchase a token</p>
+                    </section>
                 </main>
 
                 <link rel="stylesheet" href="../styles/animate.css">

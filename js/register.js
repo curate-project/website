@@ -1,11 +1,9 @@
 window.onload = function () {
 
-    const nameReg = /^[A-Za-z]+$/;
-    const numberReg = /^[0-9]+$/;
+    const nameReg = /^[A-Za-z]+\s?\b([A-Za-z]+)?$/;
     const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
     let fullname = '';
-    let passwordHash = '';
     let email = '';
 
     $('#form-name').on('input', function (e) {
@@ -28,7 +26,7 @@ window.onload = function () {
 
     $('#create-account').on('click', function (e) {
         e.preventDefault();
-        
+
         if (validateEntries()) {
             createAccount();
         }
@@ -80,7 +78,31 @@ window.onload = function () {
     }
 
     function createAccount() {
-        // console.log('Account creation succeeded!');
+
+        const hash = window.web3.sha3($('#form-pass').val());
+
+        $.ajax({
+            url: 'http://localhost:3000/create',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                name: fullname,
+                email: email,
+                password: hash.substr(2)
+            }),
+            success: function (data, textStatus) {
+                window.sessionStorage.setItem('user', JSON.stringify(data));
+
+                window.localStorage.setItem('registered', true);
+
+                window.location = 'userAccount.html';
+            },
+            error: function(jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+                // TODO: Handle errors
+            }
+        })
+
         $('#create-account').blur();
     }
 }

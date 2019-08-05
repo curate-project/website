@@ -2345,7 +2345,7 @@ div.menu li.animate:nth-of-type(6) {
     padding-top: 0px;
     margin-bottom: 100px;
     overflow-x: hidden;
-    background-image: url('/img/main/news-bg.svg');
+    background-image: url("/img/main/news-bg.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -2380,7 +2380,8 @@ div.menu li.animate:nth-of-type(6) {
     height: 16px !important;
 }
 
-.lSpg > li:hover a,a:hover {
+.lSpg > li:hover a,
+a:hover {
     background-color: #666666 !important;
 }
 
@@ -2414,6 +2415,79 @@ a:not(.btn):hover {
     background-color: grey !important;
     cursor: none !important;
     pointer-events: none !important;
+}
+
+.user-greeting {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 53px;
+    color: #ffffff;
+}
+
+.faded-label {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.light-label {
+    color: white;
+    font-size: 18px;
+    line-height: 24px;
+    margin-right: 60px !important;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.user-account-header {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.user-account-header > li {
+    display: flex;
+    align-items: center;
+}
+
+.user-purchase-section {
+    background: #0e0b12;
+    border-radius: 16px;
+    height: 375px;
+    width: 100%;
+    margin-top: 45px;
+    padding-top: 37px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.user-balance-icon {
+    margin-right: 10px;
+}
+
+.user-account-header-section {
+    display: flow-root;
+}
+
+.user-purchase-section-header {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+    color: #ffffff;
+    margin: 0px auto 30px 35px;
 }
 
 @-webkit-keyframes autofill {
@@ -2862,7 +2936,7 @@ input:-webkit-autofill {
         margin-left: 0px !important;
         margin-right: 0px !important;
         margin-top: 30px;
-        margin-bottom:  40px;
+        margin-bottom: 40px;
     }
 
     .column-wrap {
