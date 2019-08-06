@@ -2480,7 +2480,7 @@ a:not(.btn):hover {
     display: flow-root;
 }
 
-.user-purchase-section-header {
+.user-section-header {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -2488,6 +2488,61 @@ a:not(.btn):hover {
     line-height: 32px;
     color: #ffffff;
     margin: 0px auto 30px 35px;
+}
+
+.user-help-section {
+    background: #0e0b12;
+    border-radius: 16px;
+    height: 200px;
+    width: 100%;
+    margin-top: 16px;
+    padding-top: 37px;
+}
+
+.coming-soon {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user-help-label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130.08%;
+    color: #FFFFFF;
+    opacity: 0.4;
+    overflow: auto;
+}
+
+.user-help-link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 130.08%;
+    text-decoration-line: underline;
+    color: #FFD788;
+}
+
+.user-section-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+.user-main {
+    margin-bottom: 45px;
 }
 
 @-webkit-keyframes autofill {
