@@ -568,7 +568,7 @@ h4 {
 
 .header__intro {
     position: absolute;
-    top: 43%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -942,7 +942,7 @@ div.menu li.animate:nth-of-type(6) {
     justify-content: center;
 
     position: absolute;
-    top: 65%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, 0px);
 }
@@ -2461,6 +2461,32 @@ a:not(.btn):hover {
     float: right;
 }
 
+.as-featured-container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    width: 100%;
+}
+
+.as-featured-section {
+    width: 100%
+}
+
+.as-featured-section > p {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.as-featured-section > div {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
 .user-account-header {
     display: grid;
     grid-template-columns: repeat(3, 200px);
@@ -2647,7 +2673,7 @@ input:-webkit-autofill {
         transform: translate(-50vw, 0);
         background: rgba(0, 0, 0, 0.54);
         backdrop-filter: blur(20px);
-        padding: 5px;
+        /* padding: 5px; */
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
     }
@@ -2783,6 +2809,22 @@ input:-webkit-autofill {
     /* .header__arrow-down {
         bottom: 10%;
     } */
+
+    .header__arrow-down {
+        bottom: 10% !important;
+    }
+
+    .as-featured-container {
+        top: 70%;
+    }
+
+    .as-featured-section > div > img {
+        height: 20px;
+    }
+
+    .as-featured-section > p {
+        font-size: 14px;
+    }
 
     .header {
         height: auto;
@@ -2935,7 +2977,17 @@ input:-webkit-autofill {
     }
 }
 
-@media only screen and (max-width: 575px) {
+/* Was 575 */
+@media only screen and (max-width: 605px) { 
+
+    .as-featured-section > p {
+        font-size: 12px;
+    }
+
+    .as-featured-section > div > img {
+        height: 15px;
+    }
+
     .about {
         overflow-x: hidden;
         padding: 70px 0;

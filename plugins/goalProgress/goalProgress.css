@@ -4,7 +4,7 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     position: relative;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
 }
 
 .progressBar {
@@ -16,18 +16,18 @@
     display: block;
     border-radius: 6px;
     width: 20px;
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 2px black;
 }
 
 .progressBarUnmet {
-  background: rgba(255, 215, 136, 0.1);
-  padding: 10px;
-  border-radius: 6px;
-  width: 100%;
-  position: absolute;
-  top: 4px;
-  height: 42px;
-  width: calc(100% - 10px);
+    background: rgba(255, 215, 136, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    position: absolute;
+    top: 4px;
+    height: 42px;
+    width: calc(100% - 10px);
 }
 
 .goalAmount {
@@ -50,5 +50,5 @@
     color: #fff;
     font-size: 18px;
     font-weight: 700;
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 2px black;
 }
