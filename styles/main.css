@@ -2484,7 +2484,7 @@ a:not(.btn):hover {
     display: grid;
     grid-auto-flow: column;
     justify-content: space-evenly;
-    align-items: baseline;
+    align-items: end;
 }
 
 .user-account-header {
@@ -2818,7 +2818,7 @@ input:-webkit-autofill {
         top: 70%;
     }
 
-    .as-featured-section > div > img {
+    .as-featured-section > div > a > img {
         height: 20px;
     }
 
@@ -2984,7 +2984,7 @@ input:-webkit-autofill {
         font-size: 12px;
     }
 
-    .as-featured-section > div > img {
+    .as-featured-section > div > a > img {
         height: 15px;
     }
 
