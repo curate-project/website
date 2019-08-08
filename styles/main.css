@@ -3104,7 +3104,7 @@ input:-webkit-autofill {
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 375px) {
     #countdown-label {
         font-size: 10px !important;
     }
