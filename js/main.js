@@ -275,7 +275,9 @@
           $('#countdown-container').addClass('countdown-combined');
         }
 
-        setupFundsRaised();
+        // TODO: Disabling funds raised until manually added back
+        // setupFundsRaised();
+        $('#funds-container').remove();
 
         $(document).ready(function () {
           $('#lightSlider').lightSlider({
