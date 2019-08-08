@@ -2400,7 +2400,7 @@ div.menu li.animate:nth-of-type(6) {
     margin-block-start: 0.5em;
     display: inline-block;
     font: 20px Roboto;
-    color: #FFD788;
+    color: #ffd788;
     font-weight: 700;
     line-height: 20px;
     text-align: left;
@@ -2409,7 +2409,7 @@ div.menu li.animate:nth-of-type(6) {
 .founder span {
     display: inline-block;
     font: 14px Roboto;
-    color: #786A83;
+    color: #786a83;
     font-weight: 400;
     line-height: 20px;
     text-align: left;
@@ -2505,7 +2505,7 @@ a:not(.btn):hover {
 }
 
 .as-featured-section {
-    width: 100%
+    width: 100%;
 }
 
 .as-featured-section > p {
@@ -3013,8 +3013,7 @@ input:-webkit-autofill {
 }
 
 /* Was 575 */
-@media only screen and (max-width: 605px) { 
-
+@media only screen and (max-width: 605px) {
     .as-featured-section > p {
         font-size: 12px;
     }
@@ -3104,4 +3103,28 @@ input:-webkit-autofill {
         background-size: auto;
     }
 }
+
+@media only screen and (max-width: 375px) {
+    #countdown-label {
+        font-size: 10px !important;
+    }
+
+    .time {
+        font-size: 18px !important;
+    }
+
+    .timer .timer-wrapper:not(:last-of-type)::after {
+        padding-left: 8px !important;
+    }
+
+    .timer .timer-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+
+    .countdown-container > p {
+        margin-left: 0px !important;
+    }
+}
+
 /*# sourceMappingURL=maps/main.css.map */
