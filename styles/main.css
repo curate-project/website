@@ -561,7 +561,7 @@ h4 {
 .header {
     position: relative;
     height: 100vh;
-    background-image: url("../img/main/main-bg.png");
+    background-image: url("../img/main/main-bg.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -2375,9 +2375,44 @@ div.menu li.animate:nth-of-type(6) {
     margin-bottom: 50px;
 }
 
+.news-quote p {
+    line-height: 24px;
+}
+
 .news-highlight {
     color: white;
     font-weight: bold;
+}
+
+.founder {
+    display: block;
+    height: 58px;
+}
+
+.founder img {
+    display: inline-block;
+    width: 58px;
+    height: 58px;
+    margin-right: 10px;
+}
+
+.founder p {
+    margin-block-start: 0.5em;
+    display: inline-block;
+    font: 20px Roboto;
+    color: #FFD788;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+}
+
+.founder span {
+    display: inline-block;
+    font: 14px Roboto;
+    color: #786A83;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
 }
 
 .center-text {

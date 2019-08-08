@@ -12,6 +12,28 @@
         gtag('config', 'UA-144820552-1');
     </script>
 
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1002185730172884');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=1002185730172884&ev=PageView
+    &noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
     <meta charset="UTF-8">
 
     <!-- Useful meta tags -->
@@ -232,7 +254,7 @@
                                 <li class="item"> <a class="link goTo" href="#our-team">Our team</a></li>
                                 <li class="item"> <a class="link goTo" href="Presentation.pdf" target="_blank">Pitch
                                         Deck</a></li>
-                                <li class="item item--btn">
+                                <li class="item item--btn d-none">
                                     <a href="views/login.html" class="header-mobile__btn btn btn--simple">
                                         <img src="img/sprites/intermediate-svg/profile-yellow.svg" class="btn__icon"
                                             alt="icon sign-up">
@@ -270,7 +292,7 @@
                         </div>
                     </div>
                     <div class="intro__btn-wrap">
-                        <a href="views/login.html" class="intro__btn btn">
+                        <a href="views/login.html" class="intro__btn btn d-none">
                             <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon" alt="icon sign-up">
                             <span>SIGN IN</span>
                         </a>
@@ -918,7 +940,12 @@
                                     <q>"</q>
                                 </p>
                             </div>
-                            <img src="img/main/FounderImage.svg">
+                            <div class="founder">
+                                <img src="img/main/james.png" />
+                                <p>James Hakim<br>
+                                    <span>CEO Curate</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -1152,10 +1179,10 @@
         new WOW().init();
     </script>
 
-    <script src="/plugins/moment.js/moment.min.js"></script>
-    <script src="/plugins/countdown/countdown-timer.min.js"></script>
-    <script src="/plugins/goalProgress/goalProgress.js"></script>
-    <script src="/plugins/lightslider/lightslider.js"></script>
+    <script src="plugins/moment.js/moment.min.js"></script>
+    <script src="plugins/countdown/countdown-timer.min.js"></script>
+    <script src="plugins/goalProgress/goalProgress.js"></script>
+    <script src="plugins/lightslider/lightslider.js"></script>
 
     <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
     <link rel="stylesheet" href="plugins/lightslider/lightslider.css">
