@@ -65,7 +65,7 @@ window.onload = function () {
         const hash = window.web3.sha3($('#form-pass').val());
 
         $.ajax({
-            url: 'http://localhost:3000/login',
+            url: 'https://curate-user-service.herokuapp.com/login',
             type: 'post',
             contentType: 'application/json',
             data: JSON.stringify({
