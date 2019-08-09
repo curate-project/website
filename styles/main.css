@@ -560,11 +560,11 @@ h4 {
 
 .header {
     position: relative;
-    /* height: 100vh; */
+    height: 100vh;
     background-image: url("../img/main/main-bg.jpg");
     background-size: cover;
     background-position: center;
-    margin-bottom: 180px;
+    /* margin-bottom: 180px; */
 }
 
 .header__wrap {
@@ -2522,9 +2522,9 @@ a:not(.btn):hover {
     text-transform: uppercase;
 }
 
-.ieo-link-logos > a:not(:last-of-type) {
+/* .ieo-link-logos > a:not(:last-of-type) {
     margin-right: 40px;
-}
+} */
 
 .as-featured-container {
     margin-top: 80px;
@@ -3141,5 +3141,12 @@ input:-webkit-autofill {
         margin-left: 0px !important;
     }
 }
+
+@media only screen and (max-height: 1050px) and (min-width: 767px){
+    .header {
+        margin-bottom: 180px;
+    }
+}
+
 
 /*# sourceMappingURL=maps/main.css.map */
