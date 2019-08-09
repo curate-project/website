@@ -560,11 +560,11 @@ h4 {
 
 .header {
     position: relative;
-    height: 100vh;
+    /*height: 100vh;*/
     background-image: url("../img/main/main-bg.jpg");
     background-size: cover;
     background-position: center;
-    /* margin-bottom: 180px; */
+     margin-bottom: 180px; 
 }
 
 .header__wrap {
