@@ -5,6 +5,10 @@ $(function () {
 
             var link = $(this).attr("href");
 
+            if (!link) {
+                return;
+            }
+            
             if (link.match("^#") || link.match("^mailto")) {
                 // Act as normal 
             } else {
