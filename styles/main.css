@@ -2653,6 +2653,11 @@ a:not(.btn):hover {
     margin-bottom: 45px;
 }
 
+.no-overflow-x {
+    max-width: 100% !important;
+    overflow-x: hidden;
+}
+
 @-webkit-keyframes autofill {
     to {
         color: white;

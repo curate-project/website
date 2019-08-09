@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow">
+<html lang="en" class="no-overflow-x">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -87,12 +87,9 @@
 
     <!-- Title -->
     <title>CURATE</title>
-
 </head>
 
 <body>
-
-    <!-- <header> -->
     <div class="container">
         <div class="header__wrap">
 
@@ -102,16 +99,19 @@
                         <img src="../img/sprites/intermediate-svg/main-logo.svg" alt="logo" class="main-logo__img">
                     </a>
                     <ul class="main-nav__list">
-                        <li class="main-nav__item"><a class="main-nav__item-link" href="../index.html#about">About</a>
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link" href="../index.html#about">About</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item-link"
-                                href="../index.html#roadmap">Roadmap</a></li>
-                        <li class="main-nav__item"><a class="main-nav__item-link" href="../index.html#our-team">Our
-                                team</a></li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link" href="../index.html#roadmap">Roadmap</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link" href="../index.html#our-team">Our team</a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="main-nav__rightside">
+                <div >
                     <ul class="main-nav__rightside-list main-nav__rightside-account">
                         <li class="main-nav__rightside-item d-none">
                             <a class="main-nav__rightside-link" href="#">
@@ -194,12 +194,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <div class="burger">
-                    <div class="x"></div>
-                    <div class="y"></div>
-                    <div class="z"></div>
-                </div>
             </nav>
         </div>
 
@@ -212,8 +206,9 @@
                     <li class="main-nav__item faded-label">E-mail</li>
                 </ul>
                 <ul class="user-account-header float-left">
-                    <li class="main-nav__item light-label"><img src="../img/main/logo32.png"
-                            class="user-balance-icon" /><span class="centered-text" id="user-curate-balance">0</span>
+                    <li class="main-nav__item light-label">
+                        <img src="../img/main/logo32.png" class="user-balance-icon" />
+                        <span class="centered-text" id="user-curate-balance">0</span>
                     </li>
                     <li class="main-nav__item light-label" id="user-created"></li>
                     <li class="main-nav__item light-label" id="user-email"></li>
