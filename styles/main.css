@@ -1132,7 +1132,7 @@ div.menu li.animate:nth-of-type(6) {
     right: 0;
     z-index: 99999;
     margin-top: 108px;
-    min-height: calc(100vh - 108px);
+    /*min-height: calc(100vh);*/
     width: 100%;
     background-color: #000;
     padding: 20px 20px 40px;
@@ -2371,7 +2371,8 @@ div.menu li.animate:nth-of-type(6) {
     overflow-x: hidden;
     background-image: url("/img/main/news-bg.svg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position:top center;
 }
 
 .news-wrapper {
@@ -2540,18 +2541,23 @@ a:not(.btn):hover {
     width: 100%;
 }
 
+.as-featured-section a {
+    margin: 20px 30px;
+}
+
 .as-featured-section > p {
     text-align: center;
-    /* font-size: 18px; */
+    font-size: 14px; 
+    opacity:0.3;
     color: white;
     text-transform: uppercase;
 }
 
 .as-featured-section > div {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-evenly;
-    align-items: end;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .user-account-header {
@@ -2879,13 +2885,13 @@ input:-webkit-autofill {
 
 @media only screen and (max-width: 767px) {
 
-    .as-featured-section > div > a > img {
+    /*.as-featured-section > div > a > img {
         height: 20px;
     }
 
     .as-featured-section > p {
         font-size: 14px;
-    }
+    }*/
 
     .header__intro {
         margin: 0 auto;
@@ -3029,13 +3035,13 @@ input:-webkit-autofill {
 
 /* Was 575 */
 @media only screen and (max-width: 605px) {
-    .as-featured-section > p {
+    /*.as-featured-section > p {
         font-size: 12px;
     }
 
     .as-featured-section > div > a > img {
         height: 15px;
-    }
+    }*/
 
     .about {
         overflow-x: hidden;
@@ -3114,9 +3120,9 @@ input:-webkit-autofill {
         flex-direction: column !important;
     }
 
-    .news {
+    /*.news {
         background-size: auto;
-    }
+    }*/
 }
 
 @media only screen and (max-width: 375px) {
