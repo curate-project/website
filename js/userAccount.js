@@ -14,7 +14,6 @@ window.onload = function () {
     });
 
     const user = JSON.parse(window.sessionStorage.getItem('user'));
-    console.log(JSON.stringify(user));
 
     if (user) {
 
