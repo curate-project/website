@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: curate.style
+Token: 40186896b12ddd21dbba232742379f6ac23bf5d0e9c5ca89503dd84313c942e1
