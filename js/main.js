@@ -291,7 +291,7 @@
             console.log('Clicked AirSwap');
 
             AirSwap.Trader.render({
-              // env: 'production',
+              env: 'production',
               mode: 'buy',
               token: '0x490dbf7884b8e13c2161448b83dd2d8909db48ed',
               address: '0x03b6f5b2966778359496b7dac651a7ad564948a4',
