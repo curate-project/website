@@ -23,6 +23,8 @@ window.onload = function () {
         $('#user-name, #user-avatar-label').text(user.name);
         $('#user-email').text(user.email);
         $('#user-created').text(new Date(user.created).toLocaleDateString());
+    } else {
+        window.location = "login.html";
     }
 
     function formatHex(val) {
