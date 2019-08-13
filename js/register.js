@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    const Cookies = window.Cookies;
+
     const nameReg = /^[A-Za-z]+\s?\b([A-Za-z]+)?$/;
     const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
@@ -79,7 +81,7 @@ window.onload = function () {
 
     function createAccount() {
 
-        const hash = window.web3.sha3($('#form-pass').val());
+        const hash = window.sha256($('#form-pass').val());
 
         $.ajax({
             url: 'https://curate-user-service.herokuapp.com/create',
@@ -88,12 +90,12 @@ window.onload = function () {
             data: JSON.stringify({
                 name: fullname,
                 email: email,
-                password: hash.substr(2)
+                password: hash
             }),
             success: function (data, textStatus) {
-                window.sessionStorage.setItem('user', JSON.stringify(data));
+                Cookies.set('user', data);
 
-                window.localStorage.setItem('registered', true);
+                Cookies.set('registered', true);
 
                 window.location = 'userAccount.html';
             },

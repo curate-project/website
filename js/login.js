@@ -1,13 +1,16 @@
 window.onload = function () {
+
+    const Cookies = window.Cookies;
+
     const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
     let email = '';
-    let rememberMe = window.localStorage.getItem('remembered'); // TODO: Initialize
+    let rememberMe = Cookies.get('remembered');
 
     $('#form-checkbox').prop('checked', rememberMe);
 
     if (rememberMe) {
-        email = window.localStorage.getItem('email');
+        email = Cookies.get('email');
         $('#form-mail').val(email);
     }
 
@@ -60,9 +63,10 @@ window.onload = function () {
     }
 
     function login() {
+
         $('#login-button').blur();
 
-        const hash = window.web3.sha3($('#form-pass').val());
+        const hash = window.sha256($('#form-pass').val());
 
         $.ajax({
             url: 'https://curate-user-service.herokuapp.com/login',
@@ -70,24 +74,24 @@ window.onload = function () {
             contentType: 'application/json',
             data: JSON.stringify({
                 email: email,
-                password: hash.substr(2)
+                password: hash
             }),
             success: function (data, textStatus) {
-                window.sessionStorage.setItem('user', JSON.stringify(data));
+                Cookies.set('user', JSON.stringify(data));
 
                 if (rememberMe) {
-                    window.localStorage.setItem('remembered', true);
-                    window.localStorage.setItem('email', email);
+                    Cookies.set('remembered', true);
+                    Cookies.set('email', email);
                 } else {
-                    window.localStorage.removeItem('remembered');
-                    window.localStorage.removeItem('email');
+                    Cookies.remove('remembered');
+                    Cookies.remove('email');
                 }
 
                 window.location = 'userAccount.html';
             },
             error: function (jqXhr, textStatus, errorThrown) {
                 console.log(errorThrown);
-                // TODO: Handle errors
+                $('#form-pass').after('<span class="form__input-error">invalid login</span>');
             }
         })
     }

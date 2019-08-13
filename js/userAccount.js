@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    const Cookies = window.Cookies;
+
     var accountAvatar = document.getElementsByClassName("account__avatar")[0];
     var accountMenu = document.getElementsByClassName("account__menu")[0];
     var avatarAngle = document.getElementsByClassName("account__avatar-angle")[0];
@@ -9,11 +11,11 @@ window.onload = function () {
     });
 
     $('.account__menu-item--logout').on('click', function () {
-        window.sessionStorage.removeItem('user');
+        Cookies.remove('user');
         window.location = "../index.html";
     });
 
-    const user = JSON.parse(window.sessionStorage.getItem('user'));
+    const user = Cookies.getJSON('user');
 
     if (user) {
 
