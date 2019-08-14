@@ -2674,18 +2674,6 @@ a:not(.btn):hover {
     justify-content: center;
 }
 
-.user-account-header {
-    display: grid;
-    grid-template-columns: repeat(3, 200px);
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.user-account-header > li {
-    display: flex;
-    align-items: center;
-}
-
 .user-purchase-section {
     background: #0e0b12;
     border-radius: 16px;

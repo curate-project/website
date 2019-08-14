@@ -18,7 +18,6 @@ window.onload = function () {
     const user = Cookies.getJSON('user');
 
     if (user) {
-
         const initials = user.name.split(" ").map((n, idx, arr) => idx === 0 || idx === (arr.length - 1) ? n[0] : '').join('');
 
         $('#user-avatar-initials').text(initials);
@@ -40,6 +39,26 @@ window.onload = function () {
             return val;
         }
     }
+
+    $(document).ready(function () {
+        $('#airswap').on('click', function () {
+            console.log('Clicked AirSwap');
+
+            AirSwap.Trader.render({
+                env: 'production',
+                mode: 'buy',
+                token: '0x490dbf7884b8e13c2161448b83dd2d8909db48ed',
+                address: '0x03b6f5b2966778359496b7dac651a7ad564948a4',
+                // amount: 250 * (10 ** 4),
+                onCancel: function () {
+                    console.info('Trade was canceled.');
+                },
+                onComplete: function (transactionId) {
+                    console.info('Trade complete.');
+                }
+            }, 'body');
+        });
+    });
 
     if (window.web3) {
         window.web3.currentProvider.enable().then(() => {
