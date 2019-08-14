@@ -19,7 +19,7 @@ window.onload = function () {
     //IEO Round 1
     {
       start: moment('20190809', 'YYYYMMDD').toDate(),
-      end: moment('20190825', 'YYYYMMDD').toDate(),
+      end: moment('20190827', 'YYYYMMDD').toDate(),
       price: 0.1,
       discount: 0.25,
       fundingGoal: 750000
