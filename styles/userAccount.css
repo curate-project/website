@@ -1,0 +1,19 @@
+.form__input input {
+    height: auto !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .form__section .container {
+        padding-top: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .input-error {
+        border-bottom: 1px solid red !important;
+    }
+
+    span.form__input-error {
+        display: none !important;
+    }
+}

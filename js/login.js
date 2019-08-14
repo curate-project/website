@@ -43,10 +43,14 @@ window.onload = function () {
         if (email.length > 0) {
             if (!emailReg.test(email)) {
                 $('#form-mail').after('<span class="form__input-error">invalid e-mail</span>');
+                $('#form-mail').addClass('input-error');
                 result = false;
+            } else {
+                $('#form-mail').removeClass('input-error');
             }
         } else {
             result = false;
+            $('#form-mail').removeClass('input-error');
         }
 
         if ($('#form-pass').val().length == 0) {
