@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow">
+<html lang="en">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -36,10 +36,10 @@
 
     <meta charset="UTF-8">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    
+    <meta http-equiv="Expires" content="0" /> -->
+
     <!-- Useful meta tags -->
     <!--        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -88,6 +88,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <script src="https://cdn.airswap.io/gallery/airswap-trader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="plugins/moment.js/moment.min.js"></script>
+    <script src="plugins/countdown/countdown-timer.min.js"></script>
+    <script src="plugins/goalProgress/goalProgress.js"></script>
+    <script src="plugins/lightslider/lightslider.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
@@ -113,6 +121,25 @@
 </head>
 
 <body>
+    <!-- COOKIE PANEL -->
+    <div id="cookie" class="cookie">
+        <div class="container">
+            <div class="cookie__wrap">
+                <div class="cookie__text-wrap">
+                    <div class="cookie__text">
+                        We use cookies to tailor our services and online advertising.
+                    </div>
+                    <div class="cookie__text">
+                        By using our website you agree with our <a target="_blank" style="color:#ffd788;"
+                            href="/cookiepolicy">Cookie Policy</a>.
+                    </div>
+                </div>
+                <div class="cookie__close-wrap">
+                    <button id="cookiebtn" class="cookie__close">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main id="main">
 
@@ -260,13 +287,13 @@
                                 <li class="item"> <a class="link goTo" href="#our-team">Our team</a></li>
                                 <li class="item"> <a class="link goTo" href="Presentation.pdf" target="_blank">Pitch
                                         Deck</a></li>
-                                <!--       <li class="item item--btn">
+                                <li class="item item--btn">
                                     <a href="views/login.html" class="header-mobile__btn btn btn--simple">
                                         <img src="img/sprites/intermediate-svg/profile-yellow.svg" class="btn__icon"
                                             alt="icon sign-up">
                                         <span>SIGN IN</span>
                                     </a>
-                                </li> -->
+                                </li>
                                 <li class="item item--btn">
                                     <a target="_blank" href="/whitepaper.pdf"
                                         class="header-mobile__btn btn-s btn--simple">
@@ -279,19 +306,23 @@
                         </nav>
                     </div>
 
-                    <div class="ieo-link-section">
-                        <p>IEO Available on</p>
-                        <div class="ieo-link-logos">
-                            <a style="display:block" href="https://p2pb2b.io/token-sale/CUR8/1" target="_blank">
-                                <img src="img/main/p2pb2b.svg">
-                            </a>
-                            <a id="airswap">
-                                <img src="img/main/airswap.svg">
-                            </a>
-                        </div>
-                    </div>
+
 
                     <div class="header__intro intro">
+                        <div class="ieo-link-section">
+                            <a target="_blank" href="https://icomarks.com/ieo/curate" class="ieo-link-block">
+                                <div class="ieo-link-rate">9.6 <span style="font-size:14px">/ 10</span></div>
+                                <div class="ieo-link-icon">
+                                    <img src="img/main/header/ICOmarks.svg" alt="icomarks">
+                                </div>
+                            </a>
+                            <a target="_blank" href="https://icobench.com/ico/curate" class="ieo-link-block">
+                                <div class="ieo-link-rate">4.9 <span style="font-size:14px">/ 5</span></div>
+                                <div class="ieo-link-icon">
+                                    <img src="img/main/header/icobench.svg" alt="icobench">
+                                </div>
+                            </a>
+                        </div>
                         <div class="intro__wrap">
                             <div class="intro__header-wrap">
                                 <h1 class="intro__title">
@@ -300,7 +331,7 @@
                                 <h4 class="intro__undertitle">Discover Styles. Earn Crypto.</h4>
                             </div>
                             <div class="countdown-container" id="countdown-container">
-                                <p id="countdown-label">IEO starts in</p>
+                                <p id="countdown-label">IEO ENDS</p>
                                 <div class="timer" id="countdown"></div>
                             </div>
                             <div class="funds-container" id="funds-container">
@@ -310,54 +341,82 @@
                         </div>
                     </div>
                     <div class="intro__btn-wrap">
-                        <!-- <a href="views/login.html" class="intro__btn btn">
-                            <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon" alt="icon sign-up">
-                            <span>SIGN IN</span>
-                        </a> -->
-                        <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn btn--simple">
-                            <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
-                                alt="icon writing">
-                            <span>WHITEPAPER</span>
+                        <a href="https://p2pb2b.io/token-sale/CUR8/1" class="intro__btn btn btn--p2p" target="_blank">
+                            <img src="img/main/header/p2pb2b.svg" class="btn__icon" alt="icon p2pb2b">
+                            <span>BUY ON P2PB2B (KYC)</span>
                         </a>
+                        <a id="airswap" class="intro__btn btn btn--airswap">
+                            <img src="img/main/header/airswap.svg" class="btn__icon" alt="icon airswap">
+                            <span>BUY VIA AIRSWAP (NO KYC)</span>
+                        </a>
+                        <div class="intro__btn-group">
+                            <a href="views/login.html" class="intro__btn btn">
+                                <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon" alt="icon sign-up">
+                                <span>SIGN IN</span>
+                            </a>
+                            <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn btn--simple">
+                                <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
+                                    alt="icon writing">
+                                <span>WHITEPAPER</span>
+                            </a>
+                        </div>
+
                     </div>
+                    <a href="#" class="header__arrow-down">
+                        <img src="img/sprites/intermediate-svg/arrow-header-bottom.svg" alt="icon arrow-down">
+                    </a>
+
                     <div class="as-featured-container">
                         <div class="as-featured-section">
                             <p>As featured on</p>
                             <div>
                                 <a href="https://www.forbes.com/sites/joresablount/2019/08/04/10-booming-industries-and-the-companies-innovating-them/#b5be1d6102cc"
                                     target="_blank">
-                                    <img src="img/main/forbes-sm.png" />
+                                    <img src="img/main/featured/Forbes.svg" />
                                 </a>
                                 <a href="https://finance.yahoo.com/news/curate-breaks-fashion-industry-blockchain-193700025.html?guccounter=1&guce_referrer=aHR0cHM6Ly9maW5hbmNlLnlhaG9vLmNvbS8&guce_referrer_sig=AQAAALBPXdXIweq51TULt5x9Fp4TQSunoqI8PrrPaUfvuuYL5Ryqux5suV07Ta2tdm9yyOQjFHsltyyq1uB1W8wTokKyJkX6S_a7pA-gMzOJJ4UcUvRGMNrfKNgBq7WlkldhgzPVWbwaTVM5VtOkFxxjeHpFtLR0Kgp9q7tYIx1VrXHh"
                                     target="_blank">
-                                    <img src="img/main/yahoo-sm.png" />
+                                    <img src="img/main/featured/YahooFinance.svg" />
                                 </a>
                                 <a href="#" target="_blank">
-                                    <img src="img/main/entrepreneur-sm.png" />
+                                    <img src="img/main/featured/Enterpreneur.svg" />
                                 </a>
                                 <a href="https://coincodex.com/ieo/curate/" target="_blank">
-                                    <img src="img/main/coincodex-sm.png" />
+                                    <img src="img/main/featured/coincodex.svg" />
                                 </a>
                                 <a href="https://in.investing.com/analysis/pulling-it-off-at-the-edge-of-bleeding-fashion-and-tech-200431241"
                                     target="_blank">
-                                    <img src="img/main/investing-sm.png" />
+                                    <img src="img/main/featured/investing.svg" />
+                                </a>
+                                <a href="https://www.theodysseyonline.com/curate-style-a-revolutionary-platform"
+                                    target="_blank">
+                                    <img src="img/main/featured/odyssey.svg" />
+                                </a>
+                                <a href="https://neironix.io/news/blogs/view?id=699" target="_blank">
+                                    <img src="img/main/featured/neironix.svg" />
+                                </a>
+                                <a href="https://coingape.com/blockchain-cryptos-fashion-match-made-heaven"
+                                    target="_blank">
+                                    <img src="img/main/featured/coingape.svg" />
+                                </a>
+                                <a href="https://eng.ambcrypto.com/curate-bringing-fashion-and-dapps-under-the-same-ecosystem"
+                                    target="_blank">
+                                    <img src="img/main/featured/ambcrypto.svg" />
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="header__arrow-down">
-                        <img src="img/sprites/intermediate-svg/arrow-header-bottom.svg" alt="icon arrow-down">
-                    </a>
                 </div>
-            </div>
         </header>
 
         <!--MAIN-->
         <main class="main" id="main">
             <section class="about" id="about">
                 <div class="container">
+
                     <div class="about__wrap">
                         <div class="about__wrap-content">
+
                             <div class="about__img-wrap wow fadeInUp">
                                 <img style="box-shadow: -100px 60px 100px rgba(0, 0, 0, 0.2)" src="img/main/iphonex.png"
                                     alt="iphonex">
@@ -375,7 +434,7 @@
                                     <p class="about__text"><span><span class="white about__text--first"><img
                                                     src="img/sprites/intermediate-svg/mini-logo.svg" alt=""><span>CURATE
                                                 </span></span></span> is a style discovery decentralized app (DApp) i.e
-                                        ‘blockchain smart contract enabled’ platform, which rewards you with digital
+                                        'blockchain smart contract enabled' platform, which rewards you with digital
                                         tokens
                                         in the form of BTC, ETH and our own CUR8 tokens in return for users curating
                                         fashion
@@ -421,7 +480,8 @@
                                             <img src="img/sprites/intermediate-svg/ERC20.svg" alt="erc20">
                                         </div>
                                         <div class="how__main-text">
-                                            CURATE is based on the ethereum blockchain utilizing the ERC–20 token system
+                                            CURATE is based on the ethereum blockchain utilizing the ERC&mdash;20 token
+                                            system
                                             in
                                             the form of our utlity token, the CUR8 token.
                                         </div>
@@ -504,7 +564,7 @@
                 </div>
             </section>
 
-            <section class="roadmap" id="roadmap">
+            <section class="roadmap">
                 <div class="container">
                     <h2 class="roadmap__title wow fadeInUp">Curate Demo Preview</h2>
                     <div class="roadmap__wrap">
@@ -651,7 +711,8 @@
                                     </li>
                                     <li class="roadmap__item">
                                         <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>CUR8 token becomes top 50 token on CoinMarketCap by adjusted volume</span>
+                                        <span>Curate reaches 10,000 active monthly users using the platform and
+                                            app</span>
                                     </li>
                                     <li class="roadmap__item">
                                         <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
@@ -1061,10 +1122,123 @@
                         </div>
                     </div>
                 </section>
+
+                <section class="benefits" id="benefits">
+                    <div class="container">
+                        <div class="benefits__wrap">
+                            <div class="benefits__block">
+                                <div class="benefits__icon wow fadeInUp">
+                                    <img src="img/main/benefits/budget.svg" alt="Revenue Model">
+                                </div>
+                                <h2 class="benefits__block-title wow fadeInUp">Revenue Model</h2>
+                                <ul class="benefits__list">
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">1</div>
+                                        <div class="benefits__item-text">Curate Pro membership for our retailers,
+                                            <span>charging $149/year</span> giving retailers more features such as
+                                            <span>featured listings, verified badge, ability to offer CUR8 tokens to
+                                                users</span> </div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">2</div>
+                                        <div class="benefits__item-text">Amazon associates affiliate, <span>we earn up
+                                                to 10% on commission sales</span></div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">3</div>
+                                        <div class="benefits__item-text">Selling CUR8 tokens on the website, which can
+                                            be used to redeem coupons, free shipping and cashback <span>at participating
+                                                retailers</span> </div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">4</div>
+                                        <div class="benefits__item-text">We will have our Curate Loyalty App which gives
+                                            consumers and all in one app to use CUR8 tokens as points <span>to redeem
+                                                money off both at retailers both physical shops and online shops</span>
+                                        </div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">5</div>
+                                        <div class="benefits__item-text">That payments will be accepted in BTC, ETH and
+                                            USD and <span>we'll also have our own advertising platform</span> built in
+                                            allowing advertisers to advertise on the website/app in the form of native
+                                            in&mdash;line ads</div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">6</div>
+                                        <div class="benefits__item-text">We will earn open up the platform to other
+                                            categories of retail and not justify fashion to increase our partnerships,
+                                            in which case <span>we'll be taking a comission for every successful
+                                                purchase through Curate.</span> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="benefits__block">
+                                <div class="benefits__icon wow fadeInUp">
+                                    <img src="img/main/benefits/flash.png" alt="Retailer benefits">
+                                </div>
+                                <h2 class="benefits__block-title wow fadeInUp">Retailer benefits</h2>
+                                <ul class="benefits__list">
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">1</div>
+                                        <div class="benefits__item-text">Raised <span>brand awareness</span> </div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">2</div>
+                                        <div class="benefits__item-text"><span>Increased traffic</span> to merchant
+                                            sites and goal conversions</div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">3</div>
+                                        <div class="benefits__item-text">Clothing ranges and seasonal wears <span>listed
+                                                on the largest open/transparent platform</span> leveraging blockchain
+                                            technology.</div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">4</div>
+                                        <div class="benefits__item-text"><span>Access to 50,000 users</span> upon launch
+                                            for curated feedback on their fashion range.</div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">5</div>
+                                        <div class="benefits__item-text">On-site analytics and tracking pixel leading to
+                                            <span>increased sales through optimization.</span> </div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">6</div>
+                                        <div class="benefits__item-text"><span>Prevent fraud transactions </span>and
+                                            chargebacks as users will be verified <span>via KYC</span> to ensure
+                                            authenticity.</div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">7</div>
+                                        <div class="benefits__item-text"><span>Zero commission</span> will be taken from
+                                            Curate for all successful leads giving retailers bigger profits and
+                                            customers better prices.</div>
+                                    </li>
+                                    <li class="benefits__item wow fadeInUp">
+                                        <div class="benefits__item-icon">8</div>
+                                        <div class="benefits__item-text"><span>QR barcodes supplied to all partnered
+                                                clothing brands</span> to verify authenticity throughout the supply
+                                            chain preventing fake merchandise.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="audit" id="audit">
-                    <div class="container center-text audit-container">
-                        <img class="audit-logo" src="./img/main/lex-futurus-coin.png">
-                        <p>Curate including CUR8 tokens are represented by international law firm & consultancy Lex Futurus Group.</p>
+                    <div class="container center-text audit-container wow fadeInUp">
+                        <div class="audit-left">
+                            <img class="audit-logo" src="./img/main/lex-futurus-coin.png">
+                            <p>Curate including CUR8 tokens are represented by international law firm & consultancy Lex
+                                Futurus Group.</p>
+                        </div>
+                        <div class="audit-right">
+                            <div class="audit-privacy">
+                                <a target="_blank" href="/privacypolicy" class="audit-privacy-link">Privacy Policy</a>
+                            </div>
+                        </div>
                     </div>
                 </section>
         </main>
@@ -1076,7 +1250,7 @@
                         <div class="footer__logo">
                             <img src="img/sprites/intermediate-svg/footer-logo.svg" alt="" class="footer__logo-img">
                             <div class="footer__logo-copy">
-                                ©2019
+                                &copy;2019
                             </div>
                         </div>
                         <div class="footer__nav">
@@ -1184,22 +1358,17 @@
             </svg>
         </div>
     </main>
-
     <!--SCRIPTS-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
-    <script src="js/main.js"></script>
+
     <script src="js/wow.js"></script>
     <script>
         new WOW().init();
     </script>
 
-    <script src="plugins/moment.js/moment.min.js"></script>
-    <script src="plugins/countdown/countdown-timer.min.js"></script>
-    <script src="plugins/goalProgress/goalProgress.js"></script>
-    <script src="plugins/lightslider/lightslider.js"></script>
+
 
     <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
     <link rel="stylesheet" href="plugins/lightslider/lightslider.css">

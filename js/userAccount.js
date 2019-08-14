@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    const Cookies = window.Cookies;
+
     var accountAvatar = document.getElementsByClassName("account__avatar")[0];
     var accountMenu = document.getElementsByClassName("account__menu")[0];
     var avatarAngle = document.getElementsByClassName("account__avatar-angle")[0];
@@ -9,20 +11,21 @@ window.onload = function () {
     });
 
     $('.account__menu-item--logout').on('click', function () {
-        window.sessionStorage.removeItem('user');
+        Cookies.remove('user');
         window.location = "../index.html";
     });
 
-    const user = JSON.parse(window.sessionStorage.getItem('user'));
+    const user = Cookies.getJSON('user');
 
     if (user) {
-
         const initials = user.name.split(" ").map((n, idx, arr) => idx === 0 || idx === (arr.length - 1) ? n[0] : '').join('');
 
         $('#user-avatar-initials').text(initials);
         $('#user-name, #user-avatar-label').text(user.name);
         $('#user-email').text(user.email);
         $('#user-created').text(new Date(user.created).toLocaleDateString());
+    } else {
+        window.location = "login.html";
     }
 
     function formatHex(val) {
@@ -37,11 +40,33 @@ window.onload = function () {
         }
     }
 
+    $(document).ready(function () {
+        $('#airswap').on('click', function () {
+            console.log('Clicked AirSwap');
+
+            AirSwap.Trader.render({
+                env: 'production',
+                mode: 'buy',
+                token: '0x490dbf7884b8e13c2161448b83dd2d8909db48ed',
+                address: '0x03b6f5b2966778359496b7dac651a7ad564948a4',
+                // amount: 250 * (10 ** 4),
+                onCancel: function () {
+                    console.info('Trade was canceled.');
+                },
+                onComplete: function (transactionId) {
+                    console.info('Trade complete.');
+                }
+            }, 'body');
+        });
+    });
+
     if (window.web3) {
         window.web3.currentProvider.enable().then(() => {
             new Promise((res, rej) => {
 
-                const addr = formatHex(window.web3.eth.defaultAccount);
+                const account = window.web3.eth.defaultAccount ? window.web3.eth.defaultAccount : window.web3.eth.accounts[0];
+
+                const addr = formatHex(account);
                 const decimals = 8;
                 const tokenAddress = '0x490dbf7884b8e13c2161448b83dd2d8909db48ed';
                 const contractData = ('0x70a08231000000000000000000000000' + addr.substr(2));

@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    const Cookies = window.Cookies;
+
     const nameReg = /^[A-Za-z]+\s?\b([A-Za-z]+)?$/;
     const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
@@ -40,28 +42,40 @@ window.onload = function () {
         if (fullname.length > 0) {
             if (!nameReg.test(fullname)) {
                 $('#form-name').after('<span class="form__input-error">invalid name</span>');
+                $('#form-name').addClass('input-error');
                 result = false;
+            } else {
+                $('#form-name').removeClass('input-error');
             }
         } else {
             result = false;
+            $('#form-name').removeClass('input-error');
         }
 
         if ($('#form-pass').val().length > 0) {
             if ($('#form-pass').val().length < 8) {
                 $('#form-pass').after('<span class="form__input-error">invalid password</span>');
+                $('#form-pass').addClass('input-error');
                 result = false;
+            } else {
+                $('#form-pass').removeClass('input-error');
             }
         } else {
             result = false;
+            $('#form-pass').removeClass('input-error');
         }
 
         if (email.length > 0) {
             if (!emailReg.test(email)) {
                 $('#form-mail').after('<span class="form__input-error">invalid e-mail</span>');
+                $('#form-mail').addClass('input-error');
                 result = false;
+            } else {
+                $('#form-mail').removeClass('input-error');
             }
         } else {
             result = false;
+            $('#form-mail').removeClass('input-error');
         }
 
         if (!$('#form-checkbox').is(':checked')) {
@@ -79,7 +93,7 @@ window.onload = function () {
 
     function createAccount() {
 
-        const hash = window.web3.sha3($('#form-pass').val());
+        const hash = window.sha256($('#form-pass').val());
 
         $.ajax({
             url: 'https://curate-user-service.herokuapp.com/create',
@@ -88,12 +102,12 @@ window.onload = function () {
             data: JSON.stringify({
                 name: fullname,
                 email: email,
-                password: hash.substr(2)
+                password: hash
             }),
             success: function (data, textStatus) {
-                window.sessionStorage.setItem('user', JSON.stringify(data));
+                Cookies.set('user', data);
 
-                window.localStorage.setItem('registered', true);
+                Cookies.set('registered', true);
 
                 window.location = 'userAccount.html';
             },
