@@ -2,21 +2,24 @@
     height: auto !important;
 }
 
-.ieo-link-section {
+.user-ieo-link-section {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.ieo-link-logos {
+.user-ieo-link-section > p {
+    text-align: center;
+    /* font-size: 18px; */
+    color: white;
+    text-transform: uppercase;
+}
+
+.user-ieo-link-logos {
     display: flex;
     justify-content: center;
 }
-
-/* .user-nav__item {
-    margin-right: 70px;
-} */
 
 .user-nav__item {
     margin-right: auto !important;
