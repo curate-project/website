@@ -64,7 +64,9 @@ window.onload = function () {
         window.web3.currentProvider.enable().then(() => {
             new Promise((res, rej) => {
 
-                const addr = formatHex(window.web3.eth.defaultAccount);
+                const account = window.web3.eth.defaultAccount ? window.web3.eth.defaultAccount : window.web3.eth.accounts[0];
+
+                const addr = formatHex(account);
                 const decimals = 8;
                 const tokenAddress = '0x490dbf7884b8e13c2161448b83dd2d8909db48ed';
                 const contractData = ('0x70a08231000000000000000000000000' + addr.substr(2));
