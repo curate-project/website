@@ -95,36 +95,38 @@
 </head>
 
 <body>
-    <!--        <h1>New Page</h1>-->
-    <main class="main">
+    <main class="main" id="main">
         <section class="form__section">
             <div class="container">
-                <a href="../index.html" class="form__logo">
+                <a class="form__logo" href="../index.html">
                     <img src="../img/sprites/intermediate-svg/main-logo.svg" class="btn__icon" alt="icon sign-up">
                 </a>
                 <div class="form">
                     <div class="form__head">
 
-                        <h2 class="form__title">Password recovery</h2>
-                        <h3 class="form__undertitle">We will send a password <br> reset link to this email.</h3>
+                        <h2 class="form__title">Reset Password</h2>
                     </div>
                     <div class="form__body">
                         <form action="#" class="form__main-form">
 
-                            <label for="form-mail" class="form__input">
-                                <span class="label">E-mail</span>
-                                <input type="email" id="form-mail" placeholder="sample@gmail.com">
+                            <label for="form-pass" class="form__input">
+                                <span class="label multiline">New<br />Password</span>
+                                <input type="password" id="form-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
+                                    required autocomplete="new-password">
+                            </label>
+
+                            <label for="form-pass-confirm" class="form__input">
+                                <span class="label multiline">Confirm<br />Password</span>
+                                <input type="password" id="form-pass-confirm"
+                                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required
+                                    autocomplete="new-password">
                             </label>
 
                             <div class="form__footer">
-
-
-                                <h2 class="email-sent d-none" id="email-sent">Email sent</h2>
-                                <!-- <button class="form__button disabled-btn" id="reset-password">Send</button> -->
-                                <button class="form__button disabled-btn" id="reset-password">
-                                    <i class="fa fa-circle-o-notch fa-spin d-none" id="loader"></i>Send
+                                <!-- <button class="form__button disabled-btn" id="reset-button">reset</button> -->
+                                <button class="form__button disabled-btn" id="reset-button">
+                                    <i class="fa fa-circle-o-notch fa-spin d-none" id="loader"></i>reset
                                 </button>
-                                <a href="login.html" class="link">Authorization</a>
                             </div>
 
                         </form>
@@ -134,15 +136,17 @@
             </div>
         </section>
     </main>
+
     <link rel="stylesheet" href="../styles/animate.css">
     <link rel="stylesheet" href="../styles/transitions.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="../js/recovery.js"></script>
+    <script src="../js/reset.js"></script>
     <script src="../js/transitions.js"></script>
 
+    <script src="../plugins/sha256/sha256.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </body>
 

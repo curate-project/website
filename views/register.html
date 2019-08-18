@@ -33,7 +33,7 @@
         &noscript=1" />
     </noscript>
     <!-- End Facebook Pixel Code -->
-    
+
     <meta charset="UTF-8" />
 
     <!-- Useful meta tags -->
@@ -86,7 +86,9 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/userAccount.css">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Title -->
     <title>CURATE</title>
 
@@ -115,7 +117,8 @@
 
                             <label for="form-pass" class="form__input">
                                 <span class="label">Password</span>
-                                <input type="password" id="form-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+                                <input type="password" id="form-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
+                                    required>
                             </label>
 
                             <label for="form-mail" class="form__input">
@@ -130,7 +133,10 @@
                                             conditions</a></span>
                                 </label>
 
-                                <button class="form__button disabled-btn" id="create-account">Create Account</button>
+                                <!-- <button class="form__button disabled-btn" id="create-account">Create Account</button> -->
+                                <button class="form__button disabled-btn" id="create-account">
+                                    <i class="fa fa-circle-o-notch fa-spin d-none" id="loader"></i>Create Account
+                                </button>
 
                                 <a href="login.html" class="link">Already have an account</a>
                             </div>

@@ -87,6 +87,8 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/userAccount.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Title -->
     <title>CURATE</title>
 
@@ -116,8 +118,8 @@
 
                             <label for="form-pass" class="form__input">
                                 <span class="label">Password</span>
-                                <input type="password" id="form-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required
-                                    autocomplete="current-password">
+                                <input type="password" id="form-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
+                                    required autocomplete="current-password">
                             </label>
 
                             <div class="form__footer">
@@ -128,8 +130,10 @@
                                             password?</a></span>
                                 </label>
 
-                                <button class="form__button disabled-btn" id="login-button">login</button>
-
+                                <!-- <button class="form__button disabled-btn" id="login-button">login</button> -->
+                                <button class="form__button disabled-btn" id="login-button">
+                                    <i class="fa fa-circle-o-notch fa-spin d-none" id="loader"></i>login
+                                </button>
                                 <a href="register.html" class="link">Create account</a>
                             </div>
 
