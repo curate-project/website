@@ -19,7 +19,7 @@ window.onload = function () {
     });
 
     $('#form-mail').on('input', function (e) {
-        email = e.target.value;
+        // email = e.target.value;
         validateEntries();
     });
 
@@ -39,6 +39,8 @@ window.onload = function () {
         let result = true;
 
         $('.form__input-error').remove();
+
+        email = $('#form-mail').val();
 
         if (email.length > 0) {
             if (!emailReg.test(email)) {
@@ -69,6 +71,7 @@ window.onload = function () {
     function login() {
 
         $('#login-button').blur();
+        $('#login-button > i').removeClass('d-none');
 
         const hash = window.sha256($('#form-pass').val());
 
@@ -96,6 +99,7 @@ window.onload = function () {
             error: function (jqXhr, textStatus, errorThrown) {
                 console.log(errorThrown);
                 $('#form-pass').after('<span class="form__input-error">invalid login</span>');
+                $('#login-button > i').addClass('d-none');
             }
         })
     }

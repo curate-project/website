@@ -95,6 +95,8 @@ window.onload = function () {
 
         const hash = window.sha256($('#form-pass').val());
 
+        $('#create-account > i').removeClass('d-none');
+
         $.ajax({
             url: 'https://curate-user-service.herokuapp.com/create',
             type: 'post',
@@ -113,7 +115,7 @@ window.onload = function () {
             },
             error: function(jqXhr, textStatus, errorThrown) {
                 console.log(errorThrown);
-                // TODO: Handle errors
+                $('#create-account > i').addClass('d-none');
             }
         })
 

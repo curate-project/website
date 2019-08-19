@@ -45,5 +45,26 @@ window.onload = function() {
 
     function resetPassword() {
         $('#reset-password').blur();
+        $('#reset-password > i').removeClass('d-none');
+
+        $.ajax({
+            url: 'https://curate-user-service.herokuapp.com/recover',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                email: email
+            }),
+            success: function (data, textStatus) {
+                // window.location = 'login.html';
+                $('#reset-password').addClass('d-none');
+                $('#email-sent').removeClass('d-none');
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                // console.log(errorThrown);
+                // $('#form-email').after('<span class="form__input-error">invalid email</span>');
+                $('#reset-password').addClass('d-none');
+                $('#email-sent').removeClass('d-none');
+            }
+        });
     }
 }

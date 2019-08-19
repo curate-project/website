@@ -41,6 +41,25 @@
     margin-right: auto !important;
 }
 
+.label.multiline {
+    text-align: left;
+    margin-top: 7px;
+    top: 0 !important;
+}
+
+.email-sent {
+    font-size: 16px !important;
+    /* text-transform: uppercase; */
+    font-weight: normal;
+    line-height: 23px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.form__button > i {
+    margin-right: 10px;
+}
+
 @media only screen and (max-width: 767px) {
     .form__section .container {
         padding-top: 20px !important;
