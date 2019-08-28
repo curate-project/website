@@ -1,1382 +1,1481 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+         <meta http-equiv="Pragma" content="no-cache" />
+         <meta http-equiv="Expires" content="0" /> -->
+      <!-- Useful meta tags -->
+      <!--        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="author" content="">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta name="googlebot" content="">
+      <meta name="google" content="notranslate">
+      <meta name="format-detection" content="telephone=no">
+      <!-- Open Graph -->
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:url" content="">
+      <meta property="og:image" content="">
+      <meta property="og:locale" content="ru_RU">
+      <meta property="og:locale:alternate" content="fr_FR">
+      <meta property="og:locale:alternate" content="es_ES">
+      <meta property="og:locale:alternate" content="en_GB">
+      <meta property="og:site_name" content="">
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+      <meta name="application-name" content="&nbsp;">
+      <meta name="msapplication-TileColor" content="#FFFFFF">
+      <meta name="msapplication-TileImage" content="mstile-144x144.png">
+      <meta name="msapplication-square70x70logo" content="mstile-70x70.png">
+      <meta name="msapplication-square150x150logo" content="mstile-150x150.png">
+      <meta name="msapplication-wide310x150logo" content="mstile-310x150.png">
+      <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+      <meta name="theme-color" content="#040306">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="lang.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+      <script src="js/langswitch.js"></script> 
+      <script src="https://cdn.airswap.io/gallery/airswap-trader.js"></script>
+      <script src="plugins/moment.js/moment.min.js"></script>
+      <script src="plugins/countdown/countdown-timer.min.js"></script>
+      <script src="plugins/goalProgress/goalProgress.js"></script>
+      <script src="plugins/lightslider/lightslider.js"></script>
+      <script src="js/main.js"></script>
+      <style>
+      .noscroll {
+         overflow:hidden;
+      }
+         .languages {
+         width: 133px;
+         display: inline-block;
+         vertical-align: middle;
+         margin-right: 19px;
+         }
+         .languages__inner {
+         position: relative;
+         z-index: 2;
+         }
+         .languages__overlay {
+         position:absolute;
+         z-index:100;
+         transition: .5s ease;
+         background:rgba(0,0,0,0.5);
+         width:100vw;
+         height:100vh;
+         opacity: 0;
+         visibility: hidden;
+         }
+         .languages__popup {
+            z-index:101;
+         position: absolute;
+         right: 0;
+         margin-top: 7px;
+         width: 133px;
+         background: #fff;
+         border-radius: 4px;
+         opacity: 0;
+         visibility: hidden;
+         -webkit-box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
+         box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
+         -webkit-transition: all 0.3s;
+         transition: all 0.3s;
+         }
+         .languages__popup.active {
+         opacity: 1;
+         visibility: visible;
+         }
+         .languages__popup.active a {
+         transition: 0.3s ease;
+         }
+         .languages__popup.active a:hover {
+            background-color: #FFD788!important;
+         }
+         .languages__popup a {
+         position: relative;
+         display: block;
+         height: 35px;
+         font-size: 14px;
+         color: #000;
+         font-weight: 500;
+         width: 133px;
+         padding: 9px 20px 10px 46px;
+         text-decoration: none;
+         text-align: left;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         }
+         .languages__popup a:first-child {
+            border-radius: 4px 4px 0 0;
+         }
+         .languages__popup a:last-child {
+            border-radius: 0 0 4px 4px;
+         }
+         .languages a.ru:before {
+         background: url(../img/ru.svg) 0 0 no-repeat;
+         }
+         .languages a.cn:before {
+         background: url(../img/cn.svg) 0 0 no-repeat;
+         }
+         .languages a.us:before {
+         background: url(../img/us.svg) 0 0 no-repeat;
+         }
+         .languages a.kr:before {
+         background: url(../img/kr.svg) 0 0 no-repeat;
+         }
+         .languages__popup a:before {
+         position: absolute;
+         content: '';
+         left: 14px;
+         top: 50%;
+         width: 25px;
+         height: 14px;
+         margin-top: -7px;
+         }
+         .languages__body a {
+         position: relative;
+         display: block;
+         height: 35px;
+         font-size: 14px;
+         color: #FFFFFF;
+         font-weight: 500;
+         width: 133px;
+         padding: 9px 20px 10px 46px;
+         border-radius: 4px;
+         text-decoration: none;
+         text-align: left;
+         background: rgba(0, 0, 0, 0.02);
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         }
+         .languages__body a:before {
+         position: absolute;
+         content: '';
+         left: 14px;
+         top: 50%;
+         width: 25px;
+         height: 14px;
+         margin-top: -7px;
+         }
+         .languages__body a:after {
+         position: absolute;
+         content: '';
+         right: 10px;
+         top: 15px;
+         border-style: solid;
+         height: 0;
+         width: 0;
+         border-color: #fff transparent transparent transparent;
+         border-width: 4px 3px 0 3px;
+         }
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144820552-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-144820552-1');
-    </script>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1002185730172884');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" src="https://www.facebook.com/tr?id=1002185730172884&ev=PageView
-    &noscript=1" />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <meta charset="UTF-8">
-
-    <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" /> -->
-
-    <!-- Useful meta tags -->
-    <!--        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="robots" content="">
-    <meta name="googlebot" content="">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta property="og:locale" content="ru_RU">
-    <meta property="og:locale:alternate" content="fr_FR">
-    <meta property="og:locale:alternate" content="es_ES">
-    <meta property="og:locale:alternate" content="en_GB">
-    <meta property="og:site_name" content="">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
-
-    <meta name="application-name" content="&nbsp;">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="mstile-144x144.png">
-    <meta name="msapplication-square70x70logo" content="mstile-70x70.png">
-    <meta name="msapplication-square150x150logo" content="mstile-150x150.png">
-    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png">
-    <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
-
-    <meta name="theme-color" content="#040306">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <script src="https://cdn.airswap.io/gallery/airswap-trader.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <script src="plugins/moment.js/moment.min.js"></script>
-    <script src="plugins/countdown/countdown-timer.min.js"></script>
-    <script src="plugins/goalProgress/goalProgress.js"></script>
-    <script src="plugins/lightslider/lightslider.js"></script>
-    <script src="js/main.js"></script>
-
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-
-    <!-- Title -->
-    <title>CURATE</title>
-
-    <!--PRELOADER-->
-    <!-- <div class="preloader is-active" id="preloader">
-        <div class="preloader__wrap">
-            <div class="preloader__logo">
-                <img class="preloader__img preloader__img--first" src="img/main/preloader-cureback.svg"
-                    alt="icon sign-up">
-                <div class="preloader__logo-inner">
-                    <img class="preloader__img preloader__img--second" src="img/main/preloader-curefront.svg"
-                        alt="icon sign-up">
-                </div>
-            </div>
-            <img class="preloader__img preloader__img--third" src="img/main/preloader-curate.svg" alt="icon sign-up">
-        </div>
-    </div> -->
-</head>
-
-<body>
-    <!-- COOKIE PANEL -->
-    <div id="cookie" class="cookie">
-        <div class="container">
+         .active {
+         opacity: 1; visibility: visible;
+         }
+      </style>
+      <!-- Custom styles -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <!-- Title -->
+      <title>CURATE</title>
+      <!--PRELOADER-->
+      <!-- <div class="preloader is-active" id="preloader">
+         <div class="preloader__wrap">
+             <div class="preloader__logo">
+                 <img class="preloader__img preloader__img--first" src="img/main/preloader-cureback.svg"
+                     alt="icon sign-up">
+                 <div class="preloader__logo-inner">
+                     <img class="preloader__img preloader__img--second" src="img/main/preloader-curefront.svg"
+                         alt="icon sign-up">
+                 </div>
+             </div>
+             <img class="preloader__img preloader__img--third" src="img/main/preloader-curate.svg" alt="icon sign-up">
+         </div>
+         </div> -->
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144820552-1"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-144820552-1');
+      </script>
+      <!-- Facebook Pixel Code -->
+      <script>
+         !function (f, b, e, v, n, t, s) {
+             if (f.fbq) return; n = f.fbq = function () {
+                 n.callMethod ?
+                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+             };
+             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+             n.queue = []; t = b.createElement(e); t.async = !0;
+             t.src = v; s = b.getElementsByTagName(e)[0];
+             s.parentNode.insertBefore(t, s)
+         }(window, document, 'script',
+             'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '1002185730172884');
+         fbq('track', 'PageView');
+      </script>
+      <noscript>
+         <img height="1" width="1" src="https://www.facebook.com/tr?id=1002185730172884&ev=PageView
+            &noscript=1" />
+      </noscript>
+      <!-- End Facebook Pixel Code -->
+   </head>
+   <body>
+      <div class="languages__overlay"></div>
+      
+      <!-- COOKIE PANEL -->
+      <div id="cookie" class="cookie">
+         <div class="container">
             <div class="cookie__wrap">
-                <div class="cookie__text-wrap">
-                    <div class="cookie__text">
-                        We use cookies to tailor our services and online advertising.
-                    </div>
-                    <div class="cookie__text">
-                        By using our website you agree with our <a target="_blank" style="color:#ffd788;"
-                            href="/cookiepolicy">Cookie Policy</a>.
-                    </div>
-                </div>
-                <div class="cookie__close-wrap">
-                    <button id="cookiebtn" class="cookie__close">OK</button>
-                </div>
+               <div class="cookie__text-wrap">
+                  <div class="cookie__text lang" key="cookietop">
+                     We use cookies to tailor our services and online advertising.
+                  </div>
+                  <div class="cookie__text lang" key="cookielink">
+                     By using our website you agree with our <a target="_blank" style="color:#ffd788;"
+                        href="/cookiepolicy">Cookie Policy</a>.
+                  </div>
+               </div>
+               <div class="cookie__close-wrap">
+                  <button id="cookiebtn" class="cookie__close">OK</button>
+               </div>
             </div>
-        </div>
-    </div>
-
-    <main id="main">
-
-        <!--HEADER-->
-        <header class="header" id="header">
+         </div>
+      </div>
+      <main id="main">
+         <!--HEADER-->
+         <header class="header" id="header">
             <div class="container">
-                <div class="header__wrap">
-
-                    <nav class="header__main-nav main-nav">
-                        <div class="main-nav__leftside">
-                            <a href="#" class="main-nav__main-logo main-logo">
-                                <img src="img/sprites/intermediate-svg/main-logo.svg" alt="logo" class="main-logo__img">
-                            </a>
-                            <ul class="main-nav__list">
-                                <li class="main-nav__item"><a class="main-nav__item-link goTo" href="#about">About</a>
-                                </li>
-                                <li class="main-nav__item"><a class="main-nav__item-link goTo"
-                                        href="#roadmap">Roadmap</a>
-                                </li>
-                                <li class="main-nav__item"><a class="main-nav__item-link goTo" href="#our-team">Our
-                                        team</a>
-                                </li>
-                                <li class="main-nav__item"><a class="main-nav__item-link" href="Presentation.pdf"
-                                        target="_blank">Pitch Deck</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="main-nav__rightside">
-                            <ul class="main-nav__rightside-list">
-                                <li class="main-nav__rightside-item"><a class="main-nav__rightside-link" target="_blank"
-                                        href="https://t.me/curate"><span class="white"><img src="img/main/telegram.svg">
-                                            &nbsp;Our telegram:</span><span class="gray"></span><span
-                                            class="orange">&nbsp;@curate</span></a></li>
-                            </ul>
-                            <ul class="main-nav__rightside-list d-none">
-                                <li class="main-nav__rightside-item"><a class="main-nav__rightside-link" href="#"><span
-                                            class="white"> 1₿ </span><span class="gray"> = </span><span
-                                            class="orange">$8457,35</span></a></li>
-                                <li class="main-nav__rightside-item"><a class="main-nav__rightside-link" href="#"><span
-                                            class="white"> 1Ξ </span><span class="gray"> = </span><span
-                                            class="orange">$472,85</span></a></li>
-                            </ul>
-                            <ul class="main-nav__rightside-list main-nav__rightside-account main-nav__rightside--btc">
-                                <li class="main-nav__rightside-item">
-                                    <a class="main-nav__rightside-link" href="#">
-                                        <img src="img/sprites/intermediate-svg/search.svg" alt="">
-                                    </a>
-                                </li>
-                                <li class="main-nav__rightside-item">
-                                    <a class="main-nav__rightside-link" href="#">
-                                        <img src="img/sprites/intermediate-svg/message.svg" alt="">
-                                        <span class="main-nav__link-badge badge">174</span>
-                                    </a>
-                                </li>
-                                <li class="main-nav__rightside-item">
-                                    <a class="main-nav__rightside-link" href="#">
-                                        <img src="img/sprites/intermediate-svg/bell.svg" alt="">
-                                        <span class="main-nav__link-badge badge">7</span>
-                                    </a>
-                                </li>
-                                <li class="main-nav__rightside-item">
-                                    <a class="main-nav__rightside-link main-nav__rightside-link--coin" href="#">
-                                        <img src="img/sprites/intermediate-svg/mini-logo.svg" alt="">
-                                        <span>78.45</span>
-                                    </a>
-                                </li>
-                                <li class="main-nav__rightside-item">
-                                    <div class="main-nav__account">
-                                        <div class="account">
-                                            <div class="account__avatar">
-                                                <div class="account__avatar-wrap">
-                                                    <div class="account__avatar-photo">
-                                                        <img src="img/main/team-james.png" alt="avatar"
-                                                            class="account__avatar-img">
-                                                    </div>
-                                                    <div class="account__avatar-name">James</div>
-                                                </div>
-                                                <div class="account__avatar-angle">
-                                                    <img src="img/sprites/intermediate-svg/drop-angle.svg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="account__menu">
-                                                <ul class="account__menu-list">
-                                                    <li class="account__menu-item">
-                                                        <a href="#" class="account__menu-link">
-                                                            <div class="main-menu__link-icon">
-                                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
-                                                                    alt="">
-                                                            </div>
-                                                            <span class="main-menu__link-title">Profile</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="account__menu-item">
-                                                        <a href="#" class="account__menu-link">
-                                                            <div class="main-menu__link-icon">
-                                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
-                                                                    alt="">
-                                                            </div>
-                                                            <span class="main-menu__link-title">Wallet</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="account__menu-item">
-                                                        <a href="#" class="account__menu-link">
-                                                            <div class="main-menu__link-icon">
-                                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
-                                                                    alt="">
-                                                            </div>
-                                                            <span class="main-menu__link-title">Affiliate</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="account__menu-item account__menu-item--logout">
-                                                        <a href="#" class="account__menu-link">
-                                                            <div class="main-menu__link-icon">
-                                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
-                                                                    alt="">
-                                                            </div>
-                                                            <span class="main-menu__link-title">Logout</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+            <div class="header__wrap">
+               <nav class="header__main-nav main-nav">
+                  <div class="main-nav__leftside">
+                     <a href="#" class="main-nav__main-logo main-logo">
+                     <img src="img/sprites/intermediate-svg/main-logo.svg" alt="logo" class="main-logo__img">
+                     </a>
+                     <ul class="main-nav__list">
+                        <li class="main-nav__item"><a class="main-nav__item-link goTo lang" href="#about" key="about">About</a>
+                        </li>
+                        <li class="main-nav__item"><a class="main-nav__item-link goTo lang"
+                           href="#roadmap" key="roadmap">Roadmap</a>
+                        </li>
+                        <li class="main-nav__item"><a class="main-nav__item-link goTo lang" href="#our-team" key="ourteam">Our
+                           team</a>
+                        </li>
+                        <li class="main-nav__item"><a class="main-nav__item-link lang" href="Presentation.pdf"
+                           target="_blank" key="pitch">Pitch Deck</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="main-nav__rightside">
+                     <ul class="main-nav__rightside-list">
+                        <li>
+                           <div class="languages">
+                              <div class="languages__inner">
+                                 <div class="languages__body">
+                                    <a href="#" id="curlang" class="us">English</a>
+                                 </div>
+                                 <div class="languages__popup">
+                                    <a id="us" href="#" class="us translate">English</a>
+                                    <a id="ru" href="#" class="ru translate">Russian</a>
+                                    <!-- <a id="kr" href="#" class="kr translate">Korean</a>
+                                    <a id="cn" href="#" class="cn translate">China</a> -->
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="main-nav__rightside-item"><a class="main-nav__rightside-link" target="_blank"
+                           href="https://t.me/curate"><span class="white"><img src="img/main/telegram.svg"></span></a>
+                        </li>
+                     </ul>
+                     <ul class="main-nav__rightside-list d-none">
+                        <li class="main-nav__rightside-item"><a class="main-nav__rightside-link" href="#"><span
+                           class="white"> 1₿ </span><span class="gray"> = </span><span
+                           class="orange">$8457,35</span></a></li>
+                        <li class="main-nav__rightside-item"><a class="main-nav__rightside-link" href="#"><span
+                           class="white"> 1Ξ </span><span class="gray"> = </span><span
+                           class="orange">$472,85</span></a></li>
+                     </ul>
+                     <ul class="main-nav__rightside-list main-nav__rightside-account main-nav__rightside--btc">
+                        <li class="main-nav__rightside-item">
+                           <a class="main-nav__rightside-link" href="#">
+                           <img src="img/sprites/intermediate-svg/search.svg" alt="">
+                           </a>
+                        </li>
+                        <li class="main-nav__rightside-item">
+                           <a class="main-nav__rightside-link" href="#">
+                           <img src="img/sprites/intermediate-svg/message.svg" alt="">
+                           <span class="main-nav__link-badge badge">174</span>
+                           </a>
+                        </li>
+                        <li class="main-nav__rightside-item">
+                           <a class="main-nav__rightside-link" href="#">
+                           <img src="img/sprites/intermediate-svg/bell.svg" alt="">
+                           <span class="main-nav__link-badge badge">7</span>
+                           </a>
+                        </li>
+                        <li class="main-nav__rightside-item">
+                           <a class="main-nav__rightside-link main-nav__rightside-link--coin" href="#">
+                           <img src="img/sprites/intermediate-svg/mini-logo.svg" alt="">
+                           <span>78.45</span>
+                           </a>
+                        </li>
+                        <li class="main-nav__rightside-item">
+                           <div class="main-nav__account">
+                              <div class="account">
+                                 <div class="account__avatar">
+                                    <div class="account__avatar-wrap">
+                                       <div class="account__avatar-photo">
+                                          <img src="img/main/team-james.png" alt="avatar"
+                                             class="account__avatar-img">
+                                       </div>
+                                       <div class="account__avatar-name">James</div>
                                     </div>
-                                </li>
-                            </ul>
+                                    <div class="account__avatar-angle">
+                                       <img src="img/sprites/intermediate-svg/drop-angle.svg" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="account__menu">
+                                    <ul class="account__menu-list">
+                                       <li class="account__menu-item">
+                                          <a href="#" class="account__menu-link">
+                                             <div class="main-menu__link-icon">
+                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
+                                                   alt="">
+                                             </div>
+                                             <span class="main-menu__link-title">Profile</span>
+                                          </a>
+                                       </li>
+                                       <li class="account__menu-item">
+                                          <a href="#" class="account__menu-link">
+                                             <div class="main-menu__link-icon">
+                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
+                                                   alt="">
+                                             </div>
+                                             <span class="main-menu__link-title">Wallet</span>
+                                          </a>
+                                       </li>
+                                       <li class="account__menu-item">
+                                          <a href="#" class="account__menu-link">
+                                             <div class="main-menu__link-icon">
+                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
+                                                   alt="">
+                                             </div>
+                                             <span class="main-menu__link-title">Affiliate</span>
+                                          </a>
+                                       </li>
+                                       <li class="account__menu-item account__menu-item--logout">
+                                          <a href="#" class="account__menu-link">
+                                             <div class="main-menu__link-icon">
+                                                <img src="img/sprites/intermediate-svg/mini-logo.svg"
+                                                   alt="">
+                                             </div>
+                                             <span class="main-menu__link-title">Logout</span>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+                  <button class="hamburger hamburger--3dxy js-hamburger burger--btn" type="button">
+                  <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                  </span>
+                  </button>
+               </nav>
+               <div class="circle">
+               </div>
+               <div class="menu">
+                  <nav class="header-mobile__nav">
+                     <ul class="header-mobile__nav-menu">
+                        <li class="item"> <a class="link goTo lang" href="#about" key="about">About</a></li>
+                        <li class="item"> <a class="link goTo lang" href="#roadmap" key="roadmap">Roadmap</a> </li>
+                        <li class="item"> <a class="link goTo lang" href="#our-team" key="ourteam">Our team</a></li>
+                        <li class="item"> <a class="link goTo lang" href="#demo" key="demo">Demo</a></li>
+                        <li class="item"> <a class="link goTo lang" href="Presentation.pdf" target="_blank" key="pitch">Pitch
+                           Deck</a>
+                        </li>
+                        <li class="item item--btn">
+                           <a href="views/login.html" class="header-mobile__btn btn btn--simple">
+                           <img src="img/sprites/intermediate-svg/profile-yellow.svg" class="btn__icon"
+                              alt="icon sign-up">
+                           <span class="lang" key="signin">SIGN IN</span>
+                           </a>
+                        </li>
+                        <li class="item item--btn">
+                           <a target="_blank" href="/whitepaper.pdf"
+                              class="header-mobile__btn btn-s btn--simple">
+                           <img src="img/sprites/intermediate-svg/writing-w.svg" class="btn__icon"
+                              alt="icon writing">
+                           <span>WHITEPAPER</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+               <div class="header__intro intro">
+                  <div class="ieo-link-section">
+                     <a target="_blank" href="https://icomarks.com/ieo/curate" class="ieo-link-block">
+                        <div class="ieo-link-rate">9.6 <span style="font-size:14px">/ 10</span></div>
+                        <div class="ieo-link-icon">
+                           <img src="img/main/header/ICOmarks.svg" alt="icomarks">
                         </div>
-
-                        <button class="hamburger hamburger--3dxy js-hamburger burger--btn" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-
-                    </nav>
-
-                    <div class="circle">
-
-                    </div>
-                    <div class="menu">
-                        <nav class="header-mobile__nav">
-                            <ul class="header-mobile__nav-menu">
-                                <li class="item"> <a class="link goTo" href="#about">About</a></li>
-                                <li class="item"> <a class="link goTo" href="#roadmap">Roadmap</a> </li>
-                                <li class="item"> <a class="link goTo" href="#our-team">Our team</a></li>
-                                <li class="item"> <a class="link goTo" href="Presentation.pdf" target="_blank">Pitch
-                                        Deck</a></li>
-                                <li class="item item--btn">
-                                    <a href="views/login.html" class="header-mobile__btn btn btn--simple">
-                                        <img src="img/sprites/intermediate-svg/profile-yellow.svg" class="btn__icon"
-                                            alt="icon sign-up">
-                                        <span>SIGN IN</span>
-                                    </a>
-                                </li>
-                                <li class="item item--btn">
-                                    <a target="_blank" href="/whitepaper.pdf"
-                                        class="header-mobile__btn btn-s btn--simple">
-                                        <img src="img/sprites/intermediate-svg/writing-w.svg" class="btn__icon"
-                                            alt="icon writing">
-                                        <span>WHITEPAPER</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-
-
-
-                    <div class="header__intro intro">
-                        <div class="ieo-link-section">
-                            <a target="_blank" href="https://icomarks.com/ieo/curate" class="ieo-link-block">
-                                <div class="ieo-link-rate">9.6 <span style="font-size:14px">/ 10</span></div>
-                                <div class="ieo-link-icon">
-                                    <img src="img/main/header/ICOmarks.svg" alt="icomarks">
-                                </div>
-                            </a>
-                            <a target="_blank" href="https://icobench.com/ico/curate" class="ieo-link-block">
-                                <div class="ieo-link-rate">4.9 <span style="font-size:14px">/ 5</span></div>
-                                <div class="ieo-link-icon">
-                                    <img src="img/main/header/icobench.svg" alt="icobench">
-                                </div>
-                            </a>
+                     </a>
+                     <a target="_blank" href="https://icobench.com/ico/curate" class="ieo-link-block">
+                        <div class="ieo-link-rate">4.9 <span style="font-size:14px">/ 5</span></div>
+                        <div class="ieo-link-icon">
+                           <img src="img/main/header/icobench.svg" alt="icobench">
                         </div>
-                        <div class="intro__wrap">
-                            <div class="intro__header-wrap">
-                                <h1 class="intro__title">
-                                    The fashion discovery platform
-                                </h1>
-                                <h4 class="intro__undertitle">Discover Styles. Earn Crypto.</h4>
-                            </div>
-                            <div class="countdown-container" id="countdown-container">
-                                <p id="countdown-label">IEO ENDS</p>
-                                <div class="timer" id="countdown"></div>
-                            </div>
-                            <div class="funds-container" id="funds-container">
-                                <div id="fundsRaised" class="funds-progress"></div>
-                            </div>
-                            <!--  -->
+                     </a>
+                  </div>
+                  <div class="intro__wrap">
+                     <div class="intro__header-wrap">
+                        <h1 class="intro__title lang" key="header">
+                           The fashion discovery platform
+                        </h1>
+                        <h4 class="intro__undertitle lang" key="description">Discover Styles. Earn Crypto.</h4>
+                     </div>
+                     <div class="countdown-container" id="countdown-container">
+                        <p id="countdown-label" class="lang" key="ieo">IEO ENDS</p>
+                        <div class="timer" id="countdown">
+                           <div class="timer-wrapper"><div class="time">00</div><span class="text" key=x>days</span></div><div class="timer-wrapper"><div class="time">00</div><span class="text">hours</span></div><div class="timer-wrapper"><div class="time">00</div><span class="text" key="ms">min</span></div><div class="timer-wrapper"><div class="time">00</div><span class="text" key="ss">sec</span></div>
                         </div>
-                    </div>
-                    <div class="intro__btn-wrap">
-                        <a href="https://p2pb2b.io/token-sale/CUR8/1" class="intro__btn btn btn--p2p" target="_blank">
-                            <img src="img/main/header/p2pb2b.svg" class="btn__icon" alt="icon p2pb2b">
-                            <span>BUY ON P2PB2B (KYC)</span>
+                     </div>
+                     <div class="funds-container" id="funds-container">
+                        <div id="fundsRaised" class="funds-progress"></div>
+                     </div>
+                     <!--  -->
+                  </div>
+               </div>
+               <div class="intro__btn-wrap">
+                  <!-- <a href="https://p2pb2b.io/token-sale/CUR8/1" class="intro__btn btn btn--p2p" target="_blank">
+                  <img src="img/main/header/p2pb2b.svg" class="btn__icon" alt="icon p2pb2b">
+                  <span class="lang" key="p2p">BUY ON P2PB2B (KYC)</span>
+                  </a> -->
+                  <a id="airswap" class="intro__btn btn btn--airswap">
+                  <img src="img/main/header/airswap.svg" class="btn__icon" alt="icon airswap">
+                  <span class="lang" key="airswap">BUY VIA AIRSWAP (NO KYC)</span>
+                  </a>
+                  <div class="intro__btn-group">
+                     <a href="views/login.html" class="intro__btn btn">
+                     <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon" alt="icon sign-up">
+                     <span class="lang" key="signin">SIGN IN</span>
+                     </a>
+                     <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn btn--simple">
+                     <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
+                        alt="icon writing">
+                     <span>WHITEPAPER</span>
+                     </a>
+                  </div>
+               </div>
+               <a href="#" class="header__arrow-down">
+               <img src="img/sprites/intermediate-svg/arrow-header-bottom.svg" alt="icon arrow-down">
+               </a>
+               <div class="as-featured-container">
+                  <div class="as-featured-section">
+                     <p class="lang" key="featured">As featured on</p>
+                     <div>
+                        <a href="https://www.forbes.com/sites/joresablount/2019/08/04/10-booming-industries-and-the-companies-innovating-them/#b5be1d6102cc"
+                           target="_blank">
+                        <img src="img/main/featured/Forbes.svg" />
                         </a>
-                        <a id="airswap" class="intro__btn btn btn--airswap">
-                            <img src="img/main/header/airswap.svg" class="btn__icon" alt="icon airswap">
-                            <span>BUY VIA AIRSWAP (NO KYC)</span>
+                        <a href="https://finance.yahoo.com/news/curate-breaks-fashion-industry-blockchain-193700025.html?guccounter=1&guce_referrer=aHR0cHM6Ly9maW5hbmNlLnlhaG9vLmNvbS8&guce_referrer_sig=AQAAALBPXdXIweq51TULt5x9Fp4TQSunoqI8PrrPaUfvuuYL5Ryqux5suV07Ta2tdm9yyOQjFHsltyyq1uB1W8wTokKyJkX6S_a7pA-gMzOJJ4UcUvRGMNrfKNgBq7WlkldhgzPVWbwaTVM5VtOkFxxjeHpFtLR0Kgp9q7tYIx1VrXHh"
+                           target="_blank">
+                        <img src="img/main/featured/YahooFinance.svg" />
                         </a>
-                        <div class="intro__btn-group">
-                            <a href="views/login.html" class="intro__btn btn">
-                                <img src="img/sprites/intermediate-svg/profile.svg" class="btn__icon" alt="icon sign-up">
-                                <span>SIGN IN</span>
-                            </a>
-                            <a target="_blank" href="/whitepaper.pdf" class="intro__btn btn btn--simple">
-                                <img src="img/sprites/intermediate-svg/writing.svg" class="btn__icon__colored"
-                                    alt="icon writing">
-                                <span>WHITEPAPER</span>
-                            </a>
-                        </div>
-
-                    </div>
-                    <a href="#" class="header__arrow-down">
-                        <img src="img/sprites/intermediate-svg/arrow-header-bottom.svg" alt="icon arrow-down">
-                    </a>
-
-                    <div class="as-featured-container">
-                        <div class="as-featured-section">
-                            <p>As featured on</p>
-                            <div>
-                                <a href="https://www.forbes.com/sites/joresablount/2019/08/04/10-booming-industries-and-the-companies-innovating-them/#b5be1d6102cc"
-                                    target="_blank">
-                                    <img src="img/main/featured/Forbes.svg" />
-                                </a>
-                                <a href="https://finance.yahoo.com/news/curate-breaks-fashion-industry-blockchain-193700025.html?guccounter=1&guce_referrer=aHR0cHM6Ly9maW5hbmNlLnlhaG9vLmNvbS8&guce_referrer_sig=AQAAALBPXdXIweq51TULt5x9Fp4TQSunoqI8PrrPaUfvuuYL5Ryqux5suV07Ta2tdm9yyOQjFHsltyyq1uB1W8wTokKyJkX6S_a7pA-gMzOJJ4UcUvRGMNrfKNgBq7WlkldhgzPVWbwaTVM5VtOkFxxjeHpFtLR0Kgp9q7tYIx1VrXHh"
-                                    target="_blank">
-                                    <img src="img/main/featured/YahooFinance.svg" />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <img src="img/main/featured/Enterpreneur.svg" />
-                                </a>
-                                <a href="https://coincodex.com/ieo/curate/" target="_blank">
-                                    <img src="img/main/featured/coincodex.svg" />
-                                </a>
-                                <a href="https://in.investing.com/analysis/pulling-it-off-at-the-edge-of-bleeding-fashion-and-tech-200431241"
-                                    target="_blank">
-                                    <img src="img/main/featured/investing.svg" />
-                                </a>
-                                <a href="https://www.theodysseyonline.com/curate-style-a-revolutionary-platform"
-                                    target="_blank">
-                                    <img src="img/main/featured/odyssey.svg" />
-                                </a>
-                                <a href="https://neironix.io/news/blogs/view?id=699" target="_blank">
-                                    <img src="img/main/featured/neironix.svg" />
-                                </a>
-                                <a href="https://coingape.com/blockchain-cryptos-fashion-match-made-heaven"
-                                    target="_blank">
-                                    <img src="img/main/featured/coingape.svg" />
-                                </a>
-                                <a href="https://eng.ambcrypto.com/curate-bringing-fashion-and-dapps-under-the-same-ecosystem"
-                                    target="_blank">
-                                    <img src="img/main/featured/ambcrypto.svg" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </header>
-
-        <!--MAIN-->
-        <main class="main" id="main">
+                        <a href="#" target="_blank">
+                        <img src="img/main/featured/Enterpreneur.svg" />
+                        </a>
+                        <a href="https://coincodex.com/ieo/curate/" target="_blank">
+                        <img src="img/main/featured/coincodex.svg" />
+                        </a>
+                        <a href="https://in.investing.com/analysis/pulling-it-off-at-the-edge-of-bleeding-fashion-and-tech-200431241"
+                           target="_blank">
+                        <img src="img/main/featured/investing.svg" />
+                        </a>
+                        <a href="https://www.theodysseyonline.com/curate-style-a-revolutionary-platform"
+                           target="_blank">
+                        <img src="img/main/featured/odyssey.svg" />
+                        </a>
+                        <a href="https://neironix.io/news/blogs/view?id=699" target="_blank">
+                        <img src="img/main/featured/neironix.svg" />
+                        </a>
+                        <a href="https://coingape.com/blockchain-cryptos-fashion-match-made-heaven"
+                           target="_blank">
+                        <img src="img/main/featured/coingape.svg" />
+                        </a>
+                        <a href="https://eng.ambcrypto.com/curate-bringing-fashion-and-dapps-under-the-same-ecosystem"
+                           target="_blank">
+                        <img src="img/main/featured/ambcrypto.svg" />
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!--MAIN-->
+         <main class="main" id="main">
             <section class="about" id="about">
-                <div class="container">
-
-                    <div class="about__wrap">
-                        <div class="about__wrap-content">
-
-                            <div class="about__img-wrap wow fadeInUp">
-                                <img style="box-shadow: -100px 60px 100px rgba(0, 0, 0, 0.2)" src="img/main/iphonex.png"
-                                    alt="iphonex">
-                            </div>
-                            <div class="about__info-wrap">
-                                <div class="about__title-wrap">
-                                    <h2 class="about__title wow fadeInUp">About</h2>
-                                    <div class="about__unisex wow fadeInUp" data-wow-delay="0.2s" data-wow-offset="90">
-                                        <img src="img/sprites/intermediate-svg/unisex.svg" class="about__unisex-img"
-                                            alt="icon writing">
-                                        <span>UNISEX</span>
-                                    </div>
-                                </div>
-                                <div class="about__text-wrap">
-                                    <p class="about__text"><span><span class="white about__text--first"><img
-                                                    src="img/sprites/intermediate-svg/mini-logo.svg" alt=""><span>CURATE
-                                                </span></span></span> is a style discovery decentralized app (DApp) i.e
-                                        'blockchain smart contract enabled' platform, which rewards you with digital
-                                        tokens
-                                        in the form of BTC, ETH and our own CUR8 tokens in return for users curating
-                                        fashion
-                                        styles.</p>
-                                    <p class="wow fadeInUp about__text about__text--hidden">Fashion brands and retailers
-                                        have partnered up with Curate to showoff their latest styles, raise brand
-                                        awareness
-                                        and increase their online sales.
-                                    </p>
-                                    <p class="wow fadeInUp about__text about__text--hidden">
-                                        In return, Curate provides a trustless platform allowing users to feedback a
-                                        curated
-                                        collection of fashion styles for the community to discover.
-                                    </p>
-                                    <p class="wow fadeInUp about__text about__text--hidden">
-                                        To put simply, Fashion brands partner up with Curate and we pass on the rewards
-                                        to
-                                        the curators and discoverer's.
-                                    </p>
-                                    <p class="wow fadeInUp about__text about__text--hidden">
-                                        We are: Decentralised. Web 3.0. Open Source.</p>
-                                    <!-- <button type="button" class="about__btn">
-                            <span class="about__btn-text">More info</span>
-                            <img class="about__btn-img" src="img/sprites/intermediate-svg/about-open.svg" alt="">
-                        </button> -->
-                                </div>
-                            </div>
+               <div class="container">
+                  <div class="about__wrap">
+                     <div class="about__wrap-content">
+                        <div class="about__img-wrap wow fadeInUp">
+                           <img style="box-shadow: -100px 60px 100px rgba(0, 0, 0, 0.2)" src="img/main/iphonex.png"
+                              alt="iphonex">
                         </div>
-                        <div class="about__background"></div>
-                    </div>
-                </div>
+                        <div class="about__info-wrap">
+                           <div class="about__title-wrap">
+                              <h2 class="about__title wow fadeInUp lang" key="about">About</h2>
+                              <div class="about__unisex wow fadeInUp" data-wow-delay="0.2s" data-wow-offset="90">
+                                 <img src="img/sprites/intermediate-svg/unisex.svg" class="about__unisex-img"
+                                    alt="icon writing">
+                                 <span class="lang" key="unisex">UNISEX</span>
+                              </div>
+                           </div>
+                           <div class="about__text-wrap">
+                              <p class="about__text lang" key="abouttext"><span><span class="white about__text--first"><img
+                                 src="img/sprites/intermediate-svg/mini-logo.svg" alt=""><span>CURATE
+                                 </span></span></span>is a style discovery decentralized app (DApp) i.e
+                                 'blockchain smart contract enabled' platform, which rewards you with digital
+                                 tokens
+                                 in the form of BTC, ETH and our own CUR8 tokens in return for users curating
+                                 fashion
+                                 styles.
+                              </p>
+                              <p class="wow fadeInUp about__text about__text--hidden lang" key="abouttexttwo">Fashion brands and retailers
+                                 have partnered up with Curate to showoff their latest styles, raise brand
+                                 awareness
+                                 and increase their online sales.
+                              </p>
+                              <p class="wow fadeInUp about__text about__text--hidden lang" key="abouttextthree">
+                                 In return, Curate provides a trustless platform allowing users to feedback a
+                                 curated
+                                 collection of fashion styles for the community to discover.
+                              </p>
+                              <p class="wow fadeInUp about__text about__text--hidden lang" key="abouttextfour">
+                                 To put simply, Fashion brands partner up with Curate and we pass on the rewards
+                                 to
+                                 the curators and discoverer's.
+                              </p>
+                              <p class="wow fadeInUp about__text about__text--hidden lang" key="abouttextfive">
+                                 We are: Decentralised. Web 3.0. Open Source.
+                              </p>
+                              <!-- <button type="button" class="about__btn">
+                                 <span class="about__btn-text">More info</span>
+                                 <img class="about__btn-img" src="img/sprites/intermediate-svg/about-open.svg" alt="">
+                                 </button> -->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="about__background"></div>
+                  </div>
+               </div>
             </section>
             <section class="how" id="how">
-                <div class="container">
-                    <div class="how__wrap">
-
-                        <div class="how__wrap-content">
-                            <div class="how__left">
-                                <h2 class="how__title wow fadeInUp">How it works</h2>
-                                <ul class="how__main-list">
-                                    <li class="how__main-item wow fadeInUp">
-                                        <div class="how__main-img">
-                                            <img src="img/sprites/intermediate-svg/ERC20.svg" alt="erc20">
-                                        </div>
-                                        <div class="how__main-text">
-                                            CURATE is based on the ethereum blockchain utilizing the ERC&mdash;20 token
-                                            system
-                                            in
-                                            the form of our utlity token, the CUR8 token.
-                                        </div>
-                                    </li>
-                                    <li class="how__main-item wow fadeInUp">
-                                        <div class="how__main-img">
-                                            <img src="img/sprites/intermediate-svg/cloud-server.svg" alt="cloud-server">
-                                        </div>
-                                        <div class="how__main-text">
-                                            The CURATE platform being a DApp means it's decentralised and distributed
-                                            system
-                                            of service is run and hosted by numerous systems around the globe. </div>
-                                    </li>
-                                    <li class="how__main-item wow fadeInUp">
-                                        <div class="how__main-img">
-                                            <img src="img/sprites/intermediate-svg/lock.svg" alt="lock">
-                                        </div>
-                                        <div class="how__main-text">
-                                            All data in our platform is secured by cryptography. We are decentralised,
-                                            open
-                                            source and web 3.0.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="how__right">
-                                <div class="how__tooltip wow fadeInUp">
-                                    <img class="how__tooltip-img" src="img/sprites/intermediate-svg/curate-platform.svg"
-                                        alt="tooltip">
-                                </div>
-                                <ul class="how__platform-list">
-                                    <li class="how__platform-item wow fadeInUp">
-                                        <div class="how__platform-img">
-                                            <img src="img/sprites/intermediate-svg/upload.svg" alt="upload">
-                                        </div>
-                                        <div class="how__platform-text">
-                                            Content user (i.e brand or fashionista) uploads fashion content to Curate
-                                        </div>
-                                    </li>
-                                    <li class="how__platform-item wow fadeInUp">
-                                        <div class="how__platform-img">
-                                            <img src="img/sprites/intermediate-svg/like.svg" alt="like">
-                                        </div>
-                                        <div class="how__platform-text">
-                                            'Curator' community engages and upvotes fashion content
-                                        </div>
-                                    </li>
-                                    <li class="how__platform-item wow fadeInUp">
-                                        <div class="how__platform-img">
-                                            <img src="img/sprites/intermediate-svg/fire.svg" alt="fire">
-                                        </div>
-                                        <div class="how__platform-text">
-                                            Content gains popularity allowing 'discoverer' community to discover content
-                                        </div>
-                                    </li>
-                                    <li class="how__platform-item wow fadeInUp">
-                                        <div class="how__platform-img">
-                                            <img src="img/sprites/intermediate-svg/poker-piece.svg" alt="poker-piece">
-                                        </div>
-                                        <div class="how__platform-text">
-                                            Curate rewards both original content user, curator and discover users with
-                                            BTC,
-                                            ETH and CUR8 tokens
-                                        </div>
-                                    </li>
-                                    <li class="how__platform-item wow fadeInUp">
-                                        <div class="how__platform-img">
-                                            <img src="img/sprites/intermediate-svg/review.svg" alt="review">
-                                        </div>
-                                        <div class="how__platform-text">
-                                            CUR8 token holders can use the tokens to redeem discount codes, promo offers
-                                            and
-                                            more on Curate
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+               <div class="container">
+                  <div class="how__wrap">
+                     <div class="how__wrap-content">
+                        <div class="how__left">
+                           <h2 class="how__title wow fadeInUp lang" key="how">How it works</h2>
+                           <ul class="how__main-list">
+                              <li class="how__main-item wow fadeInUp">
+                                 <div class="how__main-img">
+                                    <img src="img/sprites/intermediate-svg/ERC20.svg" alt="erc20">
+                                 </div>
+                                 <div class="how__main-text lang" key="howtext">
+                                    CURATE is based on the ethereum blockchain utilizing the ERC&mdash;20 token
+                                    system
+                                    in
+                                    the form of our utlity token, the CUR8 token.
+                                 </div>
+                              </li>
+                              <li class="how__main-item wow fadeInUp">
+                                 <div class="how__main-img">
+                                    <img src="img/sprites/intermediate-svg/cloud-server.svg" alt="cloud-server">
+                                 </div>
+                                 <div class="how__main-text lang" key="howtexttwo">
+                                    The CURATE platform being a DApp means it's decentralised and distributed
+                                    system
+                                    of service is run and hosted by numerous systems around the globe. 
+                                 </div>
+                              </li>
+                              <li class="how__main-item wow fadeInUp">
+                                 <div class="how__main-img">
+                                    <img src="img/sprites/intermediate-svg/lock.svg" alt="lock">
+                                 </div>
+                                 <div class="how__main-text lang" key="howtextthree">
+                                    All data in our platform is secured by cryptography. We are decentralised,
+                                    open
+                                    source and web 3.0.
+                                 </div>
+                              </li>
+                           </ul>
                         </div>
-                    </div>
-                </div>
+                        <div class="how__right">
+                           <div class="how__tooltip wow fadeInUp">
+                              <img class="how__tooltip-img" src="img/sprites/intermediate-svg/curate-platform.svg"
+                                 alt="tooltip">
+                           </div>
+                           <ul class="how__platform-list">
+                              <li class="how__platform-item wow fadeInUp">
+                                 <div class="how__platform-img">
+                                    <img src="img/sprites/intermediate-svg/upload.svg" alt="upload">
+                                 </div>
+                                 <div class="how__platform-text lang" key="howrow">
+                                    Content user (i.e brand or fashionista) uploads fashion content to Curate
+                                 </div>
+                              </li>
+                              <li class="how__platform-item wow fadeInUp">
+                                 <div class="how__platform-img">
+                                    <img src="img/sprites/intermediate-svg/like.svg" alt="like">
+                                 </div>
+                                 <div class="how__platform-text lang" key="howrowtwo">
+                                    'Curator' community engages and upvotes fashion content
+                                 </div>
+                              </li>
+                              <li class="how__platform-item wow fadeInUp">
+                                 <div class="how__platform-img">
+                                    <img src="img/sprites/intermediate-svg/fire.svg" alt="fire">
+                                 </div>
+                                 <div class="how__platform-text lang" key="howrowthree">
+                                    Content gains popularity allowing 'discoverer' community to discover content
+                                 </div>
+                              </li>
+                              <li class="how__platform-item wow fadeInUp">
+                                 <div class="how__platform-img">
+                                    <img src="img/sprites/intermediate-svg/poker-piece.svg" alt="poker-piece">
+                                 </div>
+                                 <div class="how__platform-text lang" key="howrowfour">
+                                    Curate rewards both original content user, curator and discover users with
+                                    BTC,
+                                    ETH and CUR8 tokens
+                                 </div>
+                              </li>
+                              <li class="how__platform-item wow fadeInUp">
+                                 <div class="how__platform-img">
+                                    <img src="img/sprites/intermediate-svg/review.svg" alt="review">
+                                 </div>
+                                 <div class="how__platform-text lang" key="howrowfive">
+                                    CUR8 token holders can use the tokens to redeem discount codes, promo offers
+                                    and more on Curate
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </section>
-
-            <section class="roadmap">
-                <div class="container">
-                    <h2 class="roadmap__title wow fadeInUp">Curate Demo Preview</h2>
-                    <div class="roadmap__wrap">
-                        <ul id="lightSlider">
-                            <li>
-                                <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true"
-                                    muted="muted" playsinline="" disableremoteplayback="">
-                                    <source src="video2.mp4" type="video/mp4">
-                                    <!-- <source src="movie.ogg" type="video/ogg"> -->
-                                    Your browser does not support the video tag.
-                                </video>
-                            </li>
-                            <li>
-                                <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true"
-                                    muted="muted" playsinline="" disableremoteplayback="">
-                                    <source src="desktop.mp4" type="video/mp4">
-                                    <!-- <source src="movie.ogg" type="video/ogg"> -->
-                                    Your browser does not support the video tag.
-                                </video>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <section class="roadmap" id="roadmap">
-                    <div class="container">
-                        <h2 class="roadmap__title wow fadeInUp">Roadmap</h2>
-                        <div class="roadmap__wrap">
-                            <div class="roadmap__block roadmap__block--done wow fadeInRight">
-                                <div class="roadmap__block-title roadmap__block-title--done">
-                                    <h3>Q1</h3>
-                                    <div class="roadmap__block-year">2019</div>
-                                </div>
-                                <ul class="roadmap__list">
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>Concept created by founder, James Hakim</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>White paper first draft created</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>Busines plan first draft completed</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="roadmap__block roadmap__block--done wow fadeInRight" data-wow-delay="0.2s">
-                                <div class="roadmap__block-title roadmap__block-title--done">
-                                    <h3>Q2</h3>
-                                    <div class="roadmap__block-year">2019</div>
-                                </div>
-                                <ul class="roadmap__list">
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>Curate team members recruited</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>Website and social media/telegram group created</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>Demo preview of platform designed</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="roadmap__block roadmap__block--done wow fadeInRight" data-wow-delay="0.4s">
-                                <div class="roadmap__block-title roadmap__block-title--done">
-                                    <h3>Q3</h3>
-                                    <div class="roadmap__block-year">2019</div>
-                                </div>
-                                <ul class="roadmap__list">
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>PRE-IEO seed round complete</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>10,000+ telegram members active</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
-                                        <span>Approved for 1st IEO listing on P2PB2B.io</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="roadmap__block roadmap__block--now wow fadeInRight" data-wow-delay="0.6s">
-                                <div class="roadmap__block-title roadmap__block-title--now">
-                                    <h3>Q4</h3>
-                                    <div class="roadmap__block-year">2019</div>
-                                </div>
-                                <ul class="roadmap__list roadmap__list--now">
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-now.svg" alt="roadmap-done">
-                                        <span>1st IEO starts, aiming to raise $2.25M USD</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-now.svg" alt="roadmap-done">
-                                        <span>Development officially starts on Curate platform</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-now.svg" alt="roadmap-done">
-                                        <span>CUR8 token is listed on two exchanges, P2PB2B.io and WhiteBit.io and
-                                            begins
-                                            trading</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="roadmap__block roadmap__block--next wow fadeInRight" data-wow-delay="0.8s">
-                                <div class="roadmap__block-title roadmap__block-title--next">
-                                    <h3>Q1</h3>
-                                    <div class="roadmap__block-year">2020</div>
-                                </div>
-                                <ul class="roadmap__list roadmap__list--now">
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>2nd IEO starts on two top CoinMarketCap approved exchanges</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>Private-alpha launch of Curate platform open to telegram members</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>CUR8 token listed on two more top exchanges, volume of trading
-                                            increase</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="roadmap__block roadmap__block--next wow fadeInRight" data-wow-delay="1s">
-                                <div class="roadmap__block-title roadmap__block-title--next">
-                                    <h3>Q2</h3>
-                                    <div class="roadmap__block-year">2020</div>
-                                </div>
-                                <ul class="roadmap__list roadmap__list--now">
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>3rd IEO starts on a DEX</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>Public-beta version launched available to new members</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>Curate reaches 10,000 active monthly users using the platform and
-                                            app</span>
-                                    </li>
-                                    <li class="roadmap__item">
-                                        <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
-                                        <span>Start of application development</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="our-team" id="our-team">
-                    <div class="container">
-                        <div class="our-team__wrap">
-                            <h2 class="our-team__title wow fadeInUp">
-                                Our Team
-                            </h2>
-                            <div class="our-team__slider-wrap swiper-container wow fadeInUp">
-                                <div class="our-team__slider swiper-wrapper">
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-alexey.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Alexey Ivanov</h5>
-                                        <h6 class="our-team__slider-undertitle">Chief Design Officer</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/alexey-ivanov-39bb5161"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-joe.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Joe Adams</h5>
-                                        <h6 class="our-team__slider-undertitle">Senior Administrator</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/joe-adams-0728b818a"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-james.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">James Hakim</h5>
-                                        <h6 class="our-team__slider-undertitle">Chief Executive Officer &amp; Founder
-                                        </h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/james-hakim-22a12830"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                            <a href="https://twitter.com/JVHakim" class="our-team__slider-social-link"
-                                                target="_blank">
-                                                <img src="img/sprites/intermediate-svg/twitter.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-bret.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Bret Faller</h5>
-                                        <h6 class="our-team__slider-undertitle">Blockchain Engineer</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/bret-faller-b441738/"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-amrit.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Amrit Mirchandani</h5>
-                                        <h6 class="our-team__slider-undertitle">Marketing Advisor</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/amrit-mirchandani-093b76105"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-amal.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Amal Prasad</h5>
-                                        <h6 class="our-team__slider-undertitle">Chief Sales Officer and HR</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/amal-prasad-a78835163"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-aleks.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Aleksandar Vujic</h5>
-                                        <h6 class="our-team__slider-undertitle">Chief Community Manager</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/aleksandar-vujic-4a167a168"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-calina.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Andrei Călina</h5>
-                                        <h6 class="our-team__slider-undertitle">Content Manager</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/andrei-c%C4%83lina-b0640159"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-boulevard.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Boulevard A.</h5>
-                                        <h6 class="our-team__slider-undertitle">Certified Blockchain Lawyer</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/boulevard-a-aladetoyinbo-a864a9123"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-emmanuel.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Emmanuel Adams</h5>
-                                        <h6 class="our-team__slider-undertitle">Head of Public Relations</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/emmanuel-adams-27891354"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-davies.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Jonathan Davies</h5>
-                                        <h6 class="our-team__slider-undertitle">Head of Innovation</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://twitter.com/crypto40k" class="our-team__slider-social-link"
-                                                target="_blank">
-                                                <img src="img/sprites/intermediate-svg/twitter.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-bojan.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Bojan Lacic</h5>
-                                        <h6 class="our-team__slider-undertitle">Social Media Manager</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/bojan-lacic-689b2995"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-dmitrije.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Dimitrije Cevizovic</h5>
-                                        <h6 class="our-team__slider-undertitle">Social and Digital Manager</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/dimitrije-cevizovic-532934175"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-carrim.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Mohammed Carrim Ganey</h5>
-                                        <h6 class="our-team__slider-undertitle">Operations Manager</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/mohamedrezacarrim"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-kalla.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Aslam Kalla</h5>
-                                        <h6 class="our-team__slider-undertitle">Chief Business Officer</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/aslam-kalla-49076113"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="our-team__slider-block swiper-slide">
-                                        <div class="our-team__slider-avatar">
-                                            <img src="img/main/team-pranav.jpg" alt="Team-Avatar"
-                                                class="our-team__avatar-img">
-                                        </div>
-                                        <h5 class="our-team__slider-title">Pranav Arya</h5>
-                                        <h6 class="our-team__slider-undertitle">Chief Marketing Officer</h6>
-                                        <div class="our-team__slider-social">
-                                            <a href="https://www.linkedin.com/in/pranavarya1"
-                                                class="our-team__slider-social-link" target="_blank">
-                                                <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="our-team__slider-control">
-                                    <div class="our-team__slider-btn our-team__slider-btn--left">
-                                        <img src="img/sprites/intermediate-svg/leftt-arrow.svg" alt="">
-                                    </div>
-                                    <div class="our-team__slider-btn our-team__slider-btn--right">
-                                        <img src="img/sprites/intermediate-svg/leftt-arrow.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="partners" id="partners">
-                    <div class="container">
-                        <div class="our-team__wrap">
-                            <h2 class="our-team__title wow fadeInUp">Retail Applicants</h2>
-                            <div class="flexan">
-                                <div class="partner1 wow fadeInUp"><img src="img/main/amazon.svg"></div>
-                                <div class="partner1 wow fadeInUp"><img src="img/main/lv.svg"></div>
-                                <div class="partner1 wow fadeInUp"><img src="img/main/prada.svg"></div>
-                                <div class="partner1 wow fadeInUp"><img src="img/main/gucci.svg"></div>
-                                <div class="partner1 wow fadeInUp"><img src="img/main/zara.svg"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="ex-partners" id="partners">
-                    <div class="container">
-                        <div class="our-team__wrap">
-                            <h2 class="our-team__title wow fadeInUp">Exchange Partners</h2>
-                            <div class="flexan">
-                                <div class="partner2 wow fadeInUp"><img src="img/main/p2pb2b.svg"></div>
-                                <div class="partner2 wow fadeInUp"><img src="img/main/whitebit.svg"></div>
-                                <div class="partner2 wow fadeInUp wow fadeInUp"><img src="img/main/airswap.svg"></div>
-                                <div class="partner2 wow fadeInUp"><img src="img/main/exmarkets.svg"></div>
-                                <div class="partner2 wow fadeInUp"><img src="img/main/coinexchange.svg"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="news" id="news">
-                    <div class="container center-text">
-                        <div class="news-wrapper">
-                            <div class="flexan column-wrap">
-                                <img src="img/sprites/intermediate-svg/main-logo.svg" alt="logo" class="main-logo__img">
-                                <img src="img/main/XCircle.svg" class="x-icon-news">
-                                <img src="img/main/p2pb2b.svg">
-                            </div>
-                            <div class="news-quote">
-                                <p>
-                                    <q>"</q>
-                                    Curate is now <span class="news-highlight">confirmed to be listed on P2PB2B</span>
-                                    trading platform.
-                                    P2PB2B is one of the top 20 exchanges in the world with a daily trading volume of
-                                    <span class="news-highlight">$418 million - a real powerhouse.</span>
-                                    <q>"</q>
-                                </p>
-                            </div>
-                            <div class="founder">
-                                <img src="img/main/james.png" />
-                                <p>James Hakim<br>
-                                    <span>CEO Curate</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="graph" id="graph">
-                    <div class="container">
-                        <div class="graph__wrap">
-                            <div class="graph__left">
-                                <h2 class="graph__title wow fadeInUp">Token distribution</h2>
-                                <div class="graph__content">
-                                    <div class="graph__chart-wrap">
-                                        <div class="graph__chart">
-                                            <img src="img/main/chart1.svg" alt="chart1">
-                                        </div>
-                                    </div>
-                                    <div class="graph__list-wrap">
-                                        <ul class="graph__list">
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">25%</div>
-                                                <div class="graph__item-color ieo1"></div>
-                                                <div class="graph__item-label">IEO Phase 1</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">20%</div>
-                                                <div class="graph__item-color ieo2"></div>
-                                                <div class="graph__item-label">IEO Phase 2</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">15%</div>
-                                                <div class="graph__item-color ieo3"></div>
-                                                <div class="graph__item-label">IEO Phase 3</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">30%</div>
-                                                <div class="graph__item-color team"></div>
-                                                <div class="graph__item-label">Team</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">3%</div>
-                                                <div class="graph__item-color partner"></div>
-                                                <div class="graph__item-label">Partnerships</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">3%</div>
-                                                <div class="graph__item-color bounti"></div>
-                                                <div class="graph__item-label">Bounties</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">4%</div>
-                                                <div class="graph__item-color community"></div>
-                                                <div class="graph__item-label">Community events</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="graph__right">
-                                <h2 class="graph__title wow fadeInUp">Funds allocation</h2>
-                                <div class="graph__content">
-                                    <div class="graph__chart-wrap">
-                                        <div class="graph__chart">
-                                            <img src="img/main/chart2.svg" alt="chart1">
-                                        </div>
-                                    </div>
-                                    <div class="graph__list-wrap">
-                                        <ul class="graph__list">
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">40%</div>
-                                                <div class="graph__item-color dev"></div>
-                                                <div class="graph__item-label">Development</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">20%</div>
-                                                <div class="graph__item-color market"></div>
-                                                <div class="graph__item-label">Marketing</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">10%</div>
-                                                <div class="graph__item-color legal"></div>
-                                                <div class="graph__item-label">Legal</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">20%</div>
-                                                <div class="graph__item-color overhead"></div>
-                                                <div class="graph__item-label">Bounty &amp; Overhead</div>
-                                            </li>
-                                            <li class="graph__item wow fadeInUp">
-                                                <div class="graph__item-percent">10%</div>
-                                                <div class="graph__item-color reserve"></div>
-                                                <div class="graph__item-label">Banking &amp; Reserve</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="benefits" id="benefits">
-                    <div class="container">
-                        <div class="benefits__wrap">
-                            <div class="benefits__block">
-                                <div class="benefits__icon wow fadeInUp">
-                                    <img src="img/main/benefits/budget.svg" alt="Revenue Model">
-                                </div>
-                                <h2 class="benefits__block-title wow fadeInUp">Revenue Model</h2>
-                                <ul class="benefits__list">
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">1</div>
-                                        <div class="benefits__item-text">Curate Pro membership for our retailers,
-                                            <span>charging $149/year</span> giving retailers more features such as
-                                            <span>featured listings, verified badge, ability to offer CUR8 tokens to
-                                                users</span> </div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">2</div>
-                                        <div class="benefits__item-text">Amazon associates affiliate, <span>we earn up
-                                                to 10% on commission sales</span></div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">3</div>
-                                        <div class="benefits__item-text">Selling CUR8 tokens on the website, which can
-                                            be used to redeem coupons, free shipping and cashback <span>at participating
-                                                retailers</span> </div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">4</div>
-                                        <div class="benefits__item-text">We will have our Curate Loyalty App which gives
-                                            consumers and all in one app to use CUR8 tokens as points <span>to redeem
-                                                money off both at retailers both physical shops and online shops</span>
-                                        </div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">5</div>
-                                        <div class="benefits__item-text">That payments will be accepted in BTC, ETH and
-                                            USD and <span>we'll also have our own advertising platform</span> built in
-                                            allowing advertisers to advertise on the website/app in the form of native
-                                            in&mdash;line ads</div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">6</div>
-                                        <div class="benefits__item-text">We will earn open up the platform to other
-                                            categories of retail and not justify fashion to increase our partnerships,
-                                            in which case <span>we'll be taking a comission for every successful
-                                                purchase through Curate.</span> </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="benefits__block">
-                                <div class="benefits__icon wow fadeInUp">
-                                    <img src="img/main/benefits/flash.png" alt="Retailer benefits">
-                                </div>
-                                <h2 class="benefits__block-title wow fadeInUp">Retailer benefits</h2>
-                                <ul class="benefits__list">
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">1</div>
-                                        <div class="benefits__item-text">Raised <span>brand awareness</span> </div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">2</div>
-                                        <div class="benefits__item-text"><span>Increased traffic</span> to merchant
-                                            sites and goal conversions</div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">3</div>
-                                        <div class="benefits__item-text">Clothing ranges and seasonal wears <span>listed
-                                                on the largest open/transparent platform</span> leveraging blockchain
-                                            technology.</div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">4</div>
-                                        <div class="benefits__item-text"><span>Access to 50,000 users</span> upon launch
-                                            for curated feedback on their fashion range.</div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">5</div>
-                                        <div class="benefits__item-text">On-site analytics and tracking pixel leading to
-                                            <span>increased sales through optimization.</span> </div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">6</div>
-                                        <div class="benefits__item-text"><span>Prevent fraud transactions </span>and
-                                            chargebacks as users will be verified <span>via KYC</span> to ensure
-                                            authenticity.</div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">7</div>
-                                        <div class="benefits__item-text"><span>Zero commission</span> will be taken from
-                                            Curate for all successful leads giving retailers bigger profits and
-                                            customers better prices.</div>
-                                    </li>
-                                    <li class="benefits__item wow fadeInUp">
-                                        <div class="benefits__item-icon">8</div>
-                                        <div class="benefits__item-text"><span>QR barcodes supplied to all partnered
-                                                clothing brands</span> to verify authenticity throughout the supply
-                                            chain preventing fake merchandise.</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="audit" id="audit">
-                    <div class="container center-text audit-container wow fadeInUp">
-                        <div class="audit-left">
-                            <img class="audit-logo" src="./img/main/lex-futurus-coin.png">
-                            <p>Curate including CUR8 tokens are represented by international law firm & consultancy Lex
-                                Futurus Group.</p>
-                        </div>
-                        <div class="audit-right">
-                            <div class="audit-privacy">
-                                <a target="_blank" href="/privacypolicy" class="audit-privacy-link">Privacy Policy</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-        </main>
-        <!--FOOTER-->
-        <footer class="footer" id="footer">
+            <section class="roadmap" id="demo">
             <div class="container">
-                <div class="footer__wrap wow fadeInUp">
-                    <div class="footer__left">
-                        <div class="footer__logo">
-                            <img src="img/sprites/intermediate-svg/footer-logo.svg" alt="" class="footer__logo-img">
-                            <div class="footer__logo-copy">
-                                &copy;2019
-                            </div>
-                        </div>
-                        <div class="footer__nav">
-                            <ul class="footer__nav-list">
-                                <li class="footer__nav-item"><a href="#about" class="footer__nav-link goTo">About</a>
-                                </li>
-                                <li class="footer__nav-item"><a href="#roadmap"
-                                        class="footer__nav-link goTo">Roadmap</a>
-                                </li>
-                                <li class="footer__nav-item"><a target="_blank" href="whitepaper.pdf"
-                                        class="footer__nav-link">WHITEPAPER</a></li>
-                            </ul>
-                            <ul class="footer__nav-list">
-                                <li class="footer__nav-item"><a href="#how" class="footer__nav-link goTo">How it
-                                        works</a>
-                                </li>
-                                <li class="footer__nav-item"><a href="#our-team" class="footer__nav-link goTo">Our
-                                        team</a>
-                                </li>
-                                <li class="footer__nav-item">
-                                    <z class="footer__nav-link">hi@curate.style</z>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer__right">
-                        <div class="footer__social">
-                            <a href="https://t.me/curate" class="footer__social-link" target="_blank">
-                                <img src="img/sprites/intermediate-svg/telegram.svg" alt="" class="footer__social-icon">
-                            </a>
-                            <a href="https://www.instagram.com/curateproject" class="footer__social-link"
-                                target="_blank">
-                                <img src="img/sprites/intermediate-svg/instagram.svg" alt=""
-                                    class="footer__social-icon">
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCVq646oBKp6CTFUSIHsfKAw"
-                                class="footer__social-link" target="_blank">
-                                <img src="img/sprites/intermediate-svg/youtube.svg" alt="" class="footer__social-icon">
-                            </a>
-                            <a href="https://twitter.com/curateproject" class="footer__social-link" target="_blank">
-                                <img src="img/sprites/intermediate-svg/twitter-footer.svg" alt=""
-                                    class="footer__social-icon">
-                            </a>
-                            <a href="http://linkedin.com/company/curateproject" class="footer__social-link"
-                                target="_blank">
-                                <img src="img/sprites/intermediate-svg/linkedin-footer.svg" alt=""
-                                    class="footer__social-icon">
-                            </a>
-                            <a href="https://reddit.com/r/curatestyle" class="footer__social-link" target="_blank">
-                                <img src="img/sprites/intermediate-svg/reddit.svg" alt="" class="footer__social-icon">
-                            </a>
-                            <a href="https://github.com/curate-project" class="footer__social-link" target="_blank">
-                                <img src="img/sprites/intermediate-svg/github.svg" alt="" class="footer__social-icon">
-                            </a>
-                        </div>
-                        <div class="footer__totop">
-                            <a href="#header" class="goTo footer__totop-btn">
-                                <span>TO TOP</span>
-                                <img src="img/sprites/intermediate-svg/totop.svg" alt="totop">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+               <h2 class="roadmap__title wow fadeInUp lang" key="demoheader">Curate Demo Preview</h2>
+               <div class="roadmap__wrap">
+                  <ul id="lightSlider">
+                     <li>
+                        <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true"
+                           muted="muted" playsinline="" disableremoteplayback="">
+                           <source src="video2.mp4" type="video/mp4">
+                           <!-- <source src="movie.ogg" type="video/ogg"> -->
+                           Your browser does not support the video tag.
+                        </video>
+                     </li>
+                     <li>
+                        <video class="animation wow fadeInUp" preload="auto" autoplay="true" loop="true"
+                           muted="muted" playsinline="" disableremoteplayback="">
+                           <source src="desktop.mp4" type="video/mp4">
+                           <!-- <source src="movie.ogg" type="video/ogg"> -->
+                           Your browser does not support the video tag.
+                        </video>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </footer>
-
-        <!--SVG SPRITE-->
-        <div class="d-none">
+            <section class="roadmap" id="roadmap">
+               <div class="container">
+                  <h2 class="roadmap__title wow fadeInUp lang" key="roadmap">Roadmap</h2>
+                  <div class="roadmap__wrap">
+                     <div class="roadmap__block roadmap__block--done wow fadeInRight">
+                        <div class="roadmap__block-title roadmap__block-title--done">
+                           <h3>Q1</h3>
+                           <div class="roadmap__block-year">2019</div>
+                        </div>
+                        <ul class="roadmap__list">
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qone">Concept created by founder, James Hakim</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qonetwo">White paper first draft created</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qonethree">Busines plan first draft completed</span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="roadmap__block roadmap__block--done wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="roadmap__block-title roadmap__block-title--done">
+                           <h3>Q2</h3>
+                           <div class="roadmap__block-year">2019</div>
+                        </div>
+                        <ul class="roadmap__list">
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qtwo">Curate team members recruited</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qtwotwo">Website and social media/telegram group created</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qtwothree">Demo preview of platform designed</span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="roadmap__block roadmap__block--done wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="roadmap__block-title roadmap__block-title--done">
+                           <h3>Q3</h3>
+                           <div class="roadmap__block-year">2019</div>
+                        </div>
+                        <ul class="roadmap__list">
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qthree">PRE-IEO seed round complete</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qthreetwo">10,000+ telegram members active</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-done.svg" alt="roadmap-done">
+                              <span class="lang" key="qthreethree">Approved for 1st IEO listing on P2PB2B.io</span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="roadmap__block roadmap__block--now wow fadeInRight" data-wow-delay="0.6s">
+                        <div class="roadmap__block-title roadmap__block-title--now">
+                           <h3>Q4</h3>
+                           <div class="roadmap__block-year">2019</div>
+                        </div>
+                        <ul class="roadmap__list roadmap__list--now">
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-now.svg" alt="roadmap-done">
+                              <span class="lang" key="qfour">1st IEO starts, aiming to raise $2.25M USD</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-now.svg" alt="roadmap-done">
+                              <span class="lang" key="qfourtwo">Development officially starts on Curate platform</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-now.svg" alt="roadmap-done">
+                              <span class="lang" key="qfourthree">CUR8 token is listed on two exchanges, P2PB2B.io and WhiteBit.io and begins trading</span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="roadmap__block roadmap__block--next wow fadeInRight" data-wow-delay="0.8s">
+                        <div class="roadmap__block-title roadmap__block-title--next">
+                           <h3>Q1</h3>
+                           <div class="roadmap__block-year">2020</div>
+                        </div>
+                        <ul class="roadmap__list roadmap__list--now">
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqone">2nd IEO starts on two top CoinMarketCap approved exchanges</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqonetwo">Private-alpha launch of Curate platform open to telegram members</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqonethree">CUR8 token listed on two more top exchanges, volume of trading
+                              increase</span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="roadmap__block roadmap__block--next wow fadeInRight" data-wow-delay="1s">
+                        <div class="roadmap__block-title roadmap__block-title--next">
+                           <h3>Q2</h3>
+                           <div class="roadmap__block-year">2020</div>
+                        </div>
+                        <ul class="roadmap__list roadmap__list--now">
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqtwo">3rd IEO starts on a DEX</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqtwotwo">Public-beta version launched available to new members</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqtwothree">Curate reaches 10,000 active monthly users using the platform and app</span>
+                           </li>
+                           <li class="roadmap__item">
+                              <img src="img/sprites/intermediate-svg/roadmap-next.svg" alt="roadmap-done">
+                              <span class="lang" key="twentyqtwofour">Start of application development</span>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="our-team" id="our-team">
+               <div class="container">
+                  <div class="our-team__wrap">
+                     <h2 class="our-team__title wow fadeInUp lang" key="ourteam">
+                        Our Team
+                     </h2>
+                     <div class="our-team__slider-wrap swiper-container wow fadeInUp">
+                        <div class="our-team__slider swiper-wrapper">
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-alexey.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Alexey Ivanov</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="design">Chief Design Officer</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/alexey-ivanov-39bb5161"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-joe.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Joe Adams</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="senioradm">Senior Administrator</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/joe-adams-0728b818a"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-james.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">James Hakim</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="ceo">Chief Executive Officer &amp; Founder
+                              </h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/james-hakim-22a12830"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                                 <a href="https://twitter.com/JVHakim" class="our-team__slider-social-link"
+                                    target="_blank">
+                                 <img src="img/sprites/intermediate-svg/twitter.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-bret.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Bret Faller</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="blockchaindev">Blockchain Engineer</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/bret-faller-b441738/"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-amrit.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Amrit Mirchandani</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="marketingadv">Marketing Advisor</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/amrit-mirchandani-093b76105"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-amal.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Amal Prasad</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="salesofficer">Chief Sales Officer and HR</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/amal-prasad-a78835163"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-aleks.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Aleksandar Vujic</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="commmanager">Chief Community Manager</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/aleksandar-vujic-4a167a168"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-calina.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Andrei Calina</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="contmanager">Content Manager</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/andrei-c%C4%83lina-b0640159"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-boulevard.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Boulevard A.</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="lawyer">Certified Blockchain Lawyer</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/boulevard-a-aladetoyinbo-a864a9123"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-emmanuel.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Emmanuel Adams</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="pubrelat">Head of Public Relations</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/emmanuel-adams-27891354"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-davies.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Jonathan Davies</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="innovations">Head of Innovation</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://twitter.com/crypto40k" class="our-team__slider-social-link"
+                                    target="_blank">
+                                 <img src="img/sprites/intermediate-svg/twitter.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-bojan.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Bojan Lacic</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="smm">Social Media Manager</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/bojan-lacic-689b2995"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-dmitrije.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Dimitrije Cevizovic</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="digitalmanager">Social and Digital Manager</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/dimitrije-cevizovic-532934175"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-carrim.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Mohammed Carrim Ganey</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="operationsman">Operations Manager</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/mohamedrezacarrim"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-kalla.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Aslam Kalla</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="businessofficer">Chief Business Officer</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/aslam-kalla-49076113"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="our-team__slider-block swiper-slide">
+                              <div class="our-team__slider-avatar">
+                                 <img src="img/main/team-pranav.jpg" alt="Team-Avatar"
+                                    class="our-team__avatar-img">
+                              </div>
+                              <h5 class="our-team__slider-title">Pranav Arya</h5>
+                              <h6 class="our-team__slider-undertitle lang" key="marketingofficer">Chief Marketing Officer</h6>
+                              <div class="our-team__slider-social">
+                                 <a href="https://www.linkedin.com/in/pranavarya1"
+                                    class="our-team__slider-social-link" target="_blank">
+                                 <img src="img/sprites/intermediate-svg/linkedin.svg" alt="">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="our-team__slider-control">
+                           <div class="our-team__slider-btn our-team__slider-btn--left">
+                              <img src="img/sprites/intermediate-svg/leftt-arrow.svg" alt="">
+                           </div>
+                           <div class="our-team__slider-btn our-team__slider-btn--right">
+                              <img src="img/sprites/intermediate-svg/leftt-arrow.svg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="partners" id="partners">
+               <div class="container">
+                  <div class="our-team__wrap">
+                     <h2 class="our-team__title wow fadeInUp lang" key="retail">Retail Applicants</h2>
+                     <div class="flexan">
+                        <div class="partner1 wow fadeInUp"><img src="img/main/amazon.svg"></div>
+                        <div class="partner1 wow fadeInUp"><img src="img/main/lv.svg"></div>
+                        <div class="partner1 wow fadeInUp"><img src="img/main/prada.svg"></div>
+                        <div class="partner1 wow fadeInUp"><img src="img/main/gucci.svg"></div>
+                        <div class="partner1 wow fadeInUp"><img src="img/main/zara.svg"></div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="ex-partners" id="partners">
+               <div class="container">
+                  <div class="our-team__wrap">
+                     <h2 class="our-team__title wow fadeInUp lang" key="exchange">Exchange Partners</h2>
+                     <div class="flexan">
+                        <div class="partner2 wow fadeInUp"><img src="img/main/p2pb2b.svg"></div>
+                        <div class="partner2 wow fadeInUp"><img src="img/main/whitebit.svg"></div>
+                        <div class="partner2 wow fadeInUp wow fadeInUp"><img src="img/main/airswap.svg"></div>
+                        <div class="partner2 wow fadeInUp"><img src="img/main/exmarkets.svg"></div>
+                        <div class="partner2 wow fadeInUp"><img src="img/main/coinexchange.svg"></div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="news" id="news">
+               <div class="container center-text">
+                  <div class="news-wrapper">
+                     <div class="flexan column-wrap">
+                        <img src="img/sprites/intermediate-svg/main-logo.svg" alt="logo" class="main-logo__img">
+                        <img src="img/main/XCircle.svg" class="x-icon-news">
+                        <img src="img/main/p2pb2b.svg">
+                     </div>
+                     <div class="news-quote">
+                        <p class="lang" key="p2pannounce">
+                           <q>"</q>
+                           <fran class="lang" key="p2pannounce">
+                              Curate is now <span class="news-highlight">confirmed to be listed on P2PB2B</span>
+                              trading platform.
+                              P2PB2B is one of the top 20 exchanges in the world with a daily trading volume of
+                           </fran>
+                           <span class="news-highlight lang" key="p2pbold">$418 million - a real powerhouse.</span>
+                           <q>"</q>
+                        </p>
+                     </div>
+                     <div class="founder">
+                        <img src="img/main/james.png" />
+                        <p>James Hakim<br>
+                           <span class="lang" key="ceocurate">CEO Curate</span>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="graph" id="graph">
+               <div class="container">
+                  <div class="graph__wrap">
+                     <div class="graph__left">
+                        <h2 class="graph__title wow fadeInUp lang" key="distribution">Token distribution</h2>
+                        <div class="graph__content">
+                           <div class="graph__chart-wrap">
+                              <div class="graph__chart">
+                                 <img src="img/main/chart1.svg" alt="chart1">
+                              </div>
+                           </div>
+                           <div class="graph__list-wrap">
+                              <ul class="graph__list">
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">25%</div>
+                                    <div class="graph__item-color ieo1"></div>
+                                    <div class="graph__item-label lang" key="ieophaseone">IEO Phase 1</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">20%</div>
+                                    <div class="graph__item-color ieo2"></div>
+                                    <div class="graph__item-label lang" key="ieophasetwo">IEO Phase 2</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">15%</div>
+                                    <div class="graph__item-color ieo3"></div>
+                                    <div class="graph__item-label lang" key="ieophasethree">IEO Phase 3</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">30%</div>
+                                    <div class="graph__item-color team"></div>
+                                    <div class="graph__item-label lang" key="ieoteam">Team</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">3%</div>
+                                    <div class="graph__item-color partner"></div>
+                                    <div class="graph__item-label lang" key="ieopartner">Partnerships</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">3%</div>
+                                    <div class="graph__item-color bounti"></div>
+                                    <div class="graph__item-label lang" key="bounties">Bounties</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">4%</div>
+                                    <div class="graph__item-color community"></div>
+                                    <div class="graph__item-label lang" key="commevents">Community events</div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="graph__right">
+                        <h2 class="graph__title wow fadeInUp lang" key="fundsalloc">Funds allocation</h2>
+                        <div class="graph__content">
+                           <div class="graph__chart-wrap">
+                              <div class="graph__chart">
+                                 <img src="img/main/chart2.svg" alt="chart1">
+                              </div>
+                           </div>
+                           <div class="graph__list-wrap">
+                              <ul class="graph__list">
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">40%</div>
+                                    <div class="graph__item-color dev"></div>
+                                    <div class="graph__item-label lang" key="development">Development</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">20%</div>
+                                    <div class="graph__item-color market"></div>
+                                    <div class="graph__item-label lang" key="marteting">Marketing</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">10%</div>
+                                    <div class="graph__item-color legal"></div>
+                                    <div class="graph__item-label lang" key="legal">Legal</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">20%</div>
+                                    <div class="graph__item-color overhead"></div>
+                                    <div class="graph__item-label lang" key="bounty">Bounty &amp; Overhead</div>
+                                 </li>
+                                 <li class="graph__item wow fadeInUp">
+                                    <div class="graph__item-percent">10%</div>
+                                    <div class="graph__item-color reserve"></div>
+                                    <div class="graph__item-label lang" key="banking">Banking &amp; Reserve</div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="benefits" id="benefits">
+               <div class="container">
+                  <div class="benefits__wrap">
+                     <div class="benefits__block">
+                        <div class="benefits__icon wow fadeInUp">
+                           <img src="img/main/benefits/budget.svg" alt="Revenue Model">
+                        </div>
+                        <h2 class="benefits__block-title wow fadeInUp lang" key="revenue">Revenue Model</h2>
+                        <ul class="benefits__list">
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">1</div>
+                              <div class="benefits__item-text lang" key="revenueone">Curate, the original fashion discovery platform, will steadily grow the value of the platform and $CUR8 tokens by increasing demand and use cases by <span>adding new participating retailers, extending niches outside fashion retail via 'Curate +' and by providing enough liquidity.</span></div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">2</div>
+                              <div class="benefits__item-text lang" key="revenuetwo">Curate Pro membership for retailers, initial fee $149/year offering retailers enhanced membership <span>including featured listings, verified badge status, more engagement activities such as rewarding users directly with CUR8 tokens.</span> Free to those who opt-in for the affiliate programme i.e amazon associates affiliate, <span>earning curate up to 10% on sales.</span></div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">3</div>
+                              <div class="benefits__item-text lang" key="revenuethree">Curate Ads, <span>our in-built native advertising platform offered to advertisers and agencies</span>, allows custom targeting and ad placements to our users who have opted-in yielding a high ROI and RPM.</div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">4</div>
+                              <div class="benefits__item-text lang" key="revenuefour">Curate +, our native browser extension <span>allows users to earn free BTC and CUR8 as cashback when they shop online through a commission deal.</span> Using our existing partnerships from the curate platform, the Curate + extension extends to all niches outside fashion <span>increasing market adoption of Curate and $CUR8 tokens.</span>
+                                 </span>
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">5</div>
+                              <div class="benefits__item-text lang" key="revenuefive">$CUR8 tokens offered for sale on the platform, which <span>can be used to redeem coupons, get free shipping and get cash back</span> at participating retailers on the platform, as well as level up user accounts for more features.</div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="benefits__block">
+                        <div class="benefits__icon wow fadeInUp">
+                           <img src="img/main/benefits/flash.png" alt="Retailer benefits">
+                        </div>
+                        <h2 class="benefits__block-title wow fadeInUp lang" key="retailer">Retailer benefits</h2>
+                        <ul class="benefits__list">
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">1</div>
+                              <div class="benefits__item-text lang" key="retailerone">Raised <span>brand awareness</span> </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">2</div>
+                              <div class="benefits__item-text lang" key="retailertwo"><span>Increased traffic</span> to merchant
+                                 sites and goal conversions
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">3</div>
+                              <div class="benefits__item-text lang" key="retailerthree">Clothing ranges and seasonal wears <span>listed
+                                 on the largest open/transparent platform</span> leveraging blockchain
+                                 technology.
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">4</div>
+                              <div class="benefits__item-text lang" key="retailerfour"><span>Access to 50,000 users</span> upon launch
+                                 for curated feedback on their fashion range.
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">5</div>
+                              <div class="benefits__item-text lang" key="retailerfive">On-site analytics and tracking pixel leading to
+                                 <span>increased sales through optimization.</span> 
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">6</div>
+                              <div class="benefits__item-text lang" key="retailersix"><span>Prevent fraud transactions </span>and
+                                 chargebacks as users will be verified <span>via KYC</span> to ensure
+                                 authenticity.
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">7</div>
+                              <div class="benefits__item-text lang" key="retailerseven"><span>Zero commission</span> will be taken from
+                                 Curate for all successful leads giving retailers bigger profits and
+                                 customers better prices.
+                              </div>
+                           </li>
+                           <li class="benefits__item wow fadeInUp">
+                              <div class="benefits__item-icon">8</div>
+                              <div class="benefits__item-text lang" key="retailereight"><span>QR barcodes supplied to all partnered
+                                 clothing brands</span> to verify authenticity throughout the supply
+                                 chain preventing fake merchandise.
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="audit" id="audit">
+               <div class="container center-text audit-container wow fadeInUp">
+                  <div class="audit-left">
+                     <img class="audit-logo" src="./img/main/lex-futurus-coin.png">
+                     <p class="lang" key="lexfuturis">Curate including CUR8 tokens are represented by international law firm & consultancy Lex
+                        Futurus Group.
+                     </p>
+                  </div>
+                  <div class="audit-right">
+                     <div class="audit-privacy">
+                        <a target="_blank" href="/privacypolicy" class="audit-privacy-link lang" key="policy">Privacy Policy</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+         <!--FOOTER-->
+         <footer class="footer" id="footer">
+            <div class="container">
+               <div class="footer__wrap wow fadeInUp">
+                  <div class="footer__left">
+                     <div class="footer__logo">
+                        <img src="img/sprites/intermediate-svg/footer-logo.svg" alt="" class="footer__logo-img">
+                        <div class="footer__logo-copy">
+                           &copy;2019
+                        </div>
+                     </div>
+                     <div class="footer__nav">
+                        <ul class="footer__nav-list">
+                           <li class="footer__nav-item"><a href="#about" class="footer__nav-link goTo lang" key="about">About</a>
+                           </li>
+                           <li class="footer__nav-item"><a href="#roadmap"
+                              class="footer__nav-link goTo lang" key="roadmap">Roadmap</a>
+                           </li>
+                           <li class="footer__nav-item"><a target="_blank" href="whitepaper.pdf"
+                              class="footer__nav-link">WHITEPAPER</a></li>
+                        </ul>
+                        <ul class="footer__nav-list">
+                           <li class="footer__nav-item"><a href="#how" class="footer__nav-link goTo lang" key="howitwrks">How it
+                              works</a>
+                           </li>
+                           <li class="footer__nav-item"><a href="#our-team" class="footer__nav-link goTo lang" key="ourteam">Our
+                              team</a>
+                           </li>
+                           <li class="footer__nav-item">
+                              <z class="footer__nav-link">hi@curate.style</z>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="footer__right">
+                     <div class="footer__social">
+                        <a href="https://t.me/curate" class="footer__social-link" target="_blank">
+                        <img src="img/sprites/intermediate-svg/telegram.svg" alt="" class="footer__social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/curateproject" class="footer__social-link"
+                           target="_blank">
+                        <img src="img/sprites/intermediate-svg/instagram.svg" alt=""
+                           class="footer__social-icon">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCVq646oBKp6CTFUSIHsfKAw"
+                           class="footer__social-link" target="_blank">
+                        <img src="img/sprites/intermediate-svg/youtube.svg" alt="" class="footer__social-icon">
+                        </a>
+                        <a href="https://twitter.com/curateproject" class="footer__social-link" target="_blank">
+                        <img src="img/sprites/intermediate-svg/twitter-footer.svg" alt=""
+                           class="footer__social-icon">
+                        </a>
+                        <a href="http://linkedin.com/company/curateproject" class="footer__social-link"
+                           target="_blank">
+                        <img src="img/sprites/intermediate-svg/linkedin-footer.svg" alt=""
+                           class="footer__social-icon">
+                        </a>
+                        <a href="https://reddit.com/r/curatestyle" class="footer__social-link" target="_blank">
+                        <img src="img/sprites/intermediate-svg/reddit.svg" alt="" class="footer__social-icon">
+                        </a>
+                        <a href="https://github.com/curate-project" class="footer__social-link" target="_blank">
+                        <img src="img/sprites/intermediate-svg/github.svg" alt="" class="footer__social-icon">
+                        </a>
+                     </div>
+                     <div class="footer__totop">
+                        <a href="#header" class="goTo footer__totop-btn">
+                        <span class="lang" key="totop">TO TOP</span>
+                        <img src="img/sprites/intermediate-svg/totop.svg" alt="totop">
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!--SVG SPRITE-->
+         <div class="d-none">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <symbol viewBox="0 0 14 14" id="icon-alert" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.5 7a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 3h-1v5h1V3zm0 7h-1v1h1v-1z"></path>
-                </symbol>
-                <symbol viewBox="0 0 6 10" id="icon-angle-def" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M.293 1.354L1 .646 5.354 5 1 9.354l-.707-.708L3.939 5 .293 1.354z"></path>
-                </symbol>
-                <symbol viewBox="0 0 6 3" id="icon-angle-down" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h6L3 3 0 0z"></path>
-                </symbol>
-                <symbol viewBox="0 0 6 3" id="icon-angle-top" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3h6L3 0 0 3z"></path>
-                </symbol>
-                <symbol viewBox="0 0 17 16" id="icon-recycle" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M8 16a8 8 0 1 1 7.418-11h-2.22a6 6 0 1 0 .72 4h2.02A8.001 8.001 0 0 1 8 16z"></path>
-                    <path d="M11 5h4V1"></path>
-                </symbol>
-                <symbol viewBox="0 0 20 18" id="icon-rocket" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M14.667 10.999C18.829 7.465 19.766 4.394 20 .045c-4.163-.244-7.18.408-10.979 4.349C7.252 4.177 5.431 4.72 4 6.052l2.367 2.772C5.223 9.912 5.12 11.787 6.16 13.01a2.82 2.82 0 0 0 2.238.979 2.686 2.686 0 0 0 1.769-.761L12.533 16c1.431-1.305 2.134-3.153 2.134-5.001zm1.17-7.04c.677.816.625 2.039-.156 2.773a1.963 1.963 0 0 1-1.17.489c-.573.027-1.093-.218-1.483-.653-.677-.815-.625-2.038.156-2.772a1.84 1.84 0 0 1 1.17-.49c.573-.026 1.093.218 1.483.653z">
-                    </path>
-                    <path
-                        d="M0 18l.137-.437c.027-.11.791-2.705 1.774-3.716.546-.546 1.202-.847 1.802-.847.383 0 .683.11.929.355.628.629.41 1.83-.492 2.732-1.065 1.066-3.604 1.75-3.713 1.804L0 18z">
-                    </path>
-                </symbol>
-                <symbol viewBox="0 0 16 17" id="icon-star" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd"
-                        d="M8 13.667L3.333 16l.968-5.02L1 7.444l4.714-.812L8 2l2.286 4.632L15 7.444l-3.301 3.535.968 5.021L8 13.667z">
-                    </path>
-                </symbol>
-                <symbol viewBox="0 0 18 18" id="icon-trash" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3z"></path>
-                    <path d="M5 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1H5V1zM0 2h18v2H0zm6 4h2v8H6zm4 0h2v8h-2z"></path>
-                </symbol>
+               <symbol viewBox="0 0 14 14" id="icon-alert" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5 7a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 3h-1v5h1V3zm0 7h-1v1h1v-1z"></path>
+               </symbol>
+               <symbol viewBox="0 0 6 10" id="icon-angle-def" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M.293 1.354L1 .646 5.354 5 1 9.354l-.707-.708L3.939 5 .293 1.354z"></path>
+               </symbol>
+               <symbol viewBox="0 0 6 3" id="icon-angle-down" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h6L3 3 0 0z"></path>
+               </symbol>
+               <symbol viewBox="0 0 6 3" id="icon-angle-top" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3h6L3 0 0 3z"></path>
+               </symbol>
+               <symbol viewBox="0 0 17 16" id="icon-recycle" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M8 16a8 8 0 1 1 7.418-11h-2.22a6 6 0 1 0 .72 4h2.02A8.001 8.001 0 0 1 8 16z"></path>
+                  <path d="M11 5h4V1"></path>
+               </symbol>
+               <symbol viewBox="0 0 20 18" id="icon-rocket" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M14.667 10.999C18.829 7.465 19.766 4.394 20 .045c-4.163-.244-7.18.408-10.979 4.349C7.252 4.177 5.431 4.72 4 6.052l2.367 2.772C5.223 9.912 5.12 11.787 6.16 13.01a2.82 2.82 0 0 0 2.238.979 2.686 2.686 0 0 0 1.769-.761L12.533 16c1.431-1.305 2.134-3.153 2.134-5.001zm1.17-7.04c.677.816.625 2.039-.156 2.773a1.963 1.963 0 0 1-1.17.489c-.573.027-1.093-.218-1.483-.653-.677-.815-.625-2.038.156-2.772a1.84 1.84 0 0 1 1.17-.49c.573-.026 1.093.218 1.483.653z">
+                  </path>
+                  <path
+                     d="M0 18l.137-.437c.027-.11.791-2.705 1.774-3.716.546-.546 1.202-.847 1.802-.847.383 0 .683.11.929.355.628.629.41 1.83-.492 2.732-1.065 1.066-3.604 1.75-3.713 1.804L0 18z">
+                  </path>
+               </symbol>
+               <symbol viewBox="0 0 16 17" id="icon-star" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd"
+                     d="M8 13.667L3.333 16l.968-5.02L1 7.444l4.714-.812L8 2l2.286 4.632L15 7.444l-3.301 3.535.968 5.021L8 13.667z">
+                  </path>
+               </symbol>
+               <symbol viewBox="0 0 18 18" id="icon-trash" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3z"></path>
+                  <path d="M5 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1H5V1zM0 2h18v2H0zm6 4h2v8H6zm4 0h2v8h-2z"></path>
+               </symbol>
             </svg>
-        </div>
-    </main>
-    <!--SCRIPTS-->
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-
-
-    <script src="js/wow.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-
-
-
-    <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
-    <link rel="stylesheet" href="plugins/lightslider/lightslider.css">
-
-    <link rel="stylesheet" href="styles/animation.css">
-    <link rel="stylesheet" href="styles/animate.css">
-
-    <link rel="stylesheet" href="styles/transitions.css">
-    <script src="js/transitions.js"></script>
-
-</body>
+         </div>
+      </main>
+      <!--SCRIPTS-->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+      <script src="js/wow.js"></script>
+      <script>
+         new WOW().init();
+      </script>
+      <link rel="stylesheet" href="plugins/goalProgress/goalProgress.css">
+      <link rel="stylesheet" href="plugins/lightslider/lightslider.css">
+      <link rel="stylesheet" href="styles/animation.css">
+      <link rel="stylesheet" href="styles/animate.css">
+      <link rel="stylesheet" href="styles/transitions.css">
+      <script src="js/transitions.js"></script>
+   </body>
