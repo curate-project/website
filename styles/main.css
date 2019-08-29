@@ -2539,10 +2539,10 @@ div.menu li.animate:nth-of-type(6) {
     padding-top: 0px;
     margin-bottom: 100px;
     overflow-x: hidden;
-    background-image: url("/img/main/news-bg.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:top center;
+    background-image: url("../img/main/dots.png"),url("../img/main/dotsr.png");
+    background-repeat: no-repeat,no-repeat;
+    background-size: 531px 248px,531px 248px;
+    background-position:top left,top right;
 }
 
 .news-wrapper {
@@ -3127,6 +3127,7 @@ input:-webkit-autofill {
 
 @media only screen and (max-width: 767px) {
 
+
     /*.as-featured-section > div > a > img {
         height: 20px;
     }
@@ -3282,6 +3283,16 @@ input:-webkit-autofill {
         padding-top: 80px;
         padding-bottom: 100px;
     }
+
+    .news {
+    padding-top: 0px;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+    background-image: url("../img/main/dots.png");
+    background-repeat: no-repeat;
+    background-size: 531px 248px;
+    background-position:top center;
+}
 }
 
 /* Was 575 */
