@@ -112,7 +112,10 @@ var arrLang = {
         "lexfuturis": "Curate including CUR8 tokens are represented by international law firm & consultancy Lex Futurus Group.",
         "policy": "Privacy Policy",
         "howitwrks": "How it works",
-        "totop": "TO TOP"
+        "totop": "TO TOP",
+        "ambassador": "Ambassador",
+        "usecasehdr": "CUR8 Use Cases",
+        "usecasetext": "CUR8 tokens serve as a multi-use utility token offering users a wide<br>number of use cases on both the Curate DApp and outside the Curate ecosystem.<br><br>– Purchase items on the Curate platform using CUR8 tokens<br>– Unlock special discounts on items such as 10% off coupons<br>– Redeem free shipping when shopping on the platform<br>– Upgrade account to Curate Pro to unlock more features<br>– Social karma tipping for retailers to offer bounties to users for reviews or perform certain activities i.e like their content<br>– Use as a monetary currency for payments outside of the Curate ecosystem with our partners.<br>– Plus many more to be added as we go live"
       },
       "ru": {
         "ds": "Дней",
@@ -227,7 +230,10 @@ var arrLang = {
         "lexfuturis": "Curate, включая токены CUR8, представлены международной юридической фирмой и консалтинговой компанией Lex Futurus Group.",
         "policy": "Политика конфиденциальности",
         "howitwrks": "Как это работает",
-        "totop": "НАВЕРХ"
+        "totop": "НАВЕРХ",
+        "ambassador": "Амбассадор",
+        "usecasehdr": "Как использовать CUR8",
+        "usecasetext": "Токены CUR8 служат универсальным служебным токеном, предлагающим пользователям широкий спектр вариантов использования как в Curate DApp, так и вне экосистемы Curate. <br> <br> - Покупка вещей на платформе Curate с использованием токенов CUR8 <br > - Доступ к специальным скидкам – например, скидка 10% на купоны <br> - Погасить бесплатную доставку при совершении покупок на платформе <br> - Обновить аккаунт до Curate Pro, чтобы разблокировать дополнительные функции <br> - Социальная карма для чаевых ритейлеров, предлагающих щедрые бонусы пользователям за обзоры или выполнения определенных действий, например просмотр контента. - Использование в качестве денежной валюты для платежей за пределами экосистемы Curate с нашими партнерами. <br> - Плюс еще многое, что будет добавлено по мере запуска"
       },
       "cn": {
         "ds": "Days",
@@ -342,7 +348,10 @@ var arrLang = {
         "lexfuturis": "Curate including CUR8 tokens are represented by international law firm & consultancy Lex Futurus Group.",
         "policy": "Privacy Policy",
         "howitwrks": "How it works",
-        "totop": "TO TOP"
+        "totop": "TO TOP",
+        "ambassador": "Ambassador",
+        "usecasehdr": "CUR8 Use Cases",
+        "usecasetext": "CUR8 tokens serve as a multi-use utility token offering users a wide<br>number of use cases on both the Curate DApp and outside the Curate ecosystem.<br><br>– Purchase items on the Curate platform using CUR8 tokens<br>– Unlock special discounts on items such as 10% off coupons<br>– Redeem free shipping when shopping on the platform<br>– Upgrade account to Curate Pro to unlock more features<br>– Social karma tipping for retailers to offer bounties to users for reviews or perform certain activities i.e like their content<br>– Use as a monetary currency for payments outside of the Curate ecosystem with our partners.<br>– Plus many more to be added as we go live"
       },
       "kr": {
         "ds": "Days",
@@ -457,6 +466,9 @@ var arrLang = {
         "lexfuturis": "Curate including CUR8 tokens are represented by international law firm & consultancy Lex Futurus Group.",
         "policy": "Privacy Policy",
         "howitwrks": "How it works",
-        "totop": "TO TOP"
+        "totop": "TO TOP",
+        "ambassador": "Ambassador",
+        "usecasehdr": "CUR8 Use Cases",
+        "usecasetext": "CUR8 tokens serve as a multi-use utility token offering users a wide<br>number of use cases on both the Curate DApp and outside the Curate ecosystem.<br><br>– Purchase items on the Curate platform using CUR8 tokens<br>– Unlock special discounts on items such as 10% off coupons<br>– Redeem free shipping when shopping on the platform<br>– Upgrade account to Curate Pro to unlock more features<br>– Social karma tipping for retailers to offer bounties to users for reviews or perform certain activities i.e like their content<br>– Use as a monetary currency for payments outside of the Curate ecosystem with our partners.<br>– Plus many more to be added as we go live"
       }
     };
