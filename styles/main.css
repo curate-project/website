@@ -1260,7 +1260,8 @@ div.menu li.animate:nth-of-type(6) {
     margin-top:85px;
 }
 .how .about__text-wrap {
-    width: 700px;
+    padding:0 20px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
