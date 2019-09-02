@@ -1222,7 +1222,7 @@ div.menu li.animate:nth-of-type(6) {
 
 .about__info-wrap {
     width: 100%;
-    max-width: 330px;
+    max-width: 404px;
     padding-bottom: 36px;
     margin-top: 1%;
 }
@@ -1469,6 +1469,9 @@ div.menu li.animate:nth-of-type(6) {
          }
          .languages__popup a:last-child {
             border-radius: 0 0 4px 4px;
+         }
+         .languages a.vi:before {
+         background: url(../img/vi.svg) 0 0 no-repeat;
          }
          .languages a.ru:before {
          background: url(../img/ru.svg) 0 0 no-repeat;
