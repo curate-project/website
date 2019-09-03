@@ -23,6 +23,9 @@ $(document).ready(function() {
         case 'cn':
             langtext = "China";
             break;
+        case 'vi':
+        langtext = "Vietnamese";
+            break;
         default:
             langtext = "English";
     };
@@ -32,6 +35,8 @@ $(document).ready(function() {
     });
     $("#curlang").removeClass();
     $("#curlang").toggleClass(langdef);
+    $("#curlang2").removeClass();
+    $("#curlang2").toggleClass(langdef);
     $("#curlang").text(langtext);
 
 });
@@ -65,6 +70,9 @@ $(function() {
             case 'cn':
                 langtext = "China";
                 break;
+            case 'vi':
+                langtext = "Vietnamese";
+                break;
             default:
                 langtext = "English";
         };
@@ -72,8 +80,8 @@ $(function() {
         $("#curlang").removeClass();
         $("#curlang").toggleClass(lang);
         $("#curlang").text(langtext);
-
-
+        $("#curlang2").removeClass();
+        $("#curlang2").toggleClass(lang);
         $('.languages__popup').removeClass('active');
         $('.languages__overlay').removeClass('active');
         $('body').removeClass('noscroll');
