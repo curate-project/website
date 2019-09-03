@@ -38,13 +38,11 @@ $(document).ready(function() {
     $("#curlang2").removeClass();
     $("#curlang2").toggleClass(langdef);
     $("#curlang").text(langtext);
-
 });
 // Process translation
 $(function() {
     $('.languages__body a').on('click', function(e) {
         e.preventDefault();
-        $('body').toggleClass('noscroll');
         $('.languages__popup').toggleClass('active');
         $('.languages__overlay').toggleClass('active');
     });
@@ -52,7 +50,6 @@ $(function() {
         e.preventDefault();
         $('.languages__popup').removeClass('active');
         $('.languages__overlay').removeClass('active');
-        $('body').removeClass('noscroll');
     });
     $('.translate').click(function() {
         var lang = $(this).attr('id');
