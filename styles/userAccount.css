@@ -1,3 +1,7 @@
+.container {
+    margin-right: 300px !important;
+}
+
 .form__input input {
     height: auto !important;
 }
@@ -60,6 +64,49 @@
     margin-right: 10px;
 }
 
+.twitter-panel {
+    background: #0e0b12;
+    border-radius: 16px;
+    height: 375px !important;
+    width: 100%;
+    margin-top: 16px;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+iframe {
+    -ms-zoom: 0.75;
+    -moz-transform: scale(0.75);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+    margin-left: 12.5%;
+}
+
+.twitter-panel::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.twitter-panel::-webkit-scrollbar-track {
+    background: rgba(64, 73, 80, 20%);
+    border-radius: 0px 16px 16px 0px;
+}
+
+/* Handle */
+.twitter-panel::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 0px 4px 4px 0px;
+}
+
+/* Handle on hover */
+.twitter-panel::-webkit-scrollbar-thumb:hover {
+    background: #ffd788;
+}
+
 @media only screen and (max-width: 767px) {
     .form__section .container {
         padding-top: 20px !important;
@@ -102,7 +149,7 @@
     .user-nav__item {
         width: 150px;
     }
-    
+
     .user-account-header > li {
         margin-right: auto !important;
     }
