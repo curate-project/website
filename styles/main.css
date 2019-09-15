@@ -591,6 +591,11 @@ h4 {
 }
 
 .white {
+    color: #ffffff;
+}
+
+
+.header .white {
     width: 30px;
     height: 30px;
     border-radius: 6px;
@@ -598,13 +603,14 @@ h4 {
     background: rgba(255,255,255,0.1);
     color: #ffffff;
 }
-.white img {
+.header .white img {
         margin: 7px auto;
     width: 16px;
     height: 16px;
     display: block;
 
 }
+
 .overflow {
     overflow: hidden;
 }
