@@ -15,116 +15,116 @@ window.onload = function() {
     //   $('html').removeClass('overflow');
     // }, 1337); // SLIDER
 
-    const ieo = [
-        //IEO Round 1
-        {
-            start: moment('20190809', 'YYYYMMDD').toDate(),
-            end: moment('20190827', 'YYYYMMDD').toDate(),
-            price: 0.1,
-            discount: 0.25,
-            fundingGoal: 750000
-        },
-        //IEO Round 2
-        {
-            start: moment('20190916', 'YYYYMMDD').toDate(),
-            end: moment('20191015', 'YYYYMMDD').toDate(),
-            price: 0.12,
-            discount: 0.25,
-            fundingGoal: 720000
-        },
-        //IEO Round 3
-        {
-            start: moment('20191025', 'YYYYMMDD').toDate(),
-            end: moment('20191124', 'YYYYMMDD').toDate(),
-            price: 0.15,
-            discount: 0.25,
-            fundingGoal: 787500
-        },
-    ];
+    // const ieo = [
+    //     //IEO Round 1
+    //     {
+    //         start: moment('20190809', 'YYYYMMDD').toDate(),
+    //         end: moment('20190827', 'YYYYMMDD').toDate(),
+    //         price: 0.1,
+    //         discount: 0.25,
+    //         fundingGoal: 750000
+    //     },
+    //     //IEO Round 2
+    //     {
+    //         start: moment('20190916', 'YYYYMMDD').toDate(),
+    //         end: moment('20191015', 'YYYYMMDD').toDate(),
+    //         price: 0.12,
+    //         discount: 0.25,
+    //         fundingGoal: 720000
+    //     },
+    //     //IEO Round 3
+    //     {
+    //         start: moment('20191025', 'YYYYMMDD').toDate(),
+    //         end: moment('20191124', 'YYYYMMDD').toDate(),
+    //         price: 0.15,
+    //         discount: 0.25,
+    //         fundingGoal: 787500
+    //     },
+    // ];
 
-    function getCurrentIEOPhase() {
-        let phase = undefined;
-        const today = new Date(Date.now());
+    // function getCurrentIEOPhase() {
+    //     let phase = undefined;
+    //     const today = new Date(Date.now());
 
-        if (today >= ieo[0].start && today <= ieo[0].end) {
-            phase = ieo[0];
-        } else if (today >= ieo[1].start && today <= ieo[1].end) {
-            phase = ieo[1];
-        } else if (today >= ieo[2].start && today <= ieo[2].end) {
-            phase = ieo[2];
-        }
+    //     if (today >= ieo[0].start && today <= ieo[0].end) {
+    //         phase = ieo[0];
+    //     } else if (today >= ieo[1].start && today <= ieo[1].end) {
+    //         phase = ieo[1];
+    //     } else if (today >= ieo[2].start && today <= ieo[2].end) {
+    //         phase = ieo[2];
+    //     }
 
-        return phase;
-    }
+    //     return phase;
+    // }
 
-    function setupCountdown() {
-        let label = 'ieo starts in';
-        let countdown = undefined;
-        const today = new Date(Date.now());
+    // function setupCountdown() {
+    //     let label = 'ieo starts in';
+    //     let countdown = undefined;
+    //     const today = new Date(Date.now());
 
-        if (today < ieo[0].start) {
-            label = '<span key=ieostart>ieo starts in</span>';
-            countdown = ieo[0].start;
-        } else if (today >= ieo[0].start && today <= ieo[0].end) {
-            label = '<span key=ieoend>ieo ends</span>';
-            countdown = ieo[0].end;
-        } else if (today > ieo[0].end && today < ieo[1].start) {
-            label = '<span key=ieo2start>ieo 2 starts</span>';
-            countdown = ieo[1].start;
-        } else if (today >= ieo[1].start && today <= ieo[1].end) {
-            label = '<span key=ieo2end>ieo 2 ends</span>';
-            countdown = ieo[1].end;
-        } else if (today > ieo[1].end && today < ieo[2].start) {
-            label = '<span key=ieo3start>ieo 3 starts</span>';
-            countdown = ieo[2].start;
-        } else if (today >= ieo[2].start && today <= ieo[2].end) {
-            label = '<span key=ieo3end>ieo 3 ends</span>';
-            countdown = ieo[2].end;
-        } else {
-            $("countdown-container").remove();
-            return;
-        }
+    //     if (today < ieo[0].start) {
+    //         label = '<span key=ieostart>ieo starts in</span>';
+    //         countdown = ieo[0].start;
+    //     } else if (today >= ieo[0].start && today <= ieo[0].end) {
+    //         label = '<span key=ieoend>ieo ends</span>';
+    //         countdown = ieo[0].end;
+    //     } else if (today > ieo[0].end && today < ieo[1].start) {
+    //         label = '<span key=ieo2start>ieo 2 starts</span>';
+    //         countdown = ieo[1].start;
+    //     } else if (today >= ieo[1].start && today <= ieo[1].end) {
+    //         label = '<span key=ieo2end>ieo 2 ends</span>';
+    //         countdown = ieo[1].end;
+    //     } else if (today > ieo[1].end && today < ieo[2].start) {
+    //         label = '<span key=ieo3start>ieo 3 starts</span>';
+    //         countdown = ieo[2].start;
+    //     } else if (today >= ieo[2].start && today <= ieo[2].end) {
+    //         label = '<span key=ieo3end>ieo 3 ends</span>';
+    //         countdown = ieo[2].end;
+    //     } else {
+    //         $("countdown-container").remove();
+    //         return;
+    //     }
 
-        $("#countdown-label").html(label);
+    //     $("#countdown-label").html(label);
 
-        $("#countdown").countdown(countdown, function(event) {
-            if (new Date(event.timeStamp) > Date.parse(event.finalDate)) {
-                setupCountdown();
-            }
+    //     $("#countdown").countdown(countdown, function(event) {
+    //         if (new Date(event.timeStamp) > Date.parse(event.finalDate)) {
+    //             setupCountdown();
+    //         }
 
-            $(this).html(
-                event.strftime(
-                    '<div class="timer-wrapper"><div class="time">%D</div><span class="text" key="ds">Days</span></div><div class="timer-wrapper"><div class="time">%H</div><span class="text" key="hs">hours</span></div><div class="timer-wrapper"><div class="time">%M</div><span class="text" key="ms">min</span></div><div class="timer-wrapper"><div class="time">%S</div><span class="text" key="ss">sec</span></div>'
-                )
-            );
-        });
-    }
+    //         $(this).html(
+    //             event.strftime(
+    //                 '<div class="timer-wrapper"><div class="time">%D</div><span class="text" key="ds">Days</span></div><div class="timer-wrapper"><div class="time">%H</div><span class="text" key="hs">hours</span></div><div class="timer-wrapper"><div class="time">%M</div><span class="text" key="ms">min</span></div><div class="timer-wrapper"><div class="time">%S</div><span class="text" key="ss">sec</span></div>'
+    //             )
+    //         );
+    //     });
+    // }
 
-    setupCountdown();
+    // setupCountdown();
 
-    let fundsRaisedTimer = undefined;
+    // let fundsRaisedTimer = undefined;
 
-    function setupFundsRaised() {
-        const phase = getCurrentIEOPhase();
+    // function setupFundsRaised() {
+    //     const phase = getCurrentIEOPhase();
 
-        if (!phase) {
-            $('#funds-container').remove();
-            return;
-        }
+    //     if (!phase) {
+    //         $('#funds-container').remove();
+    //         return;
+    //     }
 
-        $('#fundsRaised').goalProgress({
-            goalAmount: 2250000,
-            currentAmount: 0,
-            textBefore: '$',
-            textAfter: ' raised'
-        });
+    //     $('#fundsRaised').goalProgress({
+    //         goalAmount: 2250000,
+    //         currentAmount: 0,
+    //         textBefore: '$',
+    //         textAfter: ' raised'
+    //     });
 
-        $('#countdown-container').addClass('countdown-combined');
-    }
+    //     $('#countdown-container').addClass('countdown-combined');
+    // }
 
-    // TODO: Disabling funds raised until manually added back
-    // setupFundsRaised();
-    $('#funds-container').remove();
+    // // TODO: Disabling funds raised until manually added back
+    // // setupFundsRaised();
+    // $('#funds-container').remove();
 
     $(document).ready(function() {
         $('#lightSlider').lightSlider({
