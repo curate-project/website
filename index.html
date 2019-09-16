@@ -15,6 +15,15 @@
       <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
       <link rel="dns-prefetch" href="//cdn.airswap.io">
 
+      <link rel="preload" href="img/main/lady.svg" as="image">
+      <link rel="preload" href="img/main/header/ICOmarks.svg" as="image">
+      <link rel="preload" href="img/main/header/icobench.svg" as="image">
+      <link rel="preload" href="img/main/header/p2pb2b.svg" as="image">
+      <link rel="preload" href="img/main/header/airswap.svg" as="image">
+      <link rel="preload" href="img/sprites/intermediate-svg/profile.svg" as="image">
+      <link rel="preload" href="img/sprites/intermediate-svg/writing.svg" as="image">
+
+
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="author" content="">
@@ -105,6 +114,7 @@
       <!-- End Facebook Pixel Code -->
    </head>
    <body>
+      <div class="bobby">
       <div class="languages__overlay"></div>
       <!-- COOKIE PANEL -->
       <div id="cookie" class="cookie">
@@ -256,9 +266,9 @@
             </div>
 
             <div class="countdown-container" id="countdown-container">
-            <p id="countdown-label" class="lang" key="ieo">IEO ENDS</p>
+            <p id="countdown-label" class="lang" key="ieoend">IEO ENDS</p>
             <div class="timer" id="countdown">
-            <div class="timer-wrapper"><div class="time">00</div><span class="text" key=x>days</span></div><div class="timer-wrapper"><div class="time">00</div><span class="text">hours</span></div><div class="timer-wrapper"><div class="time">00</div><span class="text" key="ms">min</span></div><div class="timer-wrapper"><div class="time">00</div><span class="text" key="ss">sec</span></div>
+            <div class="timer-wrapper"><div class="time" id="days">00</div><span class="text" key=x>days</span></div><div class="timer-wrapper"><div class="time" id="hours">00</div><span class="text">hours</span></div><div class="timer-wrapper"><div class="time" id="minutes">00</div><span class="text" key="ms">min</span></div><div class="timer-wrapper"><div class="time" id="seconds">00</div><span class="text" key="ss">sec</span></div>
             </div>
             </div>
             <div class="funds-container" id="funds-container">
@@ -268,10 +278,10 @@
             </div>
             </div>
             <div class="intro__btn-wrap">
-            <!-- <a href="https://p2pb2b.io/token-sale/CUR8/1" class="intro__btn btn btn--p2p" target="_blank">
+            <a href="https://p2pb2b.io/token-sale/CUR8/2" id="p2p" class="intro__btn btn btn--p2p" target="_blank">
                <img src="img/main/header/p2pb2b.svg" class="btn__icon" alt="icon p2pb2b">
                <span class="lang" key="p2p">BUY ON P2PB2B (KYC)</span>
-               </a> -->
+               </a>
             <a id="airswap" class="intro__btn btn btn--airswap">
             <img src="img/main/header/airswap.svg" class="btn__icon" alt="icon airswap">
             <span class="lang" key="airswap">BUY CUR8 (NO KYC/FEES)</span>
@@ -340,8 +350,13 @@
                   <div class="about__wrap">
                      <div class="about__wrap-content">
                         <div class="about__img-wrap wow fadeInUp">
-                           <img src="img/main/iphonex.webp"
-                              alt="iphonex">
+                           
+
+                              <picture>
+                                     <source type="image/webp" srcset="img/main/iphonex.webp">
+                                     <source type="image/png" srcset="img/main/iphonex.png">
+                                     <img src="img/main/iphonex.png" alt="iphonex">
+                              </picture>
                         </div>
                         <div class="about__info-wrap">
                            <div class="about__title-wrap">
@@ -492,8 +507,7 @@
                   <div class="usecase__text-wrap">
                         <p class="usecase__text">
                            <span class="lang" key="usecasetext">
-                           CUR8 tokens serve as a multi-use utility token offering users a wide<br>
-                           number of use cases on both the Curate DApp and outside the Curate ecosystem.<br><br>
+                           CUR8 tokens serve as a multi-use utility token offering users a wide number of use cases on both the Curate DApp and outside the Curate ecosystem.<br><br>
                            </span>
                            <div class="usecases">
                               <div class="usecase">
@@ -694,8 +708,12 @@
                      <div class="devs">
                         <div class="developer">
                            <div class="our-team__slider-avatar">
-                              <img src="img/main/team-james.webp" alt="Team-Avatar"
+                              <picture>
+                                     <source type="image/webp" srcset="img/main/team-james.webp">
+                                     <source type="image/png" srcset="img/main/team-james.png">
+                                     <img src="img/main/team-james.png" alt="Team-Avatar"
                                  class="our-team__avatar-img">
+                              </picture>
                            </div>
                            <h5 class="our-team__slider-title">James Hakim</h5>
                            <h6 class="our-team__slider-undertitle lang" key="ceo">Chief Executive Officer &amp; Founder</h6>
@@ -712,8 +730,12 @@
                         </div>
                         <div class="developer">
                            <div class="our-team__slider-avatar">
-                              <img src="img/main/team-bret.webp" alt="Team-Avatar"
+                              <picture>
+                                     <source type="image/webp" srcset="img/main/team-bret.webp">
+                                     <source type="image/png" srcset="img/main/team-bret.png">
+                                     <img src="img/main/team-bret.png" alt="Team-Avatar"
                                  class="our-team__avatar-img">
+                              </picture>
                            </div>
                            <h5 class="our-team__slider-title">Bret Faller</h5>
                            <h6 class="our-team__slider-undertitle lang" key="blockchaindev">Blockchain Engineer</h6>
@@ -726,8 +748,12 @@
                         </div>
                         <div class="developer">
                            <div class="our-team__slider-avatar">
-                              <img src="img/main/team-alexey.webp" alt="Team-Avatar"
+                              <picture>
+                                     <source type="image/webp" srcset="img/main/team-alexey.webp">
+                                     <source type="image/png" srcset="img/main/team-alexey.png">
+                                     <img src="img/main/team-alexey.png" alt="Team-Avatar"
                                  class="our-team__avatar-img">
+                              </picture>
                            </div>
                            <h5 class="our-team__slider-title">Alexey Ivanov</h5>
                            <h6 class="our-team__slider-undertitle lang" key="design">Chief Design Officer</h6>
@@ -740,8 +766,12 @@
                         </div>
                         <div class="developer">
                            <div class="our-team__slider-avatar">
-                              <img src="img/main/team-davies.webp" alt="Team-Avatar"
+                              <picture>
+                                     <source type="image/webp" srcset="img/main/team-davies.webp">
+                                     <source type="image/png" srcset="img/main/team-davies.png">
+                                     <img src="img/main/team-davies.png" alt="Team-Avatar"
                                  class="our-team__avatar-img">
+                              </picture>
                            </div>
                            <h5 class="our-team__slider-title">Jonathan Davies</h5>
                            <h6 class="our-team__slider-undertitle lang" key="innovations">Head of Innovation</h6>
@@ -760,8 +790,12 @@
                         <div class="our-team__slider swiper-wrapper">
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-joe.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-joe.webp">
+                                     <source type="image/png" srcset="img/main/team-joe.png">
+                                     <img src="img/main/team-joe.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Joe Adams</h5>
                               <h6 class="our-team__slider-undertitle lang" key="senioradm">Senior Administrator</h6>
@@ -774,8 +808,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-laurianna.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-laurianna.webp">
+                                     <source type="image/png" srcset="img/main/team-laurianna.png">
+                                     <img src="img/main/team-laurianna.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Laurianna Blackwell</h5>
                               <h6 class="our-team__slider-undertitle lang" key="ambassador">Ambassador</h6>
@@ -792,8 +830,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-amrit.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-amrit.webp">
+                                     <source type="image/png" srcset="img/main/team-amrit.png">
+                                     <img src="img/main/team-amrit.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Amrit Mirchandani</h5>
                               <h6 class="our-team__slider-undertitle lang" key="marketingadv">Marketing Advisor</h6>
@@ -806,8 +848,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-amal.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-amal.webp">
+                                     <source type="image/png" srcset="img/main/team-amal.png">
+                                     <img src="img/main/team-amal.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Amal Prasad</h5>
                               <h6 class="our-team__slider-undertitle lang" key="salesofficer">Chief Sales Officer and HR</h6>
@@ -820,8 +866,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-aleks.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-aleks.webp">
+                                     <source type="image/png" srcset="img/main/team-aleks.png">
+                                     <img src="img/main/team-aleks.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Aleksandar Vujic</h5>
                               <h6 class="our-team__slider-undertitle lang" key="commmanager">Chief Community Manager</h6>
@@ -834,8 +884,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-calina.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-calina.webp">
+                                     <source type="image/png" srcset="img/main/team-calina.png">
+                                     <img src="img/main/team-calina.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Andrei Calina</h5>
                               <h6 class="our-team__slider-undertitle lang" key="contmanager">Content Manager</h6>
@@ -848,8 +902,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-boulevard.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-boulevard.webp">
+                                     <source type="image/png" srcset="img/main/team-boulevard.png">
+                                     <img src="img/main/team-boulevard.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Boulevard A.</h5>
                               <h6 class="our-team__slider-undertitle lang" key="lawyer">Certified Blockchain Lawyer</h6>
@@ -862,8 +920,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-emmanuel.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-emmanuel.webp">
+                                     <source type="image/png" srcset="img/main/team-emmanuel.png">
+                                     <img src="img/main/team-emmanuel.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Emmanuel Adams</h5>
                               <h6 class="our-team__slider-undertitle lang" key="pubrelat">Head of Public Relations</h6>
@@ -876,8 +938,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-bojan.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-bojan.webp">
+                                     <source type="image/png" srcset="img/main/team-bojan.png">
+                                     <img src="img/main/team-bojan.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Bojan Lacic</h5>
                               <h6 class="our-team__slider-undertitle lang" key="smm">Social Media Manager</h6>
@@ -890,8 +956,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-dmitrije.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-dmitrije.webp">
+                                     <source type="image/png" srcset="img/main/team-dmitrije.png">
+                                     <img src="img/main/team-dmitrije.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Dimitrije Cevizovic</h5>
                               <h6 class="our-team__slider-undertitle lang" key="digitalmanager">Social and Digital Manager</h6>
@@ -904,8 +974,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-carrim.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-carrim.webp">
+                                     <source type="image/png" srcset="img/main/team-carrim.png">
+                                     <img src="img/main/team-carrim.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Carrim Ganey</h5>
                               <h6 class="our-team__slider-undertitle lang" key="operationsman">Operations Manager</h6>
@@ -918,8 +992,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-kalla.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-kalla.webp">
+                                     <source type="image/png" srcset="img/main/team-kalla.png">
+                                     <img src="img/main/team-kalla.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Aslam Kalla</h5>
                               <h6 class="our-team__slider-undertitle lang" key="businessofficer">Chief Business Officer</h6>
@@ -932,8 +1010,12 @@
                            </div>
                            <div class="our-team__slider-block swiper-slide">
                               <div class="our-team__slider-avatar">
-                                 <img src="img/main/team-pranav.webp" alt="Team-Avatar"
-                                    class="our-team__avatar-img">
+                                 <picture>
+                                     <source type="image/webp" srcset="img/main/team-pranav.webp">
+                                     <source type="image/png" srcset="img/main/team-pranav.png">
+                                     <img src="img/main/team-pranav.png" alt="Team-Avatar"
+                                 class="our-team__avatar-img">
+                              </picture>
                               </div>
                               <h5 class="our-team__slider-title">Pranav Arya</h5>
                               <h6 class="our-team__slider-undertitle lang" key="marketingofficer">Chief Marketing Officer</h6>
@@ -1008,7 +1090,12 @@
                         </p>
                      </div>
                      <div class="founder">
-                        <img src="img/main/james.webp" />
+                        <picture>
+                                     <source type="image/webp" srcset="img/main/james.webp">
+                                     <source type="image/png" srcset="img/main/james.png">
+                                     <img src="img/main/james.png" />
+                              </picture>
+                        
                         <p>James Hakim<br>
                            <span class="lang" key="ceocurate">CEO Curate</span>
                         </p>
@@ -1207,7 +1294,12 @@
             <section class="audit" id="audit">
                <div class="container center-text audit-container wow fadeInUp">
                   <div class="audit-left">
-                     <img class="audit-logo" src="./img/main/lex-futurus-coin.webp">
+                     <picture>
+                                     <source type="image/webp" srcset="./img/main/lex-futurus-coin.webp">
+                                     <source type="image/png" srcset="./img/main/lex-futurus-coin.png">
+                                     <img class="audit-logo" src="./img/main/lex-futurus-coin.png">
+                              </picture>
+                     
                      <p class="lang" key="lexfuturis">Curate including CUR8 tokens are represented by international law firm & consultancy Lex
                         Futurus Group.
                      </p>
@@ -1351,6 +1443,7 @@
       </main>
       <!--SCRIPTS-->
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="js/timer.js"></script>
       <script src="lang.js"></script> 
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
       <script src="js/langswitch.js"></script> 
@@ -1372,4 +1465,6 @@
       <link rel="stylesheet" href="styles/animate.css">
       <link rel="stylesheet" href="styles/transitions.css">
       <script src="js/transitions.js"></script>
+   </div>
    </body>
+   </html>
