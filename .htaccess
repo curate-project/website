@@ -1,0 +1,3 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^curate.style [NC] RewriteRule ^(.*)$ https://www.curate.style/$1 [L,R=301]
