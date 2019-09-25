@@ -92,10 +92,27 @@
     <!-- Title -->
     <title>CURATE</title>
 
+    <script>
+        var captchaSuccess = function () {
+            //TODO: Add callback and store response token
+        }
+
+        var onReCaptchaLoad = function () {
+            var captchaWidgetId = grecaptcha.render('captcha', {
+                'sitekey': '6LeOYroUAAAAAOjTfp0dWLiqGXsRyUFk2qWOHcDJ',  // required
+                'theme': 'dark',  // optional
+                // 'callback': 'verifyCallback'  // optional
+            });
+        };
+
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onReCaptchaLoad"" async defer></script>
+
 </head>
 
 <body>
-    <main class="main" id="main">
+    <main class=" main" id="main">
         <section class="form__section">
             <div class="container">
                 <a class="form__logo" href="../index.html">
@@ -130,6 +147,8 @@
                                             password?</a></span>
                                 </label>
 
+                                <div id="captcha" class="g-recaptcha" data-theme="dark"></div>
+
                                 <!-- <button class="form__button disabled-btn" id="login-button">login</button> -->
                                 <button class="form__button disabled-btn" id="login-button">
                                     <i class="fa fa-circle-o-notch fa-spin d-none" id="loader"></i>login
@@ -156,6 +175,6 @@
 
     <script src="../plugins/sha256/sha256.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-</body>
+    </body>
 
 </html>

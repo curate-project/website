@@ -31,7 +31,11 @@ window.onload = function () {
         e.preventDefault();
 
         if (validateEntries()) {
-            login();
+
+            var response = grecaptcha.getResponse( window.captchaWidgetId );
+            console.log( 'g-recaptcha-response: ' + response );
+
+            // login();
         }
     });
 
@@ -59,6 +63,13 @@ window.onload = function () {
             result = false;
         }
 
+        var response = grecaptcha.getResponse( window.captchaWidgetId );
+        console.log( 'g-recaptcha-response: ' + response );
+
+        if (!response || response === '') {
+            result = false;
+        }
+        
         if (!result) {
             $('#login-button').addClass('disabled-btn');
         } else {
@@ -102,5 +113,9 @@ window.onload = function () {
                 $('#login-button > i').addClass('d-none');
             }
         })
+    }
+
+    function onCaptchaSuccess(token) {
+        console.log(token);
     }
 }
