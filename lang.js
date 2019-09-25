@@ -143,7 +143,7 @@ var arrLang = {
         "cookietop": "Мы используем куки чтобы улучшать наши сервисы и быть релевантными.",
         "cookielink": "Находясь на нашем сайте вы соглашаетесь с <a target='_blank' style='color:#ffd788;' href='/cookiepolicy'>Политика Cookie</a>.",
         "about": "О нас",
-        "roadmap": "Дорожная карта",
+        "roadmap": "Дор. карта",
         "ourdevs": "Разработчики",
         "ourteam": "Команда",
         "pitch": "Pitch Deck",
