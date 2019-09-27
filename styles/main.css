@@ -1038,6 +1038,11 @@ div.menu li.animate:nth-of-type(6) {
     margin-right: 0;
 }
 
+#demo .roadmap__wrap:before {
+    height:0px;
+    background:none;
+}
+
 .btn {
     transition: 0.3s ease-in-out;
     display: block;
@@ -1613,9 +1618,9 @@ div.menu li.animate:nth-of-type(6) {
 .languages__popup {
     z-index: 101;
     position: absolute;
-    right: 0;
+    /*right: 0;*/
     margin-top: 7px;
-    width: 133px;
+    width: 144px;
     background: #fff;
     border-radius: 4px;
     opacity: 0;
@@ -1646,7 +1651,7 @@ div.menu li.animate:nth-of-type(6) {
     font-size: 14px;
     color: #000;
     font-weight: 500;
-    width: 133px;
+    width: 144px;
     padding: 9px 20px 10px 46px;
     text-decoration: none;
     text-align: left;
@@ -1711,6 +1716,7 @@ div.menu li.animate:nth-of-type(6) {
     background: rgba(0, 0, 0, 0.02);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    transition:.3s ease;
 }
 
 .languages__body a:before {
@@ -1734,6 +1740,147 @@ div.menu li.animate:nth-of-type(6) {
     border-color: #fff transparent transparent transparent;
     border-width: 4px 3px 0 3px;
 }
+
+.languages__body a:hover {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+
+
+
+
+/////
+
+.invest {
+    width: 133px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 19px;
+}
+
+.invest__inner {
+    position: relative;
+    z-index: 2;
+}
+
+.invest__overlay {
+    position: absolute;
+    z-index: 100;
+    transition: .5s ease;
+    background: linear-gradient(180deg, rgba(1, 31, 31, 0.9) 0%, rgba(32, 82, 79, 0) 100%);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.invest__popup {
+    z-index: 101;
+    position: absolute;
+    right: 0;
+    margin-top: 7px;
+    width: 150px;
+    background: #fff;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.invest__popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.invest__popup.active a {
+    transition: 0.3s ease;
+}
+
+.invest__popup.active a:hover {
+    background-color: #2DE58D!important;
+}
+
+.invest__popup a {
+    position: relative;
+    display: block;
+    height: 35px;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    width: 150px;
+    padding: 9px 20px 10px 16px;
+    text-decoration: none;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.invest__popup a:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.invest__popup a:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+.invest__popup a:before {
+    position: absolute;
+    content: '';
+    left: 14px;
+    top: 50%;
+    width: 25px;
+    height: 14px;
+    margin-top: -7px;
+}
+
+.invest__body a {
+    position: relative;
+    display: block;
+    height: 35px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
+    width: 143px;
+    padding: 9px 20px 10px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.02);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    transition:.3s ease;
+}
+
+.invest__body a:hover {
+    color: #2DE58D;
+}
+
+.invest__body a:before {
+    position: absolute;
+    content: '';
+    left: 14px;
+    top: 50%;
+    width: 25px;
+    height: 14px;
+    margin-top: -7px;
+}
+
+.invest__body a:after {
+    position: absolute;
+    content: '';
+    right: 10px;
+    top: 15px;
+    border-style: solid;
+    height: 0;
+    width: 0;
+    border-color: #fff transparent transparent transparent;
+    border-width: 4px 3px 0 3px;
+}
+
+/////
 
 .active {
     opacity: 1;
@@ -2713,7 +2860,7 @@ div.menu li.animate:nth-of-type(6) {
 }
 
 .countdown-container {
-    z-index:999;
+    z-index:98;
     width:280px;
     position: absolute;
     right:0;
@@ -3041,8 +3188,8 @@ a:not(.btn):hover {
     background: rgba(255,255,255,.05);
     }
 .ieo-link-section>a:hover {
-    filter:invert(0.5) sepia(1) hue-rotate(-40deg) saturate(6) brightness(2);
-    opacity:1;
+    filter: invert(0.5) sepia(1) hue-rotate(95deg) saturate(6) brightness(2);
+    opacity: 1;
 }
 
 .ieo-link-section>p {

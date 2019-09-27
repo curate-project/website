@@ -93,3 +93,16 @@ $(function() {
         });
     });
 });
+
+$(function() {
+    $('.invest__body a').on('click', function(e) {
+        e.preventDefault();
+        $('.invest__popup').toggleClass('active');
+        $('.invest__overlay').toggleClass('active');
+    });
+    $('.invest__overlay').on('click', function(e) {
+        e.preventDefault();
+        $('.invest__popup').removeClass('active');
+        $('.invest__overlay').removeClass('active');
+    });
+});
