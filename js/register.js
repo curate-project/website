@@ -127,8 +127,7 @@ window.onload = function () {
             $('#create-account > i').addClass('d-none');
 
             $.ajax({
-                url: 'http://localhost:3000/captcha',
-                // url: 'https://curate-user-service.herokuapp.com/captcha',
+                url: 'https://curate-user-service.herokuapp.com/captcha',
                 type: 'post',
                 contentType: 'application/json',
                 data: JSON.stringify({
