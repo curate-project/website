@@ -1,5 +1,6 @@
 var Cookies = null;
 var email = '';
+var rememberMe = false;
 const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
 function validateEntries() {
@@ -81,7 +82,7 @@ window.onload = function () {
 
     Cookies = window.Cookies;
 
-    let rememberMe = Cookies.get('remembered');
+    rememberMe = Cookies.get('remembered');
 
     $('#form-checkbox').prop('checked', rememberMe);
 
@@ -107,8 +108,12 @@ window.onload = function () {
         e.preventDefault();
 
         if (validateEntries()) {
+            $('#login-button').blur();
+            $('#login-button > i').removeClass('d-none');
+        
             $.ajax({
-                url: 'https://curate-user-service.herokuapp.com/captcha',
+                url: 'http://localhost:3000/captcha',
+                // url: 'https://curate-user-service.herokuapp.com/captcha',
                 type: 'post',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -119,10 +124,11 @@ window.onload = function () {
                 },
                 error: function (jqXhr, textStatus, errorThrown) {
                     console.log(errorThrown);
+                    window.grecaptcha.reset(window.captchaWidgetId);
                     $('#form-pass').after('<span class="form__input-error">invalid login</span>');
                     $('#login-button > i').addClass('d-none');
                 }
-            })
+            });
         }
     });
 }
