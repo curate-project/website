@@ -92,6 +92,27 @@
     <!-- Title -->
     <title>CURATE</title>
 
+    <script>
+        var captchaWidgetId = null;
+        var captchaToken = null;
+
+        var captchaSuccess = function () {
+            captchaToken = grecaptcha.getResponse(captchaWidgetId);
+            console.log('g-recaptcha-response: ' + captchaToken);
+            validateEntries();
+        }
+
+        var onReCaptchaLoad = function () {
+            captchaWidgetId = grecaptcha.render('captcha', {
+                'sitekey': '6LeOYroUAAAAAOjTfp0dWLiqGXsRyUFk2qWOHcDJ',  // required
+                'theme': 'dark',  // optional
+                'callback': 'captchaSuccess'  // optional
+            });
+        };
+
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onReCaptchaLoad"" async defer></script>
 </head>
 
 <body>
@@ -132,6 +153,8 @@
                                     <span class="form__checkbox-span">I agree to the <a href="#" class="link">Terms and
                                             conditions</a></span>
                                 </label>
+
+                                <div id="captcha" class="g-recaptcha" data-theme="dark"></div>
 
                                 <!-- <button class="form__button disabled-btn" id="create-account">Create Account</button> -->
                                 <button class="form__button disabled-btn" id="create-account">
